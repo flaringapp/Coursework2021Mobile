@@ -1,4 +1,4 @@
-package com.flaringapp.coursework2021.presentation.main
+package com.flaringapp.coursework2021.presentation.features.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
