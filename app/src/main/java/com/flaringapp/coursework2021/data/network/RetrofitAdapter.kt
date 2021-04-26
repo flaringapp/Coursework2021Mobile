@@ -2,10 +2,12 @@ package com.flaringapp.coursework2021.data.network
 
 import android.util.Log
 import com.flaringapp.coursework2021.app.Constants
+import com.flaringapp.coursework2021.data.network.features.profile.ProfileApiService
 import com.flaringapp.coursework2021.data.network.modifiers.ModifierApplyInterceptor
 import com.flaringapp.coursework2021.data.network.modifiers.ParametrizedCallAdapterFactory
 import com.flaringapp.coursework2021.data.network.modifiers.RequestDataCache
 import com.flaringapp.coursework2021.data.network.modifiers.modifier.RequestModifier
+import com.flaringapp.coursework2021.data.network.modifiers.modifier.RequestTokenAppender
 import com.flaringapp.coursework2021.data.network.modifiers.setupModifiersCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,6 +19,12 @@ class RetrofitAdapter {
 
     companion object {
         private const val LOGGER_TAG = "Http"
+    }
+
+    val profileService: ProfileApiService = createClientAutoToken(NetworkConstants.profile)
+
+    private inline fun <reified T> createClientAutoToken(prefix: String): T {
+        return createClient(prefix, RequestTokenAppender())
     }
 
     private inline fun <reified T> createClient(
