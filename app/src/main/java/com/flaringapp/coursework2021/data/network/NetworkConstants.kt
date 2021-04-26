@@ -4,7 +4,7 @@ object NetworkConstants {
 
     const val API_KEY = "X-API-KEY"
 
-    const val serverUrl: String = "127.0.0.1/"
+    const val serverUrl: String = "http://127.0.0.1/"
 
     const val profile: String = "user/"
 
