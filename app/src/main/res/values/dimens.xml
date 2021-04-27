@@ -3,4 +3,7 @@
 
     <dimen name="button_radius">8dp</dimen>
 
+    <dimen name="menu_spacing">24dp</dimen>
+    <dimen name="menu_image_size">120dp</dimen>
+
 </resources>

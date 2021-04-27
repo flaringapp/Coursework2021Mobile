@@ -9,4 +9,13 @@
     <string name="error_login_invalid">Please enter a valid email</string>
     <string name="error_password_empty">Please enter your password</string>
 
+    <!-- Menu -->
+    <string name="button_menu_buildings">Buildings</string>
+    <string name="button_menu_managers">Managers</string>
+    <string name="button_menu_users">Users</string>
+    <string name="button_menu_payments">Payments</string>
+    <string name="button_menu_building_dashboard">Building dashboard</string>
+    <string name="button_menu_admin_dashboard">Admin dashboard</string>
+    <string name="title_menu">Menu</string>
+
 </resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:overScrollMode="ifContentScrolls">
+
+    <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/menu_spacing"
+        android:gravity="center_vertical"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:bll_children_spacing="@dimen/menu_spacing">
+
+        <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+            style="@style/MenuItemLayoutRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
+                android:id="@+id/layoutBuildings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:src="@drawable/img_menu_building" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_buildings" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
+                android:id="@+id/layoutManagers"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:layout_weight="1"
+                    android:src="@drawable/img_menu_manager" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_managers" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+            style="@style/MenuItemLayoutRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
+                android:id="@+id/layoutUsers"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:src="@drawable/img_menu_users" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_users" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
+                android:id="@+id/layoutPayments"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:src="@drawable/img_menu_payments" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_payments" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+            style="@style/MenuItemLayoutRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
+                android:id="@+id/layoutBuildingDashboard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:src="@drawable/img_menu_dashboard" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_building_dashboard" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
+                android:id="@+id/layoutAdminDashboard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:src="@drawable/img_menu_dashboard" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_admin_dashboard" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+    </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+</ScrollView>

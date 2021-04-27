@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/screen_menu">
+
+    <fragment
+        android:id="@+id/screen_menu"
+        android:label="@string/title_menu"
+        android:name="com.flaringapp.coursework2021.presentation.features.menu.MenuFragment"
+        tools:layout="@layout/fragment_menu" />
+
+</navigation>

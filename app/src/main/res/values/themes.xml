@@ -128,4 +128,33 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <!-- Menu -->
+
+    <style name="MenuItemLayoutRow">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">2</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:clipChildren">false</item>
+        <item name="bll_children_spacing">@dimen/menu_spacing</item>
+    </style>
+
+    <style name="MenuItemLayout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/bg_menu_item</item>
+        <item name="android:elevation">8dp</item>
+        <item name="bll_children_spacing">12dp</item>
+    </style>
+
+    <style name="MenuItemImage">
+        <item name="android:layout_weight">1</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="MenuItemText" parent="Text.Accent">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
 </resources>
