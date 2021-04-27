@@ -33,6 +33,8 @@ class OptionsDialog : BaseDialog(R.layout.dialog_options) {
     private val listener: OptionsDialogParent?
         get() = parentAsListener()
 
+    private var isOptionNotified: Boolean = false
+
     override fun initViews() {
         val params = requireArguments().getParcelable<OptionPickerParams>(PARAMS_KEY)!!
         binding.recyclerViewOptions.apply {
@@ -46,6 +48,9 @@ class OptionsDialog : BaseDialog(R.layout.dialog_options) {
     }
 
     private fun handleOptionSelected(id: String) {
+        if (isOptionNotified) return
+        isOptionNotified = true
+        dismiss()
         listener?.onOptionSelected(tag, id)
     }
 
