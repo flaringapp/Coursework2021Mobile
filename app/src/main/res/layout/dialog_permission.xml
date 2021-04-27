@@ -33,21 +33,20 @@
 
         <Button
             style="@style/Button.Small"
+            android:id="@+id/buttonNegative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            tools:text="Disagree" />
+
+        <Button
+            style="@style/Button.Small"
             android:id="@+id/buttonPositive"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             tools:text="Submit" />
 
-        <Button
-            style="@style/Button.Small"
-            android:id="@+id/buttonNegative"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            tools:text="Disagree" />
     </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
-
-
 
 </LinearLayout>
