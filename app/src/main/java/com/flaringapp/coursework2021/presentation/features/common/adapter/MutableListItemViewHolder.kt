@@ -4,6 +4,6 @@ import android.view.View
 
 abstract class MutableListItemViewHolder protected constructor(view: View): MutableListViewHolder(view) {
 
-    abstract fun setIdEditable(isEditable: Boolean)
+    abstract fun setIsEditable(isEditable: Boolean)
 
 }

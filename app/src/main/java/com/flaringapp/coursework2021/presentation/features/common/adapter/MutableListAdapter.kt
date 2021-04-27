@@ -63,7 +63,12 @@ abstract class MutableListAdapter<
     @Suppress("UNCHECKED_CAST")
     override fun onBindViewHolder(holder: MutableListViewHolder, position: Int) {
         when (holder) {
-            is MutableListItemViewHolder -> bindItemViewHolder(holder as IVH, position)
+            is MutableListItemViewHolder -> {
+                with(holder as IVH) {
+                    bindItemViewHolder(this, position)
+                    setIsEditable(isEditable)
+                }
+            }
             is MutableListAddItemViewHolder -> bindAddItemViewHolder(holder as AVH, position)
         }
     }
