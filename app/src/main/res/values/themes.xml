@@ -81,14 +81,26 @@
     </style>
 
     <style name="InputLayout">
-        <item name="boxBackgroundMode">filled</item>
-        <item name="boxBackgroundColor">@color/input</item>
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
         <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+
+    <style name="InputLayout.Filled">
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxBackgroundColor">@color/input</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+    </style>
+
+    <style name="InputLayout.Stroke" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">@color/input</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/error</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
     </style>
 
     <style name="Input" parent="Text">
@@ -101,6 +113,11 @@
 
     <style name="Input.InLayout">
         <item name="android:background">@null</item>
+    </style>
+
+    <style name="Input.InLayout.Stroke">
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
     </style>
 
     <style name="Button" parent="Widget.MaterialComponents.Button">

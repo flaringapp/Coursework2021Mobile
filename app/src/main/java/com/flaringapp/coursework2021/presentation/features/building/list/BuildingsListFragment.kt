@@ -1,5 +1,6 @@
 package com.flaringapp.coursework2021.presentation.features.building.list
 
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
@@ -7,6 +8,9 @@ import com.flaringapp.coursework2021.databinding.FragmentBuildingsListBinding
 import com.flaringapp.coursework2021.presentation.base.ModelledFragment
 import com.flaringapp.coursework2021.presentation.features.building.list.adapter.BuildingsListAdapter
 import com.flaringapp.coursework2021.presentation.features.building.list.model.BuildingsListModel
+import com.flaringapp.coursework2021.presentation.features.building.modify.ModifyBuildingParams
+import com.flaringapp.coursework2021.presentation.features.building.modify.behaviour.CreateBuildingBehaviour
+import com.flaringapp.coursework2021.presentation.features.building.modify.behaviour.EditBuildingBehaviour
 import com.flaringapp.coursework2021.presentation.features.dialogs.options.OptionPickerParams
 import com.flaringapp.coursework2021.presentation.features.dialogs.options.OptionsDialogParent
 import com.flaringapp.coursework2021.presentation.features.dialogs.options.models.ResourceOption
@@ -118,11 +122,25 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
     }
 
     private fun openCreateBuilding() {
-        // TODO open create building
+        goToModifyBuilding(
+            ModifyBuildingParams(CreateBuildingBehaviour()),
+            getString(R.string.title_create_building)
+        )
     }
 
     private fun openEditBuilding(building: Building) {
-        // TODO open edit building
+        goToModifyBuilding(
+            ModifyBuildingParams(EditBuildingBehaviour(building)),
+            getString(R.string.title_edit_building)
+        )
+    }
+
+    private fun goToModifyBuilding(params: ModifyBuildingParams, title: String) {
+        val direction = BuildingsListFragmentDirections.actionBuildingsListToModifyBuilding(
+            params,
+            title
+        )
+        findNavController().navigate(direction)
     }
 
 }

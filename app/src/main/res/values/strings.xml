@@ -34,4 +34,18 @@
     <string name="title_building_delete">Delete building</string>
     <string name="message_building_delete">Do you really want to delete building \"%s\"?</string>
 
+    <!-- Create building -->
+    <string name="title_create_building">Create new coworking</string>
+    <string name="title_edit_building">Edit coworking</string>
+    <string name="hint_building_name">Building name</string>
+    <string name="hint_building_description">Description</string>
+    <string name="hint_building_latitude">Latitude</string>
+    <string name="hint_building_longitude">Longitude</string>
+    <string name="hint_building_address">Address</string>
+    <string name="hint_building_area">Building area</string>
+    <string name="error_building_empty_name">Please enter a building name</string>
+    <string name="error_building_invalid_latitude">Latitude is invalid</string>
+    <string name="error_building_invalid_longitude">Longitude is invalid</string>
+    <string name="error_building_invalid_area">Area is invalid</string>
+
 </resources>

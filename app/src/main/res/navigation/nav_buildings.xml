@@ -9,6 +9,25 @@
         android:id="@+id/screen_buildings_list"
         android:label="@string/title_buildings"
         android:name="com.flaringapp.coursework2021.presentation.features.building.list.BuildingsListFragment"
-        tools:layout="@layout/fragment_buildings_list" />
+        tools:layout="@layout/fragment_buildings_list">
+
+        <action android:id="@+id/action_buildings_list_to_modify_building"
+            app:destination="@id/screen_modify_building" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/screen_modify_building"
+        android:label="{title}"
+        android:name="com.flaringapp.coursework2021.presentation.features.building.modify.ModifyBuildingFragment"
+        tools:layout="@layout/fragment_building_modify">
+
+        <argument android:name="params"
+            app:argType="com.flaringapp.coursework2021.presentation.features.building.modify.ModifyBuildingParams" />
+
+        <argument android:name="title"
+            app:argType="string" />
+
+    </fragment>
 
 </navigation>
