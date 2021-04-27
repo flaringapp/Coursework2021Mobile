@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Coworking</string>
 
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+
     <!-- Login -->
     <string name="title_login">Email</string>
     <string name="title_password">Password</string>
