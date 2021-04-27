@@ -5,10 +5,17 @@
     android:id="@+id/main_navigation"
     app:startDestination="@id/screen_menu">
 
+    <include app:graph="@navigation/nav_buildings" />
+
     <fragment
         android:id="@+id/screen_menu"
         android:label="@string/title_menu"
         android:name="com.flaringapp.coursework2021.presentation.features.menu.MenuFragment"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu">
+
+        <action android:id="@+id/action_menu_to_buildings"
+            app:destination="@id/nav_buildings" />
+
+    </fragment>
 
 </navigation>

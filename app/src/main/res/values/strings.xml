@@ -18,4 +18,8 @@
     <string name="button_menu_admin_dashboard">Admin dashboard</string>
     <string name="title_menu">Menu</string>
 
+    <!-- Buildings -->
+    <string name="title_buildings">Coworking spaces</string>
+    <string name="button_add_building">Add new coworking</string>
+
 </resources>

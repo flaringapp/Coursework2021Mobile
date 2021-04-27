@@ -1,6 +1,7 @@
 package com.flaringapp.coursework2021.data.text
 
 import androidx.annotation.StringRes
+import com.flaringapp.coursework2021.data.repository.entity.models.GeoLocation
 
 interface TextProvider {
 
@@ -10,5 +11,9 @@ interface TextProvider {
     }
 
     fun getText(@StringRes res: Int, vararg params: Any): CharSequence
+
+    fun formatLocation(location: GeoLocation): CharSequence
+
+    fun formatArea(area: Float): CharSequence
 
 }

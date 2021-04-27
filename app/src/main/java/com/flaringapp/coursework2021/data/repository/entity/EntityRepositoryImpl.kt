@@ -1,5 +1,6 @@
 package com.flaringapp.coursework2021.data.repository.entity
 
+import com.flaringapp.coursework2021.data.common.call.CallResult
 import com.flaringapp.coursework2021.data.common.call.CallResultList
 import com.flaringapp.coursework2021.data.common.call.CallResultNothing
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
@@ -19,7 +20,7 @@ class EntityRepositoryImpl: EntityRepository, BuildingsStorage, RoomsStorage {
     override val deleteRoomFlow = MutableSharedFlow<Room>()
 
     override suspend fun getBuildings(): CallResultList<Building> {
-        TODO("Not yet implemented")
+        return CallResult.Success(emptyList())
     }
 
     override suspend fun addBuilding(building: Building): CallResultList<Building> {

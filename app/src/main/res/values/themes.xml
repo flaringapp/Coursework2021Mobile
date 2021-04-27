@@ -52,6 +52,11 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="Text.WithIcon">
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
     <style name="Text.DialogTitle">
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textStyle">bold</item>

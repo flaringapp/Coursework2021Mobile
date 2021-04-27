@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bg_ripple"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    app:bll_children_spacing="12dp">
+
+    <LinearLayout
+        android:id="@+id/layoutBaseContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imageItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:background="@drawable/bg_placeholder"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                style="@style/Text.Accent"
+                android:id="@+id/textName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="Item 4" />
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:lines="3"
+                android:ellipsize="end"
+                tools:text="Fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Text.WithIcon"
+        android:id="@+id/textLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_location"
+        tools:text="41.123122S -12.3123123W" />
+
+    <TextView
+        style="@style/Text.WithIcon"
+        android:id="@+id/textAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_address"
+        tools:text="Lviv, 12 Schevchenka Str." />
+
+    <TextView
+        style="@style/Text.WithIcon"
+        android:id="@+id/textArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_area"
+        tools:text="412.34 m2" />
+
+</com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>

@@ -7,11 +7,9 @@ import com.flaringapp.coursework2021.presentation.features.building.list.models.
 import com.flaringapp.coursework2021.presentation.features.common.adapter.SimpleMutableListAdapter
 
 class BuildingsListAdapter(
-    isEditable: Boolean,
+    addNewBuilding: Action,
     private val editBuilding: (String) -> Unit,
-    addNewBuilding: Action
 ): SimpleMutableListAdapter<BuildingViewHolder, BuildingViewData>(
-    isEditable,
     R.string.button_add_building,
     addNewBuilding
 ) {

@@ -1,6 +1,7 @@
 package com.flaringapp.coursework2021.data.text
 
 import android.content.Context
+import com.flaringapp.coursework2021.data.repository.entity.models.GeoLocation
 
 class TextProviderImpl(
     private val context: Context
@@ -14,4 +15,11 @@ class TextProviderImpl(
         return context.getString(res, *params)
     }
 
+    override fun formatLocation(location: GeoLocation): CharSequence {
+        return "${location.latitude}N, ${location.latitude}W"
+    }
+
+    override fun formatArea(area: Float): CharSequence {
+        return "$area m2"
+    }
 }

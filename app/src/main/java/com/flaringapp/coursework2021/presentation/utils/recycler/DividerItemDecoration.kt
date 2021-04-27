@@ -1,15 +1,33 @@
 package com.flaringapp.coursework2021.presentation.utils.recycler
 
+import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.view.View
+import androidx.annotation.DrawableRes
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 open class DividerItemDecoration(
     private val drawable: Drawable,
-    spacing: Int = 0
+    spacing: Int = 0,
+    private val paddingLeft: Int? = null,
+    private val paddingRight: Int? = null,
 ) : SpacingItemDecoration(spacing) {
+
+    constructor(
+        context: Context,
+        @DrawableRes drawableRes: Int,
+        spacing: Int = 0,
+        drawableLeft: Int? = null,
+        drawableRight: Int? = null,
+    ) : this(
+        ContextCompat.getDrawable(context, drawableRes)!!,
+        spacing,
+        drawableLeft,
+        drawableRight
+    )
 
     override fun getItemOffsets(
         outRect: Rect,
@@ -29,8 +47,8 @@ open class DividerItemDecoration(
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        val dividerLeft = parent.paddingLeft
-        val dividerRight = parent.width - parent.paddingRight
+        val dividerLeft = paddingLeft ?: parent.paddingLeft
+        val dividerRight = parent.width - (paddingRight ?: parent.paddingRight)
         val childCount = parent.childCount
 
         for (i in 0 until childCount - 1) {

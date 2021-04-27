@@ -1,5 +1,6 @@
 package com.flaringapp.coursework2021.presentation.features.menu
 
+import androidx.navigation.fragment.findNavController
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.databinding.FragmentMenuBinding
 import com.flaringapp.coursework2021.presentation.base.ModelledFragment
@@ -35,6 +36,7 @@ class MenuFragment: ModelledFragment(R.layout.fragment_menu) {
     }
 
     private fun openBuildings() {
+        findNavController().navigate(R.id.action_menu_to_buildings)
     }
 
     private fun openManagers() {

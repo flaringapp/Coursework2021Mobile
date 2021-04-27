@@ -7,9 +7,8 @@ import com.flaringapp.coursework2021.app.common.clearAndAdd
 abstract class MutableListAdapter<
         IVH : MutableListItemViewHolder,
         AVH : MutableListAddItemViewHolder,
-        I : MutableListItem>(
-    private val isEditable: Boolean
-) : RecyclerView.Adapter<MutableListViewHolder>() {
+        I : MutableListItem> :
+    RecyclerView.Adapter<MutableListViewHolder>() {
 
     companion object {
         private const val VIEW_TYPE_ITEM = 1
@@ -43,7 +42,17 @@ abstract class MutableListAdapter<
         notifyItemRemoved(index)
     }
 
-    override fun getItemCount(): Int = items.size
+    fun setIsEditable(isEditable: Boolean) {
+        if (this.isEditable == isEditable) return
+        this.isEditable = isEditable
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount(): Int {
+        var count = items.size
+        if (isEditable) count += 1
+        return count
+    }
 
     override fun getItemViewType(position: Int): Int {
         return when {

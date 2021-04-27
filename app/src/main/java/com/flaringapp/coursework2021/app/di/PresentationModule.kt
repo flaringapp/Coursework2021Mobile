@@ -1,5 +1,7 @@
 package com.flaringapp.coursework2021.app.di
 
+import com.flaringapp.coursework2021.presentation.features.building.list.model.BuildingsListModel
+import com.flaringapp.coursework2021.presentation.features.building.list.model.BuildingsListModelImpl
 import com.flaringapp.coursework2021.presentation.features.login.viewmodel.LoginModel
 import com.flaringapp.coursework2021.presentation.features.login.viewmodel.LoginModelImpl
 import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModel
@@ -12,5 +14,7 @@ val PresentationModule = module {
     viewModel<LoginModel> { LoginModelImpl(get()) }
 
     viewModel<MenuModel> { MenuModelImpl() }
+
+    viewModel<BuildingsListModel> { BuildingsListModelImpl(get(), get()) }
 
 }
