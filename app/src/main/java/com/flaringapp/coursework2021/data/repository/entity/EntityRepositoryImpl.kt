@@ -23,12 +23,12 @@ class EntityRepositoryImpl: EntityRepository, BuildingsStorage, RoomsStorage {
         return CallResult.Success(emptyList())
     }
 
-    override suspend fun addBuilding(building: Building): CallResultList<Building> {
-        TODO("Not yet implemented")
+    override suspend fun addBuilding(building: Building): CallResult<Building> {
+        return CallResult.Success(building)
     }
 
-    override suspend fun editBuilding(building: Building): CallResultList<Building> {
-        TODO("Not yet implemented")
+    override suspend fun editBuilding(building: Building): CallResult<Building> {
+        return CallResult.Success(building)
     }
 
     override suspend fun deleteBuilding(id: String): CallResultNothing {
@@ -39,12 +39,12 @@ class EntityRepositoryImpl: EntityRepository, BuildingsStorage, RoomsStorage {
         TODO("Not yet implemented")
     }
 
-    override suspend fun addRoom(building: Room): CallResultList<Building> {
-        TODO("Not yet implemented")
+    override suspend fun addRoom(room: Room): CallResult<Room> {
+        return CallResult.Success(room)
     }
 
-    override suspend fun editRoom(building: Room): CallResultList<Building> {
-        TODO("Not yet implemented")
+    override suspend fun editRoom(room: Room): CallResult<Room> {
+        return CallResult.Success(room)
     }
 
     override suspend fun deleteRoom(id: String): CallResultNothing {
