@@ -7,11 +7,26 @@ import com.flaringapp.coursework2021.databinding.FragmentBuildingsListBinding
 import com.flaringapp.coursework2021.presentation.base.ModelledFragment
 import com.flaringapp.coursework2021.presentation.features.building.list.adapter.BuildingsListAdapter
 import com.flaringapp.coursework2021.presentation.features.building.list.model.BuildingsListModel
+import com.flaringapp.coursework2021.presentation.features.dialogs.options.OptionPickerParams
+import com.flaringapp.coursework2021.presentation.features.dialogs.options.OptionsDialogParent
+import com.flaringapp.coursework2021.presentation.features.dialogs.options.models.ResourceOption
+import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParams
+import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParent
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list) {
+class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list),
+    PermissionDialogParent, OptionsDialogParent {
+
+    companion object {
+        private const val BUILDING_EDIT_OPTION = "option_building_edit"
+        private const val BUILDING_DELETE_OPTION = "option_building_delete"
+
+        private const val BUILDING_OPTIONS_DIALOG = "dialog_building_options"
+
+        private const val DELETE_BUILDING_DIALOG = "dialog_delete_building"
+    }
 
     override val model: BuildingsListModel by viewModel()
 
@@ -24,7 +39,7 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
         }
         recyclerBuildings.adapter = BuildingsListAdapter(
             { model.createNewBuilding() },
-            { model.editBuilding(it) }
+            { model.handleBuildingOptions(it) }
         ).apply {
             setIsEditable(true)
         }
@@ -47,6 +62,14 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
             adapterAction { removeItem(id) }
         }
 
+        openBuildingActionsData.observe(viewLifecycleOwner) {
+            openBuildingOptions()
+        }
+
+        openConfirmDeleteBuildingData.observe(viewLifecycleOwner) { buildingName ->
+            openConfirmDeleteBuilding(buildingName)
+        }
+
         openCreateBuildingData.observe(viewLifecycleOwner) {
             openCreateBuilding()
         }
@@ -55,8 +78,43 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
         }
     }
 
+    override fun onPermissionPositive(tag: String?) {
+        if (tag == DELETE_BUILDING_DIALOG) {
+            model.confirmDeleteSelectedBuilding()
+        }
+    }
+
+    override fun onOptionSelected(tag: String?, optionKey: String) {
+        if (tag == BUILDING_OPTIONS_DIALOG) {
+            when (optionKey) {
+                BUILDING_EDIT_OPTION -> model.editSelectedBuilding()
+                BUILDING_DELETE_OPTION -> model.deleteSelectedBuilding()
+            }
+        }
+    }
+
     private fun <T> adapterAction(action: BuildingsListAdapter.() -> T): T {
         return (binding.recyclerBuildings.adapter as BuildingsListAdapter).action()
+    }
+
+    private fun openBuildingOptions() {
+        OptionPickerParams.Builder()
+            .withTitle(R.string.title_building_options)
+            .withOptions(
+                ResourceOption(BUILDING_EDIT_OPTION, R.string.option_building_edit),
+                ResourceOption(BUILDING_DELETE_OPTION, R.string.option_building_delete),
+            )
+            .buildAndCreate()
+            .show(childFragmentManager, BUILDING_OPTIONS_DIALOG)
+    }
+
+    private fun openConfirmDeleteBuilding(buildingName: String) {
+        PermissionDialogParams.Builder()
+            .withTitle(R.string.title_building_delete)
+            .withMessage(R.string.message_building_delete, buildingName)
+            .withYesNoActions()
+            .buildAndCreateDialog()
+            .show(childFragmentManager, DELETE_BUILDING_DIALOG)
     }
 
     private fun openCreateBuilding() {

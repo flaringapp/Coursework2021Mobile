@@ -28,5 +28,10 @@
     <!-- Buildings -->
     <string name="title_buildings">Coworking spaces</string>
     <string name="button_add_building">Add new coworking</string>
+    <string name="title_building_options">Building actions</string>
+    <string name="option_building_edit">Edit building details</string>
+    <string name="option_building_delete">Delete building</string>
+    <string name="title_building_delete">Delete building</string>
+    <string name="message_building_delete">Do you really want to delete building \"%s\"?</string>
 
 </resources>

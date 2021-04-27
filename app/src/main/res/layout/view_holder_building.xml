@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/bg_ripple"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
     android:paddingStart="16dp"
@@ -20,13 +19,15 @@
         android:gravity="center_vertical"
         android:weightSum="1">
 
-        <ImageView
+        <com.flaringapp.coursework2021.presentation.utils.aspectratio.AspectRatioImageView
             android:id="@+id/imageItem"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:background="@drawable/bg_placeholder"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            app:iv_aspect_ratio="1:1"
+            app:iv_aspect_ratio_base="width" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -35,14 +36,32 @@
             android:orientation="vertical"
             android:layout_marginStart="12dp">
 
-            <TextView
-                style="@style/Text.Accent"
-                android:id="@+id/textName"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:ellipsize="end"
-                tools:text="Item 4" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textName"
+                    style="@style/Text.Accent"
+                    android:layout_width="243dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    tools:text="Item 4" />
+
+                <ImageButton
+                    android:id="@+id/buttonOptions"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_ripple_circle"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_more"
+                    android:tint="@color/color_primary"
+                    android:scaleType="fitCenter"/>
+
+            </LinearLayout>
 
             <TextView
                 style="@style/Text"

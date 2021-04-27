@@ -16,14 +16,14 @@ class BuildingViewHolder(
         )
     }
 
-    fun bind(item: BuildingViewData, editBuilding: (String) -> Unit) = with(binding) {
+    fun bind(item: BuildingViewData, onOptionsClicked: (String) -> Unit) = with(binding) {
         textName.text = item.name
         textDescription.text = item.description
         textLocation.text = item.location
         textAddress.text = item.address
         textArea.text = item.area
 
-        root.setOnClickListener { editBuilding(item.id) }
+        buttonOptions.setOnClickListener { onOptionsClicked(item.id) }
     }
 
     override fun setIsEditable(isEditable: Boolean) {

@@ -14,17 +14,23 @@ import com.flaringapp.coursework2021.presentation.utils.common.SingleLiveEvent
 class BuildingsListModelImpl(
     private val repository: EntityRepository,
     private val textProvider: TextProvider,
-): BuildingsListModel() {
+) : BuildingsListModel() {
 
     override val buildingsData = MutableLiveData<List<BuildingViewData>>()
     override val addBuildingData = SingleLiveEvent<BuildingViewData>()
     override val updateBuildingData = SingleLiveEvent<BuildingViewData>()
     override val deleteBuildingData = SingleLiveEvent<String>()
 
+    override val openBuildingActionsData = SingleLiveEvent<Unit>()
+
+    override val openConfirmDeleteBuildingData = SingleLiveEvent<String>()
+
     override val openCreateBuildingData = SingleLiveEvent<Unit>()
     override val openEditBuildingData = SingleLiveEvent<Building>()
 
     private val buildings: MutableList<Building> = mutableListOf()
+
+    private var pendingOptionsBuildingId: String? = null
 
     init {
         loadBuildings()
@@ -34,9 +40,23 @@ class BuildingsListModelImpl(
         openCreateBuildingData.value = Unit
     }
 
-    override fun editBuilding(id: String) {
-        val building = buildings.find { it.id == id } ?: return
-        openEditBuildingData.value = building
+    override fun handleBuildingOptions(id: String) {
+        pendingOptionsBuildingId = id
+        openBuildingActionsData.value = Unit
+    }
+
+    override fun editSelectedBuilding() {
+        pendingBuildingAction(this::editBuilding)
+    }
+
+    override fun deleteSelectedBuilding() {
+        val buildingId = pendingOptionsBuildingId ?: return
+        val building = buildings.find { it.id == buildingId } ?: return
+        openConfirmDeleteBuildingData.value = building.name
+    }
+
+    override fun confirmDeleteSelectedBuilding() {
+        pendingBuildingAction(this::deleteBuilding)
     }
 
     private fun loadBuildings() {
@@ -55,6 +75,21 @@ class BuildingsListModelImpl(
         }
     }
 
+    private fun editBuilding(id: String) {
+        val building = buildings.find { it.id == id } ?: return
+        openEditBuildingData.value = building
+    }
+
+    private fun deleteBuilding(id: String) {
+        viewModelScope.launchOnIO {
+            safeCall { repository.deleteBuilding(id) } ?: return@launchOnIO
+
+            withMainContext {
+                deleteBuildingData.value = id
+            }
+        }
+    }
+
     private fun Building.toViewData() = BuildingViewData(
         id,
         name,
@@ -63,4 +98,10 @@ class BuildingsListModelImpl(
         address,
         area?.let { textProvider.formatArea(it) }
     )
+
+    private fun pendingBuildingAction(action: (String) -> Unit) {
+        val id = pendingOptionsBuildingId ?: return
+        action(id)
+        pendingOptionsBuildingId = null
+    }
 }
