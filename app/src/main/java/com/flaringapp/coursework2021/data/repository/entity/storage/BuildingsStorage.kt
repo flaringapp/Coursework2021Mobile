@@ -7,6 +7,6 @@ interface BuildingsStorage {
 
     val addBuildingFlow: Flow<Building>
     val editBuildingFlow: Flow<Building>
-    val deleteBuildingFlow: Flow<Building>
+    val deleteBuildingFlow: Flow<String>
 
 }

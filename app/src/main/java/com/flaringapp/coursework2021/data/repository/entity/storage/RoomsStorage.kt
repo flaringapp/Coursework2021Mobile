@@ -7,6 +7,6 @@ interface RoomsStorage {
 
     val addRoomFlow: Flow<Room>
     val editRoomFlow: Flow<Room>
-    val deleteRoomFlow: Flow<Room>
+    val deleteRoomFlow: Flow<String>
 
 }

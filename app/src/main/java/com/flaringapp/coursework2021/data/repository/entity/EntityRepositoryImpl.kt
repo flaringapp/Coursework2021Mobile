@@ -13,41 +13,47 @@ class EntityRepositoryImpl: EntityRepository, BuildingsStorage, RoomsStorage {
 
     override val addBuildingFlow = MutableSharedFlow<Building>()
     override val editBuildingFlow = MutableSharedFlow<Building>()
-    override val deleteBuildingFlow = MutableSharedFlow<Building>()
+    override val deleteBuildingFlow = MutableSharedFlow<String>()
 
     override val addRoomFlow = MutableSharedFlow<Room>()
     override val editRoomFlow = MutableSharedFlow<Room>()
-    override val deleteRoomFlow = MutableSharedFlow<Room>()
+    override val deleteRoomFlow = MutableSharedFlow<String>()
 
     override suspend fun getBuildings(): CallResultList<Building> {
         return CallResult.Success(emptyList())
     }
 
     override suspend fun addBuilding(building: Building): CallResult<Building> {
+        addBuildingFlow.emit(building)
         return CallResult.Success(building)
     }
 
     override suspend fun editBuilding(building: Building): CallResult<Building> {
+        editBuildingFlow.emit(building)
         return CallResult.Success(building)
     }
 
     override suspend fun deleteBuilding(id: String): CallResultNothing {
-        TODO("Not yet implemented")
+        deleteBuildingFlow.emit(id)
+        return CallResult.Success(Unit)
     }
 
     override suspend fun getRooms(): CallResultList<Room> {
-        TODO("Not yet implemented")
+        return CallResult.Success(emptyList())
     }
 
     override suspend fun addRoom(room: Room): CallResult<Room> {
+        addRoomFlow.emit(room)
         return CallResult.Success(room)
     }
 
     override suspend fun editRoom(room: Room): CallResult<Room> {
+        editRoomFlow.emit(room)
         return CallResult.Success(room)
     }
 
     override suspend fun deleteRoom(id: String): CallResultNothing {
-        TODO("Not yet implemented")
+        deleteRoomFlow.emit(id)
+        return CallResult.Success(Unit)
     }
 }
