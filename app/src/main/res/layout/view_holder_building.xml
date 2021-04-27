@@ -22,17 +22,17 @@
         <com.flaringapp.coursework2021.presentation.utils.aspectratio.AspectRatioImageView
             android:id="@+id/imageItem"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
             android:background="@drawable/bg_placeholder"
             android:scaleType="centerCrop"
-            app:iv_aspect_ratio="1:1"
+            app:iv_aspect_ratio="4:3"
             app:iv_aspect_ratio_base="width" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.75"
+            android:layout_weight="0.7"
             android:orientation="vertical"
             android:layout_marginStart="12dp">
 
@@ -44,9 +44,10 @@
                 <TextView
                     android:id="@+id/textName"
                     style="@style/Text.Accent"
-                    android:layout_width="243dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="8dp"
                     android:ellipsize="end"
                     android:lines="1"
                     tools:text="Item 4" />
@@ -69,7 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:lines="3"
+                android:layout_marginBottom="8dp"
+                android:lines="2"
                 android:ellipsize="end"
                 tools:text="Fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description" />
 
