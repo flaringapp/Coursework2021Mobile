@@ -10,5 +10,6 @@ object NetworkConstants {
 
     const val buildings: String = ""
     const val rooms: String = ""
+    const val managers: String = ""
 
 }
