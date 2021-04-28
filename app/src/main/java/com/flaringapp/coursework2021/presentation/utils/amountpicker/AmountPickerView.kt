@@ -113,7 +113,7 @@ class AmountPickerView : ConstraintLayout {
         binding = ViewAmountPickerBinding.bind(this)
 
         if (background == null) {
-            setBackgroundResource(R.drawable.bg_amount_picker)
+            setBackgroundResource(R.drawable.selector_amount_picker)
         }
 
         binding.textAmount.text = amount.toString()
@@ -241,6 +241,17 @@ class AmountPickerView : ConstraintLayout {
         }
 
         typedArray.recycle()
+    }
+
+    override fun setEnabled(enabled: Boolean) {
+        super.setEnabled(enabled)
+
+        binding.buttonPlus.isEnabled = enabled
+        binding.buttonMinus.isEnabled = enabled
+
+        val alpha = if (isEnabled) 1f else 0.25f
+        binding.buttonPlus.alpha = alpha
+        binding.buttonMinus.alpha = alpha
     }
 
     fun setSelectedAmount(amount: Int) {

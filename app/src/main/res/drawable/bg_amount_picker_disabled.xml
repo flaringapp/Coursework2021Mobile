@@ -4,6 +4,6 @@
 
     <corners android:radius="200dp" />
 
-    <solid android:color="@color/input_light" />
+    <solid android:color="@color/input_disabled" />
 
 </shape>

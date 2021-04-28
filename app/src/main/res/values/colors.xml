@@ -3,6 +3,7 @@
     <color name="color_primary">#1CA6B9</color>
     <color name="color_primary_dark">#007789</color>
     <color name="color_primary_light">#62d8eb</color>
+    <color name="color_primary_disabled">#441CA6B9</color>
 
     <color name="color_secondary">#F1C21B</color>
     <color name="color_secondary_dark">#ba9200</color>
@@ -17,6 +18,7 @@
     <color name="ripple_dark">#11000000</color>
 
     <color name="input">#C0C0C0</color>
+    <color name="input_light">#E0E0E0</color>
     <color name="input_disabled">#F2F2F2</color>
 
     <color name="success">#2ECC35</color>

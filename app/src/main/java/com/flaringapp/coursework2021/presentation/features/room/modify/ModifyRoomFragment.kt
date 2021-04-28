@@ -100,9 +100,7 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
         }
 
         loadingData.observe(viewLifecycleOwner) { isLoading ->
-            binding.progressBar.isVisibleAndAnimateProgressBar = isLoading
-            binding.buttonSubmit.isEnabled = !isLoading
-            binding.buttonSubmit.isVisibleAndAnimateProgressBar = !isLoading
+            setIsLoading(isLoading)
         }
 
         closeScreenData.observe(viewLifecycleOwner) {
@@ -118,6 +116,25 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
         listOf(binding.buttonRoomTypePrivate, binding.buttonRoomTypeOpenSpace).forEach {
             it.isSelected = it == button
         }
+    }
+
+    private fun setIsLoading(isLoading: Boolean) {
+        binding.progressBar.isVisibleAndAnimateProgressBar = isLoading
+
+        binding.buttonSubmit.isEnabled = !isLoading
+        binding.buttonSubmit.isVisibleAndAnimateProgressBar = !isLoading
+
+        listOf(
+            binding.layoutInputName,
+            binding.layoutInputDescription,
+            binding.buttonRoomTypePrivate,
+            binding.buttonRoomTypeOpenSpace,
+            binding.checkBoxHasBoard,
+            binding.checkBoxHasBalcony,
+            binding.pickerWorkplacesCount,
+            binding.pickerWindowCount,
+            binding.layoutInputArea,
+        ).forEach { it.isEnabled = !isLoading }
     }
 
 }

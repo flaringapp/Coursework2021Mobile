@@ -109,7 +109,9 @@
                 android:id="@+id/checkBoxHasBoard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_room_has_board" />
+                android:text="@string/title_room_has_board"
+                android:button="@null"
+                android:drawableStart="?android:attr/listChoiceIndicatorMultiple" />
 
             <Space
                 android:layout_width="0dp"
