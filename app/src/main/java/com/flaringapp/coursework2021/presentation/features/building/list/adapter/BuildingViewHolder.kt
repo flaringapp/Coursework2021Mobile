@@ -29,6 +29,6 @@ class BuildingViewHolder(
     }
 
     override fun setIsEditable(isEditable: Boolean) {
-        binding.imageItem.isVisible = isEditable
+        binding.buttonOptions.isVisible = isEditable
     }
 }
