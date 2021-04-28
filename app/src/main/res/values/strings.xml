@@ -66,6 +66,7 @@
 
     <!-- Create room -->
     <string name="title_create_room">Create new room</string>
+    <string name="title_edit_room">Edit coworking room</string>
     <string name="hint_room_name">Room name</string>
     <string name="hint_room_description">Description</string>
     <string name="title_room_type">Room type</string>

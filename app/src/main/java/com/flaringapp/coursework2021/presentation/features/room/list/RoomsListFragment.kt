@@ -134,14 +134,14 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
     private fun openCreateRoom(buildingId: String) {
         goToModifyRoom(
             ModifyRoomParams(buildingId, CreateRoomBehaviour()),
-            getString(R.string.title_create_building)
+            getString(R.string.title_create_room)
         )
     }
 
     private fun openEditRoom(room: Room) {
         goToModifyRoom(
             ModifyRoomParams(room.buildingId, EditRoomBehaviour(room)),
-            getString(R.string.title_edit_building)
+            getString(R.string.title_edit_room)
         )
     }
 
