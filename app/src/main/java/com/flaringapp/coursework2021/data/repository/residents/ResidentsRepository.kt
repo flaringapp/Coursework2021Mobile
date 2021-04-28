@@ -8,6 +8,7 @@ import com.flaringapp.coursework2021.data.repository.residents.models.Resident
 interface ResidentsRepository {
 
     suspend fun getResidents(): CallResultList<Resident>
+    suspend fun getResidents(buildingId: String): CallResultList<Resident>
 
     suspend fun addResident(resident: Resident): CallResult<Resident>
 

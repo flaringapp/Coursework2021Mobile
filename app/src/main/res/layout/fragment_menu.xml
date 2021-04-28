@@ -72,7 +72,7 @@
 
             <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
                 style="@style/MenuItemLayout"
-                android:id="@+id/layoutUsers"
+                android:id="@+id/layoutResidents"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
 
@@ -80,13 +80,13 @@
                     style="@style/MenuItemImage"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/menu_image_size"
-                    android:src="@drawable/img_menu_users" />
+                    android:src="@drawable/img_menu_residents" />
 
                 <TextView
                     style="@style/MenuItemText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_menu_users" />
+                    android:text="@string/button_menu_residents" />
 
             </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
 

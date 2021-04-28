@@ -19,6 +19,12 @@ class ResidentsRepositoryImpl: ResidentsRepository, ResidentsStorage {
         ))
     }
 
+    override suspend fun getResidents(buildingId: String): CallResultList<Resident> {
+        return CallResult.Success(listOf(
+            Resident("1", "Andrew", "Shpek", "as@asdc.com", "", "1", "B1")
+        ))
+    }
+
     override suspend fun addResident(resident: Resident): CallResult<Resident> {
         addResidentFlow.emit(resident)
         return CallResult.Success(resident)

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_residents"
+    app:startDestination="@id/screen_residents_list">
+
+    <fragment
+        android:id="@+id/screen_residents_list"
+        android:label="@string/title_residents"
+        android:name="com.flaringapp.coursework2021.presentation.features.resident.list.ResidentsListFragment"
+        tools:layout="@layout/fragment_resident_list">
+
+<!--        <action android:id="@+id/action_managers_list_to_modify_manager"-->
+<!--            app:destination="@id/screen_modify_manager" />-->
+
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/screen_modify_manager"-->
+<!--        android:label="{title}"-->
+<!--        android:name="com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerFragment"-->
+<!--        tools:layout="@layout/fragment_manager_modify">-->
+
+<!--        <argument android:name="params"-->
+<!--            app:argType="com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerParams" />-->
+
+<!--        <argument android:name="title"-->
+<!--            app:argType="string" />-->
+
+<!--    </fragment>-->
+
+</navigation>

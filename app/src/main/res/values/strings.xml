@@ -20,7 +20,7 @@
     <string name="button_menu_buildings">Buildings</string>
     <string name="button_menu_managers">Managers</string>
     <string name="button_menu_payments">Payments</string>
-    <string name="button_menu_users">Users</string>
+    <string name="button_menu_residents">Residents</string>
     <string name="button_menu_rooms">Rooms</string>
     <string name="button_menu_building_dashboard">Building dashboard</string>
     <string name="button_menu_admin_dashboard">Admin dashboard</string>
@@ -85,7 +85,7 @@
     <string name="option_manager_edit">Edit manager information</string>
     <string name="option_manager_delete">Delete manager</string>
     <string name="title_manager_delete">Delete manager</string>
-    <string name="message_manager_delete">Do you really want to delete \"%s\" from the managers list?</string>
+    <string name="message_manager_delete">Do you really want to delete \%s\ from the managers list?</string>
 
     <!-- Modify manager -->
     <string name="title_add_manager">Add new manager</string>
@@ -99,6 +99,15 @@
     <string name="error_manager_empty_surname">Please enter a manager surname</string>
     <string name="error_manager_empty_email">Please enter a manager email</string>
     <string name="error_manager_empty_building">Please select an operation building</string>
+
+    <!-- Residents -->
+    <string name="title_residents">Residents</string>
+    <string name="button_add_resident">Add new resident</string>
+    <string name="title_resident_options">Resident actions</string>
+    <string name="option_resident_edit">Edit resident information</string>
+    <string name="option_resident_delete">Delete resident</string>
+    <string name="title_resident_delete">Delete resident</string>
+    <string name="message_resident_delete">Do you really want to delete resident \%s\?</string>
 
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>

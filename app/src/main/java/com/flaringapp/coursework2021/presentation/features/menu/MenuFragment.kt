@@ -21,8 +21,8 @@ class MenuFragment: ModelledFragment(R.layout.fragment_menu) {
         layoutManagers.setOnClickListener {
             openManagers()
         }
-        layoutUsers.setOnClickListener {
-            openUsers()
+        layoutResidents.setOnClickListener {
+            openResidents()
         }
         layoutPayments.setOnClickListener {
             openPayments()
@@ -43,7 +43,8 @@ class MenuFragment: ModelledFragment(R.layout.fragment_menu) {
         findNavController().navigate(R.id.action_menu_to_managers)
     }
 
-    private fun openUsers() {
+    private fun openResidents() {
+        findNavController().navigate(R.id.action_menu_to_residents)
     }
 
     private fun openPayments() {

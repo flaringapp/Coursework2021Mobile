@@ -9,6 +9,8 @@
 
     <include app:graph="@navigation/nav_managers" />
 
+    <include app:graph="@navigation/nav_residents" />
+
     <fragment
         android:id="@+id/screen_menu"
         android:label="@string/title_menu"
@@ -20,6 +22,9 @@
 
         <action android:id="@+id/action_menu_to_managers"
             app:destination="@id/nav_managers" />
+
+        <action android:id="@+id/action_menu_to_residents"
+            app:destination="@id/nav_residents" />
 
     </fragment>
 
