@@ -2,7 +2,7 @@ package com.flaringapp.coursework2021.presentation.features.manager.modify.behav
 
 import android.os.Parcelable
 import com.flaringapp.coursework2021.data.common.call.CallResultNothing
-import com.flaringapp.coursework2021.data.repository.manager.models.Manager
+import com.flaringapp.coursework2021.data.repository.managers.models.Manager
 import com.flaringapp.coursework2021.presentation.features.manager.modify.models.ManagerEditableData
 
 interface ModifyManagerBehaviour: Parcelable {

@@ -1,6 +1,6 @@
 package com.flaringapp.coursework2021.presentation.features.manager.modify.models
 
-import com.flaringapp.coursework2021.data.repository.manager.models.Manager
+import com.flaringapp.coursework2021.data.repository.managers.models.Manager
 
 class ManagerEditableData(
     var name: String = "",

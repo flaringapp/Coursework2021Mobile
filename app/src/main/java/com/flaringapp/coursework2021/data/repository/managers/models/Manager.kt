@@ -1,4 +1,4 @@
-package com.flaringapp.coursework2021.data.repository.manager.models
+package com.flaringapp.coursework2021.data.repository.managers.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

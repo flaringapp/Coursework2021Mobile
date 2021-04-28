@@ -6,7 +6,7 @@ import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.app.common.withMainContext
 import com.flaringapp.coursework2021.data.repository.entity.EntityRepository
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
-import com.flaringapp.coursework2021.data.repository.manager.models.Manager
+import com.flaringapp.coursework2021.data.repository.managers.models.Manager
 import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.ModifyManagerBehaviour
 import com.flaringapp.coursework2021.presentation.features.manager.modify.models.ManagerBuildingViewData
 import com.flaringapp.coursework2021.presentation.features.manager.modify.models.ManagerEditableData

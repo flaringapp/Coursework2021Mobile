@@ -3,7 +3,7 @@ package com.flaringapp.coursework2021.presentation.features.manager.list
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flaringapp.coursework2021.R
-import com.flaringapp.coursework2021.data.repository.manager.models.Manager
+import com.flaringapp.coursework2021.data.repository.managers.models.Manager
 import com.flaringapp.coursework2021.databinding.FragmentManagerListBinding
 import com.flaringapp.coursework2021.presentation.base.ModelledFragment
 import com.flaringapp.coursework2021.presentation.features.dialogs.options.OptionPickerParams
