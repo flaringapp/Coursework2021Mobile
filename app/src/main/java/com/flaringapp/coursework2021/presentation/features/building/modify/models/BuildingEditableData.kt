@@ -13,8 +13,8 @@ class BuildingEditableData(
 ) {
 
     constructor(building: Building) : this(
-        building.name.trim(),
-        building.description.trim(),
+        building.name,
+        building.description,
         building.location?.latitude?.toString() ?: "",
         building.location?.longitude?.toString() ?: "",
         building.address ?: "",
