@@ -15,7 +15,9 @@ abstract class MutableListAdapter<
         private const val VIEW_TYPE_ADD_ITEM = 2
     }
 
-    private val items: MutableList<I> = mutableListOf()
+    protected val items: MutableList<I> = mutableListOf()
+
+    private var isEditable: Boolean = false
 
     fun setItems(items: List<I>) {
         this.items.clearAndAdd(items)
