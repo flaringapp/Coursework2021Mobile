@@ -16,7 +16,7 @@ abstract class RoomsListModel: BaseViewModel() {
 
     abstract val openConfirmDeleteRoomData: LiveData<String>
 
-    abstract val openCreateRoomData: LiveData<Unit>
+    abstract val openCreateRoomData: LiveData<String>
     abstract val openEditRoomData: LiveData<Room>
 
     abstract fun initBuildingId(id: String)

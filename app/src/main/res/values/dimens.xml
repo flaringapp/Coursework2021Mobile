@@ -4,6 +4,10 @@
     <dimen name="button_radius">8dp</dimen>
 
     <dimen name="menu_spacing">24dp</dimen>
+
     <dimen name="menu_image_size">120dp</dimen>
+
+    <dimen name="room_type_button_corners">8dp</dimen>
+    <dimen name="room_type_button_stroke_width">2dp</dimen>
 
 </resources>

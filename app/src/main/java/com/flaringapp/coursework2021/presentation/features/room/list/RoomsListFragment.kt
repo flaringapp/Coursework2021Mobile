@@ -1,6 +1,7 @@
 package com.flaringapp.coursework2021.presentation.features.room.list
 
 import android.os.Bundle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flaringapp.coursework2021.R
@@ -14,6 +15,9 @@ import com.flaringapp.coursework2021.presentation.features.dialogs.permission.Pe
 import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParent
 import com.flaringapp.coursework2021.presentation.features.room.list.adapter.RoomsListAdapter
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModel
+import com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomParams
+import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.CreateRoomBehaviour
+import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.EditRoomBehaviour
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -80,8 +84,8 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
             openConfirmDeleteRoom(roomName)
         }
 
-        openCreateRoomData.observe(viewLifecycleOwner) {
-            openCreateRoom()
+        openCreateRoomData.observe(viewLifecycleOwner) { buildingId ->
+            openCreateRoom(buildingId)
         }
         openEditRoomData.observe(viewLifecycleOwner) { room ->
             openEditRoom(room)
@@ -127,26 +131,26 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
             .show(childFragmentManager, DELETE_ROOM_DIALOG)
     }
 
-    private fun openCreateRoom() {
-//        goToModifyBuilding(
-//            ModifyBuildingParams(CreateBuildingBehaviour()),
-//            getString(R.string.title_create_building)
-//        )
+    private fun openCreateRoom(buildingId: String) {
+        goToModifyRoom(
+            ModifyRoomParams(buildingId, CreateRoomBehaviour()),
+            getString(R.string.title_create_building)
+        )
     }
 
     private fun openEditRoom(room: Room) {
-//        goToModifyBuilding(
-//            ModifyBuildingParams(EditBuildingBehaviour(building)),
-//            getString(R.string.title_edit_building)
-//        )
+        goToModifyRoom(
+            ModifyRoomParams(room.buildingId, EditRoomBehaviour(room)),
+            getString(R.string.title_edit_building)
+        )
     }
 
-//    private fun goToModifyBuilding(params: ModifyBuildingParams, title: String) {
-//        val direction = BuildingsListFragmentDirections.actionBuildingsListToModifyBuilding(
-//            params,
-//            title
-//        )
-//        findNavController().navigate(direction)
-//    }
+    private fun goToModifyRoom(params: ModifyRoomParams, title: String) {
+        val direction = RoomsListFragmentDirections.actionRoomsListToModifyRoom(
+            params,
+            title
+        )
+        findNavController().navigate(direction)
+    }
 
 }

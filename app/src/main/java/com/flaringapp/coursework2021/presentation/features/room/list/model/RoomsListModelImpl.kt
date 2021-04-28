@@ -27,7 +27,7 @@ class RoomsListModelImpl(
 
     override val openConfirmDeleteRoomData = SingleLiveEvent<String>()
 
-    override val openCreateRoomData = SingleLiveEvent<Unit>()
+    override val openCreateRoomData = SingleLiveEvent<String>()
     override val openEditRoomData = SingleLiveEvent<Room>()
 
     private lateinit var buildingId: String
@@ -61,7 +61,7 @@ class RoomsListModelImpl(
     }
 
     override fun createNewRoom() {
-        openCreateRoomData.value = Unit
+        openCreateRoomData.value = buildingId
     }
 
     override fun handleRoomOptions(id: String) {

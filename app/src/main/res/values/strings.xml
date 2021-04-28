@@ -64,6 +64,19 @@
     <string name="room_type_private">Private room</string>
     <string name="room_type_open_space">Open space</string>
 
+    <!-- Create room -->
+    <string name="title_create_room">Create new room</string>
+    <string name="hint_room_name">Room name</string>
+    <string name="hint_room_description">Description</string>
+    <string name="title_room_type">Room type</string>
+    <string name="hint_room_area">Room area</string>
+    <string name="title_room_has_board">Has board</string>
+    <string name="title_room_has_balcony">Has balcony</string>
+    <string name="title_room_workplaces_count">Workplaces count</string>
+    <string name="title_room_window_count">Window count</string>
+    <string name="error_room_empty_name">Please enter a room name</string>
+    <string name="error_room_invalid_area">Area is invalid</string>
+
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>
         <item quantity="one">%d workplace</item>

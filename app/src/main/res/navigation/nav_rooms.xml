@@ -15,23 +15,23 @@
             android:name="building_id"
             app:argType="string" />
 
-<!--        <action android:id="@+id/action_buildings_list_to_modify_building"-->
-<!--            app:destination="@id/screen_modify_building" />-->
+        <action android:id="@+id/action_rooms_list_to_modify_room"
+            app:destination="@id/screen_modify_room" />
 
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/screen_modify_building"-->
-<!--        android:label="{title}"-->
-<!--        android:name="com.flaringapp.coursework2021.presentation.features.building.modify.ModifyBuildingFragment"-->
-<!--        tools:layout="@layout/fragment_building_modify">-->
+    <fragment
+        android:id="@+id/screen_modify_room"
+        android:label="{title}"
+        android:name="com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomFragment"
+        tools:layout="@layout/fragment_room_modify">
 
-<!--        <argument android:name="params"-->
-<!--            app:argType="com.flaringapp.coursework2021.presentation.features.building.modify.ModifyBuildingParams" />-->
+        <argument android:name="params"
+            app:argType="com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomParams" />
 
-<!--        <argument android:name="title"-->
-<!--            app:argType="string" />-->
+        <argument android:name="title"
+            app:argType="string" />
 
-<!--    </fragment>-->
+    </fragment>
 
 </navigation>

@@ -10,6 +10,8 @@ import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModel
 import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModelImpl
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModel
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModelImpl
+import com.flaringapp.coursework2021.presentation.features.room.modify.model.ModifyRoomModel
+import com.flaringapp.coursework2021.presentation.features.room.modify.model.ModifyRoomModelImpl
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -24,5 +26,7 @@ val PresentationModule = module {
     viewModel<ModifyBuildingModel> { ModifyBuildingModelImpl() }
 
     viewModel<RoomsListModel> { RoomsListModelImpl(get(), get(), get()) }
+
+    viewModel<ModifyRoomModel> { ModifyRoomModelImpl() }
 
 }
