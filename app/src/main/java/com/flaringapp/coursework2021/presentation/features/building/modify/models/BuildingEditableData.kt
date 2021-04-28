@@ -13,8 +13,8 @@ class BuildingEditableData(
 ) {
 
     constructor(building: Building) : this(
-        building.name,
-        building.description,
+        building.name.trim(),
+        building.description.trim(),
         building.location?.latitude?.toString() ?: "",
         building.location?.longitude?.toString() ?: "",
         building.address ?: "",
@@ -23,10 +23,10 @@ class BuildingEditableData(
 
     fun toBuilding(building: Building?) = Building(
         building?.id ?: Building.NO_ID,
-        name,
-        description,
+        name.trim(),
+        description.trim(),
         createGeoLocation(),
-        address,
+        address.trim(),
         area.trim().toFloatOrNull()
     )
 

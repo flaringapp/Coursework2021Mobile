@@ -13,13 +13,13 @@ class Room(
 
     val type: RoomType,
 
-    val area: Float?,
-
     val hasBoard: Boolean?,
     val hasBalcony: Boolean?,
 
     val placesCount: Int?,
     val windowCount: Int?,
+
+    val area: Float?,
 ): Parcelable {
 
     companion object {
