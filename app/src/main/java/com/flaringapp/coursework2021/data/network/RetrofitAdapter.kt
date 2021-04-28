@@ -5,6 +5,7 @@ import com.flaringapp.coursework2021.app.Constants
 import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsApiService
 import com.flaringapp.coursework2021.data.network.features.managers.ManagersApiService
 import com.flaringapp.coursework2021.data.network.features.profile.ProfileApiService
+import com.flaringapp.coursework2021.data.network.features.residents.ResidentsApiService
 import com.flaringapp.coursework2021.data.network.features.rooms.RoomsApiService
 import com.flaringapp.coursework2021.data.network.modifiers.ModifierApplyInterceptor
 import com.flaringapp.coursework2021.data.network.modifiers.ParametrizedCallAdapterFactory
@@ -28,7 +29,7 @@ class RetrofitAdapter {
     val buildingsService: BuildingsApiService = createClientAutoToken(NetworkConstants.buildings)
     val roomsService: RoomsApiService = createClientAutoToken(NetworkConstants.rooms)
     val managersService: ManagersApiService = createClientAutoToken(NetworkConstants.managers)
-    val residentsService: ManagersApiService = createClientAutoToken(NetworkConstants.residents)
+    val residentsService: ResidentsApiService = createClientAutoToken(NetworkConstants.residents)
 
     private inline fun <reified T> createClientAutoToken(prefix: String): T {
         return createClient(prefix, RequestTokenAppender())
