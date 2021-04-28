@@ -87,6 +87,19 @@
     <string name="title_manager_delete">Delete manager</string>
     <string name="message_manager_delete">Do you really want to delete \"%s\" from the managers list?</string>
 
+    <!-- Modify manager -->
+    <string name="title_add_manager">Add new manager</string>
+    <string name="title_edit_manager">Edit manager information</string>
+    <string name="hint_manager_name">Name</string>
+    <string name="hint_manager_surname">Surname</string>
+    <string name="hint_manager_email">Contact email</string>
+    <string name="hint_manager_description">Description</string>
+    <string name="hint_manager_building">Operationa building</string>
+    <string name="error_manager_empty_name">Please enter a manager name</string>
+    <string name="error_manager_empty_surname">Please enter a manager surname</string>
+    <string name="error_manager_empty_email">Please enter a manager email</string>
+    <string name="error_manager_empty_building">Please select an operation building</string>
+
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>
         <item quantity="one">%d workplace</item>

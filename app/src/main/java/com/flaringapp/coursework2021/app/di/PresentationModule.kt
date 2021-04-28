@@ -6,8 +6,10 @@ import com.flaringapp.coursework2021.presentation.features.building.modify.model
 import com.flaringapp.coursework2021.presentation.features.building.modify.model.ModifyBuildingModelImpl
 import com.flaringapp.coursework2021.presentation.features.login.viewmodel.LoginModel
 import com.flaringapp.coursework2021.presentation.features.login.viewmodel.LoginModelImpl
-import com.flaringapp.coursework2021.presentation.features.managers.list.model.ManagersListModel
-import com.flaringapp.coursework2021.presentation.features.managers.list.model.ManagersListModelImpl
+import com.flaringapp.coursework2021.presentation.features.manager.list.model.ManagersListModel
+import com.flaringapp.coursework2021.presentation.features.manager.list.model.ManagersListModelImpl
+import com.flaringapp.coursework2021.presentation.features.manager.modify.model.ModifyManagerModel
+import com.flaringapp.coursework2021.presentation.features.manager.modify.model.ModifyManagerModelImpl
 import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModel
 import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModelImpl
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModel
@@ -32,5 +34,7 @@ val PresentationModule = module {
     viewModel<ModifyRoomModel> { ModifyRoomModelImpl() }
 
     viewModel<ManagersListModel> { ManagersListModelImpl(get(), get(), get()) }
+
+    viewModel<ModifyManagerModel> { ModifyManagerModelImpl(get()) }
 
 }

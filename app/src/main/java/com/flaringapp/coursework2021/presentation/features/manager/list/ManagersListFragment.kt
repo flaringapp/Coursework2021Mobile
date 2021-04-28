@@ -1,5 +1,6 @@
-package com.flaringapp.coursework2021.presentation.features.managers.list
+package com.flaringapp.coursework2021.presentation.features.manager.list
 
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.data.repository.manager.models.Manager
@@ -10,8 +11,11 @@ import com.flaringapp.coursework2021.presentation.features.dialogs.options.Optio
 import com.flaringapp.coursework2021.presentation.features.dialogs.options.models.ResourceOption
 import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParams
 import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParent
-import com.flaringapp.coursework2021.presentation.features.managers.list.adapter.ManagerListAdapter
-import com.flaringapp.coursework2021.presentation.features.managers.list.model.ManagersListModel
+import com.flaringapp.coursework2021.presentation.features.manager.list.adapter.ManagerListAdapter
+import com.flaringapp.coursework2021.presentation.features.manager.list.model.ManagersListModel
+import com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerParams
+import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.CreateManagerBehaviour
+import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.EditManagerBehaviour
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -118,25 +122,25 @@ class ManagersListFragment : ModelledFragment(R.layout.fragment_manager_list),
     }
 
     private fun openCreateManager() {
-//        goToModifyBuilding(
-//            ModifyBuildingParams(CreateBuildingBehaviour()),
-//            getString(R.string.title_create_building)
-//        )
+        goToModifyManager(
+            ModifyManagerParams(CreateManagerBehaviour()),
+            getString(R.string.title_create_building)
+        )
     }
 
     private fun openEditManager(manager: Manager) {
-//        goToModifyBuilding(
-//            ModifyBuildingParams(EditBuildingBehaviour(building)),
-//            getString(R.string.title_edit_building)
-//        )
+        goToModifyManager(
+            ModifyManagerParams(EditManagerBehaviour(manager)),
+            getString(R.string.title_edit_building)
+        )
     }
 
-//    private fun goToModifyBuilding(params: ModifyBuildingParams, title: String) {
-//        val direction = BuildingsListFragmentDirections.actionBuildingsListToModifyBuilding(
-//            params,
-//            title
-//        )
-//        findNavController().navigate(direction)
-//    }
+    private fun goToModifyManager(params: ModifyManagerParams, title: String) {
+        val direction = ManagersListFragmentDirections.actionManagersListToModifyManager(
+            params,
+            title
+        )
+        findNavController().navigate(direction)
+    }
 
 }

@@ -1,4 +1,4 @@
-package com.flaringapp.coursework2021.presentation.features.managers.list.models
+package com.flaringapp.coursework2021.presentation.features.manager.list.models
 
 import com.flaringapp.coursework2021.presentation.features.common.adapter.MutableListItem
 

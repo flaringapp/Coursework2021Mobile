@@ -1,10 +1,10 @@
-package com.flaringapp.coursework2021.presentation.features.managers.list.adapter
+package com.flaringapp.coursework2021.presentation.features.manager.list.adapter
 
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import com.flaringapp.coursework2021.databinding.ViewHolderManagerBinding
 import com.flaringapp.coursework2021.presentation.features.common.adapter.MutableListItemViewHolder
-import com.flaringapp.coursework2021.presentation.features.managers.list.models.ManagerViewData
+import com.flaringapp.coursework2021.presentation.features.manager.list.models.ManagerViewData
 import com.flaringapp.coursework2021.presentation.utils.inflater
 import com.flaringapp.coursework2021.presentation.utils.textWithVisibility
 

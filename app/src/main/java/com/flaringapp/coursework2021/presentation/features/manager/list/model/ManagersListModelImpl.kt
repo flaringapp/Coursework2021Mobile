@@ -1,4 +1,4 @@
-package com.flaringapp.coursework2021.presentation.features.managers.list.model
+package com.flaringapp.coursework2021.presentation.features.manager.list.model
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -7,7 +7,7 @@ import com.flaringapp.coursework2021.data.repository.manager.ManagersRepository
 import com.flaringapp.coursework2021.data.repository.manager.models.Manager
 import com.flaringapp.coursework2021.data.repository.manager.storage.ManagersStorage
 import com.flaringapp.coursework2021.data.text.TextProvider
-import com.flaringapp.coursework2021.presentation.features.managers.list.models.ManagerViewData
+import com.flaringapp.coursework2021.presentation.features.manager.list.models.ManagerViewData
 import com.flaringapp.coursework2021.presentation.utils.common.SingleLiveEvent
 import com.flaringapp.coursework2021.presentation.utils.valueIfHasObservers
 

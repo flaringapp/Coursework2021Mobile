@@ -1,10 +1,10 @@
-package com.flaringapp.coursework2021.presentation.features.managers.list.adapter
+package com.flaringapp.coursework2021.presentation.features.manager.list.adapter
 
 import android.view.ViewGroup
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.app.common.Action
 import com.flaringapp.coursework2021.presentation.features.common.adapter.SimpleMutableListAdapter
-import com.flaringapp.coursework2021.presentation.features.managers.list.models.ManagerViewData
+import com.flaringapp.coursework2021.presentation.features.manager.list.models.ManagerViewData
 
 class ManagerListAdapter(
     private val onManagerOptions: (String) -> Unit,

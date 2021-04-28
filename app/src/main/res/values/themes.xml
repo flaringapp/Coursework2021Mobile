@@ -105,6 +105,10 @@
         <item name="boxCollapsedPaddingTop">0dp</item>
     </style>
 
+    <style name="InputLayout.Stroke.Dropdown">
+        <item name="endIconMode">dropdown_menu</item>
+    </style>
+
     <style name="Input" parent="Text">
         <item name="android:background">@drawable/bg_input</item>
         <item name="android:paddingStart">8dp</item>

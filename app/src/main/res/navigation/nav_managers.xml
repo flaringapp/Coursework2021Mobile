@@ -8,26 +8,26 @@
     <fragment
         android:id="@+id/screen_managers_list"
         android:label="@string/title_managers"
-        android:name="com.flaringapp.coursework2021.presentation.features.managers.list.ManagersListFragment"
+        android:name="com.flaringapp.coursework2021.presentation.features.manager.list.ManagersListFragment"
         tools:layout="@layout/fragment_manager_list">
 
-<!--        <action android:id="@+id/action_rooms_list_to_modify_room"-->
-<!--            app:destination="@id/screen_modify_room" />-->
+        <action android:id="@+id/action_managers_list_to_modify_manager"
+            app:destination="@id/screen_modify_manager" />
 
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/screen_modify_room"-->
-<!--        android:label="{title}"-->
-<!--        android:name="com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomFragment"-->
-<!--        tools:layout="@layout/fragment_room_modify">-->
+    <fragment
+        android:id="@+id/screen_modify_manager"
+        android:label="{title}"
+        android:name="com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerFragment"
+        tools:layout="@layout/fragment_manager_modify">
 
-<!--        <argument android:name="params"-->
-<!--            app:argType="com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomParams" />-->
+        <argument android:name="params"
+            app:argType="com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerParams" />
 
-<!--        <argument android:name="title"-->
-<!--            app:argType="string" />-->
+        <argument android:name="title"
+            app:argType="string" />
 
-<!--    </fragment>-->
+    </fragment>
 
 </navigation>

@@ -1,9 +1,9 @@
-package com.flaringapp.coursework2021.presentation.features.managers.list.model
+package com.flaringapp.coursework2021.presentation.features.manager.list.model
 
 import androidx.lifecycle.LiveData
 import com.flaringapp.coursework2021.data.repository.manager.models.Manager
 import com.flaringapp.coursework2021.presentation.base.BaseViewModel
-import com.flaringapp.coursework2021.presentation.features.managers.list.models.ManagerViewData
+import com.flaringapp.coursework2021.presentation.features.manager.list.models.ManagerViewData
 
 abstract class ManagersListModel: BaseViewModel() {
 
