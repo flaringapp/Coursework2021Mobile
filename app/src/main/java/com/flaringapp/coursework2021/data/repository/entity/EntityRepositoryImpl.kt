@@ -32,14 +32,14 @@ class EntityRepositoryImpl(
 
     override suspend fun addBuilding(building: Building): CallResult<Building> {
         return buildingsSourceModel.addBuilding(building.asRequest())
-            .doOnSuccessSuspend { addBuildingFlow.emit(building) }
             .transform { parseBuilding() }
+            .doOnSuccessSuspend { addBuildingFlow.emit(it) }
     }
 
     override suspend fun editBuilding(building: Building): CallResult<Building> {
         return buildingsSourceModel.editBuilding(building.asRequest())
-            .doOnSuccessSuspend { editBuildingFlow.emit(building) }
             .transform { parseBuilding() }
+            .doOnSuccessSuspend { editBuildingFlow.emit(it) }
     }
 
     override suspend fun deleteBuilding(id: String): CallResultNothing {
@@ -54,14 +54,14 @@ class EntityRepositoryImpl(
 
     override suspend fun addRoom(room: Room): CallResult<Room> {
         return roomsSourceModel.addRoom(room.asRequest())
-            .doOnSuccessSuspend { addRoomFlow.emit(room) }
             .transform { parseRoom() }
+            .doOnSuccessSuspend { addRoomFlow.emit(it) }
     }
 
     override suspend fun editRoom(room: Room): CallResult<Room> {
         return roomsSourceModel.editRoom(room.asRequest())
-            .doOnSuccessSuspend { editRoomFlow.emit(room) }
             .transform { parseRoom() }
+            .doOnSuccessSuspend { editRoomFlow.emit(it) }
     }
 
     override suspend fun deleteRoom(id: String): CallResultNothing {
