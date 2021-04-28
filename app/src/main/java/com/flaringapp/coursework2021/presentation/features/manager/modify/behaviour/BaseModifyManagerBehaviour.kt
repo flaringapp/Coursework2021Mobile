@@ -6,7 +6,7 @@ import com.flaringapp.coursework2021.presentation.features.manager.modify.models
 import kotlinx.parcelize.IgnoredOnParcel
 import org.koin.core.context.GlobalContext
 
-abstract class BaseModifyManagerManagerBehaviour: ModifyManagerBehaviour {
+abstract class BaseModifyManagerBehaviour: ModifyManagerBehaviour {
 
     @IgnoredOnParcel
     protected val repository: ManagersRepository by GlobalContext.get().inject()

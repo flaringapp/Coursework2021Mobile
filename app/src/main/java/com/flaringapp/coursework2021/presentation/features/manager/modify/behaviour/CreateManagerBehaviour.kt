@@ -5,7 +5,7 @@ import com.flaringapp.coursework2021.data.repository.managers.models.Manager
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class CreateManagerBehaviour: BaseModifyManagerManagerBehaviour() {
+class CreateManagerBehaviour: BaseModifyManagerBehaviour() {
 
     override suspend fun modifyManager(manager: Manager): CallResultNothing {
         return repository.addManager(manager)

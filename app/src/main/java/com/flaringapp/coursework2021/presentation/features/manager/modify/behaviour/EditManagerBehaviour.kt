@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class EditManagerBehaviour(
     override val manager: Manager
-): BaseModifyManagerManagerBehaviour() {
+): BaseModifyManagerBehaviour() {
 
     @IgnoredOnParcel
     override val preliminaryData: ManagerEditableData
