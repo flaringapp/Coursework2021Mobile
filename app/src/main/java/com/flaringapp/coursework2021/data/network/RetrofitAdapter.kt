@@ -28,6 +28,7 @@ class RetrofitAdapter {
     val buildingsService: BuildingsApiService = createClientAutoToken(NetworkConstants.buildings)
     val roomsService: RoomsApiService = createClientAutoToken(NetworkConstants.rooms)
     val managersService: ManagersApiService = createClientAutoToken(NetworkConstants.managers)
+    val residentsService: ManagersApiService = createClientAutoToken(NetworkConstants.residents)
 
     private inline fun <reified T> createClientAutoToken(prefix: String): T {
         return createClient(prefix, RequestTokenAppender())
