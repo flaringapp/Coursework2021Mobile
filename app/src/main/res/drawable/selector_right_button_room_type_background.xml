@@ -3,5 +3,5 @@
     <item android:drawable="@drawable/bg_room_type_right_button_selected" android:state_selected="true" android:state_enabled="true" />
     <item android:drawable="@drawable/bg_room_type_right_button_selected_disabled" android:state_selected="true" android:state_enabled="false" />
     <item android:drawable="@drawable/bg_room_type_right_button_default_disabled" android:state_selected="false" android:state_enabled="false" />
-    <item android:drawable="@drawable/bg_room_type_left_button_default" />
+    <item android:drawable="@drawable/bg_room_type_right_button_default" />
 </selector>
