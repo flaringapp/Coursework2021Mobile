@@ -21,4 +21,23 @@
         </attr>
     </declare-styleable>
 
+
+    <declare-styleable name="AmountPickerView">
+        <attr name="amountDefaultValue" format="integer" />
+        <attr name="amountMinValue" format="integer" />
+        <attr name="amountMaxValue" format="integer" />
+        <attr name="amountTextMarginHorizontal" format="dimension" />
+        <attr name="amountTextMarginVertical" format="dimension" />
+        <attr name="amountTextColor" format="color" />
+        <attr name="amountTextSize" format="dimension" />
+        <attr name="amountTextFontFamily" format="reference" />
+        <attr name="amountTextAppearance" format="reference" />
+        <attr name="amountMinusButtonIcon" format="reference" />
+        <attr name="amountPlusButtonIcon" format="reference" />
+        <attr name="amountButtonSize" format="dimension" />
+        <attr name="amountButtonPadding" format="dimension" />
+        <attr name="amountButtonMargin" format="dimension" />
+        <attr name="amountButtonTint" format="color" />
+    </declare-styleable>
+
 </resources>
