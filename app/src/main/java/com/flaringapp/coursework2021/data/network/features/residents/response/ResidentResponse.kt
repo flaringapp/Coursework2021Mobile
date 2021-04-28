@@ -11,7 +11,7 @@ class ResidentResponse(
     val email: String,
     val description: String? = null,
     @Json(name = "building_id")
-    val buildingId: String,
+    val buildingId: String? = null,
     @Json(name = "building_name")
-    val buildingName: String,
+    val buildingName: String? = null,
 )
