@@ -18,7 +18,7 @@ fun ManagerResponse.parseManager() = Manager(
     name,
     surname,
     email,
-    description,
+    description ?: "",
     buildingId,
     buildingName
 )
