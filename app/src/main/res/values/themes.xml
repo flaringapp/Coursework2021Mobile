@@ -23,6 +23,8 @@
         <item name="materialButtonStyle">@style/Button</item>
 
         <item name="android:indeterminateTint">@color/color_primary</item>
+
+        <item name="colorControlNormal">@color/gray</item>
     </style>
 
     <style name="ToolbarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
