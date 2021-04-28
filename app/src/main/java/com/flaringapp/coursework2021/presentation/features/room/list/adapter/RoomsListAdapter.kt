@@ -10,7 +10,7 @@ class RoomsListAdapter(
     addNewRoom: Action,
     private val onRoomOptions: (String) -> Unit,
 ): SimpleMutableListAdapter<RoomViewHolder, RoomViewData>(
-    R.string.button_add_building,
+    R.string.button_add_room,
     addNewRoom
 ) {
 
