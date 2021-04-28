@@ -19,3 +19,17 @@ object KeyboardUtils {
 fun Fragment.hideKeyboard() = activity?.hideKeyboard()
 
 fun Activity.hideKeyboard() = KeyboardUtils.hideKeyboard(this, currentFocus)
+
+fun View.showKeyboard(): Boolean {
+    val inputMethodManager = context.getSystemService(
+        Context.INPUT_METHOD_SERVICE
+    ) as InputMethodManager
+    return inputMethodManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+}
+
+fun View.requestFocusAndShowKeyboard() {
+    post {
+        requestFocus()
+        showKeyboard()
+    }
+}

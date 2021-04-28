@@ -9,6 +9,7 @@ import com.flaringapp.coursework2021.presentation.base.ModelledDialog
 import com.flaringapp.coursework2021.presentation.base.parentAsListener
 import com.flaringapp.coursework2021.presentation.features.searchresident.model.SearchResidentModel
 import com.flaringapp.coursework2021.presentation.features.searchresident.models.SearchResidentViewData
+import com.flaringapp.coursework2021.presentation.utils.requestFocusAndShowKeyboard
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -36,6 +37,8 @@ class SearchResidentDialog : ModelledDialog(R.layout.dialog_search_resident) {
     override fun initViews() {
         val roomName = requireArguments().getString(ROOM_NAME_KEY)
         binding.textRoomName.text = roomName
+
+        binding.inputName.requestFocusAndShowKeyboard()
     }
 
     override fun observeModel() = with(model) {
@@ -48,10 +51,6 @@ class SearchResidentDialog : ModelledDialog(R.layout.dialog_search_resident) {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
     private fun setupResidents(residents: List<SearchResidentViewData>) {
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, residents.map { it.name })
         binding.inputName.setAdapter(adapter)
@@ -60,7 +59,10 @@ class SearchResidentDialog : ModelledDialog(R.layout.dialog_search_resident) {
                 residents.find { it.name == adapter.getItem(position) }!!.id
             )
         }
-        binding.inputName.showDropDown()
+        binding.inputName.post {
+            if (isRemoving) return@post
+            binding.inputName.showDropDown()
+        }
     }
 
     private fun notifyResidentSelected(resident: Resident) {
