@@ -2,9 +2,7 @@ package com.flaringapp.coursework2021.presentation.features.room.modify.behaviou
 
 import android.os.Parcelable
 import com.flaringapp.coursework2021.data.common.call.CallResultNothing
-import com.flaringapp.coursework2021.data.repository.entity.models.Building
 import com.flaringapp.coursework2021.data.repository.entity.models.Room
-import com.flaringapp.coursework2021.presentation.features.building.modify.models.BuildingEditableData
 import com.flaringapp.coursework2021.presentation.features.room.modify.models.RoomEditableData
 
 interface ModifyRoomBehaviour: Parcelable {
