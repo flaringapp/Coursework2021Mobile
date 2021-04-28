@@ -40,15 +40,15 @@ class ModifyManagerModelImpl(
 
     private var buildings: List<Building> = emptyList()
 
-    init {
-        loadBuildings()
-    }
-
     override fun initBehaviour(behaviour: ModifyManagerBehaviour) {
         this.behaviour = behaviour
         sourceManager = behaviour.manager
         editor = behaviour.preliminaryData ?: ManagerEditableData()
         editor.setup()
+    }
+
+    override fun loadData() {
+        loadBuildings()
     }
 
     override fun handleNameChanged(name: String) {

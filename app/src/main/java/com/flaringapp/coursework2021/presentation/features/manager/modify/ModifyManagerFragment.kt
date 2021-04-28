@@ -27,6 +27,7 @@ class ModifyManagerFragment : ModelledFragment(R.layout.fragment_manager_modify)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         model.initBehaviour(args.params.behaviour)
+        model.loadData()
     }
 
     override fun initViews() = with(binding) {

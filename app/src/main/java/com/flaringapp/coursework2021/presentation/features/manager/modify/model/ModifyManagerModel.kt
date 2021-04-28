@@ -26,6 +26,8 @@ abstract class ModifyManagerModel: BaseViewModel() {
 
     abstract fun initBehaviour(behaviour: ModifyManagerBehaviour)
 
+    abstract fun loadData()
+
     abstract fun handleNameChanged(name: String)
     abstract fun handleSurnameChanged(surname: String)
     abstract fun handleEmailChanged(email: String)
