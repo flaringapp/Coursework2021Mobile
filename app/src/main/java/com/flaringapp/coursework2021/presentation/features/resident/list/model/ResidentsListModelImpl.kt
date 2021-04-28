@@ -27,7 +27,7 @@ class ResidentsListModelImpl(
 
     override val openConfirmDeleteResidentData = SingleLiveEvent<String>()
 
-    override val openCreateResidentData = SingleLiveEvent<Unit>()
+    override val openCreateResidentData = SingleLiveEvent<String>()
     override val openEditResidentData = SingleLiveEvent<Resident>()
 
     private val residents: MutableList<Resident> = mutableListOf()
@@ -53,7 +53,8 @@ class ResidentsListModelImpl(
     }
 
     override fun createNewResident() {
-        openCreateResidentData.value = Unit
+        // TODO IMPORTANT add current manager building id
+        openCreateResidentData.value = "1"
     }
 
     override fun handleResidentOptions(id: String) {

@@ -14,6 +14,8 @@ import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModel
 import com.flaringapp.coursework2021.presentation.features.menu.model.MenuModelImpl
 import com.flaringapp.coursework2021.presentation.features.resident.list.model.ResidentsListModel
 import com.flaringapp.coursework2021.presentation.features.resident.list.model.ResidentsListModelImpl
+import com.flaringapp.coursework2021.presentation.features.resident.modify.model.ModifyResidentModel
+import com.flaringapp.coursework2021.presentation.features.resident.modify.model.ModifyResidentModelImpl
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModel
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModelImpl
 import com.flaringapp.coursework2021.presentation.features.room.modify.model.ModifyRoomModel
@@ -40,5 +42,7 @@ val PresentationModule = module {
     viewModel<ModifyManagerModel> { ModifyManagerModelImpl(get()) }
 
     viewModel<ResidentsListModel> { ResidentsListModelImpl(get(), get(), get()) }
+
+    viewModel<ModifyResidentModel> { ModifyResidentModelImpl() }
 
 }

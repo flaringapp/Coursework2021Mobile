@@ -16,7 +16,7 @@ abstract class ResidentsListModel: BaseViewModel() {
 
     abstract val openConfirmDeleteResidentData: LiveData<String>
 
-    abstract val openCreateResidentData: LiveData<Unit>
+    abstract val openCreateResidentData: LiveData<String?>
     abstract val openEditResidentData: LiveData<Resident>
 
     abstract fun createNewResident()

@@ -1,6 +1,7 @@
 
 package com.flaringapp.coursework2021.presentation.features.resident.list
 
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
@@ -13,6 +14,9 @@ import com.flaringapp.coursework2021.presentation.features.dialogs.permission.Pe
 import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParent
 import com.flaringapp.coursework2021.presentation.features.resident.list.adapter.ResidentsListAdapter
 import com.flaringapp.coursework2021.presentation.features.resident.list.model.ResidentsListModel
+import com.flaringapp.coursework2021.presentation.features.resident.modify.ModifyResidentParams
+import com.flaringapp.coursework2021.presentation.features.resident.modify.behaviour.CreateResidentBehaviour
+import com.flaringapp.coursework2021.presentation.features.resident.modify.behaviour.EditResidentBehaviour
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -72,7 +76,7 @@ class ResidentsListFragment : ModelledFragment(R.layout.fragment_resident_list),
         }
 
         openCreateResidentData.observe(viewLifecycleOwner) {
-            openCreateResident()
+            openCreateResident(it)
         }
         openEditResidentData.observe(viewLifecycleOwner) { resident ->
             openEditResident(resident)
@@ -118,26 +122,26 @@ class ResidentsListFragment : ModelledFragment(R.layout.fragment_resident_list),
             .show(childFragmentManager, DELETE_RESIDENT_DIALOG)
     }
 
-    private fun openCreateResident() {
-//        goToModifyManager(
-//            ModifyManagerParams(CreateManagerBehaviour()),
-//            getString(R.string.title_create_building)
-//        )
+    private fun openCreateResident(buildingId: String?) {
+        goToModifyResident(
+            ModifyResidentParams(buildingId, CreateResidentBehaviour()),
+            getString(R.string.title_add_resident)
+        )
     }
 
     private fun openEditResident(resident: Resident) {
-//        goToModifyManager(
-//            ModifyManagerParams(EditManagerBehaviour(manager)),
-//            getString(R.string.title_edit_building)
-//        )
+        goToModifyResident(
+            ModifyResidentParams(resident.buildingId, EditResidentBehaviour(resident)),
+            getString(R.string.title_edit_resident)
+        )
     }
 
-//    private fun goToModifyManager(params: ModifyManagerParams, title: String) {
-//        val direction = ManagersListFragmentDirections.actionManagersListToModifyManager(
-//            params,
-//            title
-//        )
-//        findNavController().navigate(direction)
-//    }
+    private fun goToModifyResident(params: ModifyResidentParams, title: String) {
+        val direction = ResidentsListFragmentDirections.actionResidentsListToModifyResident(
+            params,
+            title
+        )
+        findNavController().navigate(direction)
+    }
 
 }

@@ -109,6 +109,17 @@
     <string name="title_resident_delete">Delete resident</string>
     <string name="message_resident_delete">Do you really want to delete resident \%s\?</string>
 
+    <!-- Modify resident -->
+    <string name="title_add_resident">Add new resident</string>
+    <string name="title_edit_resident">Edit resident information</string>
+    <string name="hint_resident_name">Name</string>
+    <string name="hint_resident_surname">Surname</string>
+    <string name="hint_resident_email">Contact email</string>
+    <string name="hint_resident_description">Description</string>
+    <string name="error_resident_empty_name">Please enter a resident name</string>
+    <string name="error_resident_empty_surname">Please enter a resident surname</string>
+    <string name="error_resident_empty_email">Please enter a resident email</string>
+
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>
         <item quantity="one">%d workplace</item>

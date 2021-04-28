@@ -11,23 +11,23 @@
         android:name="com.flaringapp.coursework2021.presentation.features.resident.list.ResidentsListFragment"
         tools:layout="@layout/fragment_resident_list">
 
-<!--        <action android:id="@+id/action_managers_list_to_modify_manager"-->
-<!--            app:destination="@id/screen_modify_manager" />-->
+        <action android:id="@+id/action_residents_list_to_modify_resident"
+            app:destination="@id/screen_modify_resident" />
 
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/screen_modify_manager"-->
-<!--        android:label="{title}"-->
-<!--        android:name="com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerFragment"-->
-<!--        tools:layout="@layout/fragment_manager_modify">-->
+    <fragment
+        android:id="@+id/screen_modify_resident"
+        android:label="{title}"
+        android:name="com.flaringapp.coursework2021.presentation.features.resident.modify.ModifyResidentFragment"
+        tools:layout="@layout/fragment_resident_list">
 
-<!--        <argument android:name="params"-->
-<!--            app:argType="com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerParams" />-->
+        <argument android:name="params"
+            app:argType="com.flaringapp.coursework2021.presentation.features.resident.modify.ModifyResidentParams" />
 
-<!--        <argument android:name="title"-->
-<!--            app:argType="string" />-->
+        <argument android:name="title"
+            app:argType="string" />
 
-<!--    </fragment>-->
+    </fragment>
 
 </navigation>
