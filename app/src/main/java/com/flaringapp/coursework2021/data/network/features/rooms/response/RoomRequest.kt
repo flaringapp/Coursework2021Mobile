@@ -14,7 +14,7 @@ class RoomRequest(
     @Json(name = "has_balcony")
     val hasBalcony: Int? = null,
     @Json(name = "places_count")
-    val placesCount: Int? = null,
+    val workplacesCount: Int? = null,
     @Json(name = "window_count")
     val windowCount: Int? = null,
     val area: Float? = null,
