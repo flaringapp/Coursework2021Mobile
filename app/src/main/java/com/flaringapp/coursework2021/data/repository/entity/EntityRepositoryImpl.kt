@@ -3,6 +3,7 @@ package com.flaringapp.coursework2021.data.repository.entity
 import com.flaringapp.coursework2021.data.common.call.CallResult
 import com.flaringapp.coursework2021.data.common.call.CallResultList
 import com.flaringapp.coursework2021.data.common.call.CallResultNothing
+import com.flaringapp.coursework2021.data.common.call.transformList
 import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsSourceModel
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
 import com.flaringapp.coursework2021.data.repository.entity.models.Room
@@ -23,7 +24,8 @@ class EntityRepositoryImpl(
     override val deleteRoomFlow = MutableSharedFlow<String>()
 
     override suspend fun getBuildings(): CallResultList<Building> {
-        return CallResult.Success(emptyList())
+        return buildingsSourceModel.getBuildings()
+            .transformList { parseBuilding() }
     }
 
     override suspend fun addBuilding(building: Building): CallResult<Building> {
