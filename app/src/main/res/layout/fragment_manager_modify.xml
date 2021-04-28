@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:imeOptions="actionNext"
-                android:nextFocusDown="@id/inputArea" />
+                android:nextFocusDown="@id/inputDescription" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -108,7 +108,7 @@
                 android:inputType="textMultiLine|textCapSentences"
                 android:lines="2"
                 android:imeOptions="actionNext"
-                android:nextFocusDown="@id/inputLatitude"
+                android:nextFocusDown="@id/inputBuilding"
                 tools:text="Manager description" />
 
         </com.google.android.material.textfield.TextInputLayout>
