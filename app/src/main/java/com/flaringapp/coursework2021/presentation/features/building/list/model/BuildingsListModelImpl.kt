@@ -13,7 +13,7 @@ import com.flaringapp.coursework2021.presentation.utils.valueIfHasObservers
 
 class BuildingsListModelImpl(
     private val repository: EntityRepository,
-    private val buildingsStorage: BuildingsStorage,
+    buildingsStorage: BuildingsStorage,
     private val textProvider: TextProvider,
 ) : BuildingsListModel() {
 
@@ -49,12 +49,6 @@ class BuildingsListModelImpl(
 
             buildingsData.value = buildings.map { it.toViewData() }
         }
-        buildingsStorage.deleteBuildingFlow.collectOn(viewModelScope) { id ->
-            buildings.removeFirst { it.id == id }
-            deleteBuildingData.valueIfHasObservers = id
-
-            buildingsData.value = buildings.map { it.toViewData() }
-        }
     }
 
     override fun createNewBuilding() {
@@ -86,9 +80,7 @@ class BuildingsListModelImpl(
 
             buildings.clearAndAdd(loadedBuildings)
 
-            val buildingsViewData = loadedBuildings.map {
-                it.toViewData()
-            }
+            val buildingsViewData = loadedBuildings.map { it.toViewData() }
 
             withMainContext {
                 buildingsData.value = buildingsViewData
