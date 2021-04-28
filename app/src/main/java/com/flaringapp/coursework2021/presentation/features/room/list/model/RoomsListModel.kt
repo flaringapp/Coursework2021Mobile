@@ -12,6 +12,8 @@ abstract class RoomsListModel: BaseViewModel() {
     abstract val updateRoomData: LiveData<RoomViewData>
     abstract val deleteRoomData: LiveData<String>
 
+    abstract val openRoomData: LiveData<Room>
+
     abstract val openRoomActionsData: LiveData<Unit>
 
     abstract val openConfirmDeleteRoomData: LiveData<String>
@@ -24,6 +26,8 @@ abstract class RoomsListModel: BaseViewModel() {
     abstract fun loadRooms()
 
     abstract fun createNewRoom()
+
+    abstract fun openRoom(id: String)
 
     abstract fun handleRoomOptions(id: String)
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_rents"
+    app:startDestination="@id/screen_room_rents">
+
+    <fragment
+        android:id="@+id/screen_room_rents"
+        android:label="@string/title_room_rents"
+        android:name="com.flaringapp.coursework2021.presentation.features.tenants.TenantsFragment"
+        tools:layout="@layout/fragment_tenants">
+
+        <argument
+            android:name="params"
+            app:argType="com.flaringapp.coursework2021.presentation.features.tenants.RoomTenantsParams" />
+
+    </fragment>
+
+</navigation>

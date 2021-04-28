@@ -23,6 +23,8 @@ class RoomsListModelImpl(
     override val updateRoomData = SingleLiveEvent<RoomViewData>()
     override val deleteRoomData = SingleLiveEvent<String>()
 
+    override val openRoomData = SingleLiveEvent<Room>()
+
     override val openRoomActionsData = SingleLiveEvent<Unit>()
 
     override val openConfirmDeleteRoomData = SingleLiveEvent<String>()
@@ -62,6 +64,11 @@ class RoomsListModelImpl(
 
     override fun createNewRoom() {
         openCreateRoomData.value = buildingId
+    }
+
+    override fun openRoom(id: String) {
+        val room = rooms.find { it.id == id } ?: return
+        openRoomData.value = room
     }
 
     override fun handleRoomOptions(id: String) {

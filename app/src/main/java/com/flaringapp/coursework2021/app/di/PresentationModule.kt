@@ -20,6 +20,10 @@ import com.flaringapp.coursework2021.presentation.features.room.list.model.Rooms
 import com.flaringapp.coursework2021.presentation.features.room.list.model.RoomsListModelImpl
 import com.flaringapp.coursework2021.presentation.features.room.modify.model.ModifyRoomModel
 import com.flaringapp.coursework2021.presentation.features.room.modify.model.ModifyRoomModelImpl
+import com.flaringapp.coursework2021.presentation.features.searchresident.model.SearchResidentModel
+import com.flaringapp.coursework2021.presentation.features.searchresident.model.SearchResidentModelImpl
+import com.flaringapp.coursework2021.presentation.features.tenants.model.TenantsModel
+import com.flaringapp.coursework2021.presentation.features.tenants.model.TenantsModelImpl
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -44,5 +48,9 @@ val PresentationModule = module {
     viewModel<ResidentsListModel> { ResidentsListModelImpl(get(), get(), get()) }
 
     viewModel<ModifyResidentModel> { ModifyResidentModelImpl() }
+
+    viewModel<TenantsModel> { TenantsModelImpl(get(), get()) }
+
+    viewModel<SearchResidentModel> { SearchResidentModelImpl(get(), get()) }
 
 }

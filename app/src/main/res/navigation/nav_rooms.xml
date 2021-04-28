@@ -5,6 +5,8 @@
     android:id="@+id/nav_rooms"
     app:startDestination="@id/screen_rooms_list">
 
+    <include app:graph="@navigation/nav_rents" />
+
     <fragment
         android:id="@+id/screen_rooms_list"
         android:label="@string/title_buildings"
@@ -15,8 +17,18 @@
             android:name="building_id"
             app:argType="string" />
 
-        <action android:id="@+id/action_rooms_list_to_modify_room"
+        <action
+            android:id="@+id/action_rooms_list_to_modify_room"
             app:destination="@id/screen_modify_room" />
+
+        <action android:id="@+id/action_rooms_list_to_room_tenants"
+            app:destination="@id/nav_rents">
+
+            <argument
+                android:name="params"
+                app:argType="com.flaringapp.coursework2021.presentation.features.tenants.RoomTenantsParams" />
+
+        </action>
 
     </fragment>
 
@@ -26,10 +38,12 @@
         android:name="com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomFragment"
         tools:layout="@layout/fragment_room_modify">
 
-        <argument android:name="params"
+        <argument
+            android:name="params"
             app:argType="com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomParams" />
 
-        <argument android:name="title"
+        <argument
+            android:name="title"
             app:argType="string" />
 
     </fragment>

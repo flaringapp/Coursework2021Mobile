@@ -51,7 +51,11 @@ class RoomViewHolder(
         }
     }
 
-    fun bind(item: RoomViewData, onOptionsClicked: (String) -> Unit) = with(binding) {
+    fun bind(
+        item: RoomViewData,
+        onItemClicked: (String) -> Unit,
+        onOptionsClicked: (String) -> Unit
+    ) = with(binding) {
         textName.text = item.name
         textDescription.textWithVisibility = item.description
 
@@ -68,11 +72,17 @@ class RoomViewHolder(
 
         textRoomType.textWithVisibility = item.roomType
 
+        root.setOnClickListener { onItemClicked(item.id) }
         buttonOptions.setOnClickListener { onOptionsClicked(item.id) }
     }
 
     override fun setIsEditable(isEditable: Boolean) {
         binding.buttonOptions.isClickable = isEditable
+    }
+
+    override fun release() {
+        binding.root.setOnClickListener(null)
+        binding.buttonOptions.setOnClickListener(null)
     }
 
     private fun setHasBoard(hasBoard: Boolean?) {

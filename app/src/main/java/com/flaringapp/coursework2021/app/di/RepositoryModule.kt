@@ -12,6 +12,8 @@ import com.flaringapp.coursework2021.data.repository.profile.ProfileRepositoryIm
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepository
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepositoryImpl
 import com.flaringapp.coursework2021.data.repository.residents.storage.ResidentsStorage
+import com.flaringapp.coursework2021.data.repository.tenants.RentsRepository
+import com.flaringapp.coursework2021.data.repository.tenants.RentsRepositoryImpl
 import org.koin.dsl.bind
 import org.koin.dsl.binds
 import org.koin.dsl.module
@@ -28,5 +30,7 @@ val RepositoryModule = module {
     single<ManagersRepository> { ManagersRepositoryImpl(get()) } bind ManagersStorage::class
 
     single<ResidentsRepository> { ResidentsRepositoryImpl(get()) } bind ResidentsStorage::class
+
+    single<RentsRepository> { RentsRepositoryImpl() }
 
 }

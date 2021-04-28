@@ -8,4 +8,4 @@
     android:paddingBottom="16dp"
     android:paddingStart="12dp"
     android:paddingEnd="12dp"
-    tools:text="Some building" />
+    tools:text="Some item" />

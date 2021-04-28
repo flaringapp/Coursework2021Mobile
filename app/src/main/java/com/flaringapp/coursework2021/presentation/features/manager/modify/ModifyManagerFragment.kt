@@ -108,7 +108,7 @@ class ModifyManagerFragment : ModelledFragment(R.layout.fragment_manager_modify)
 
     private fun setBuildingsList(buildings: List<ManagerBuildingViewData>) {
         val itemTexts = buildings.map { it.name }
-        val adapter = ArrayAdapter(requireContext(), R.layout.list_item_building, itemTexts)
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, itemTexts)
         binding.inputBuilding.setAdapter(adapter)
         binding.inputBuilding.setOnItemClickListener { _, _, position, _ ->
             model.handleBuildingChanged(buildings[position].id)

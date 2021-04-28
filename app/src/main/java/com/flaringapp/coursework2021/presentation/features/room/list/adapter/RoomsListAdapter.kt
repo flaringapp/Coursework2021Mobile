@@ -7,8 +7,9 @@ import com.flaringapp.coursework2021.presentation.features.common.adapter.Simple
 import com.flaringapp.coursework2021.presentation.features.room.list.models.RoomViewData
 
 class RoomsListAdapter(
-    addNewRoom: Action,
+    private val openRoom: (String) -> Unit,
     private val onRoomOptions: (String) -> Unit,
+    addNewRoom: Action,
 ): SimpleMutableListAdapter<RoomViewHolder, RoomViewData>(
     R.string.button_add_room,
     addNewRoom
@@ -19,6 +20,6 @@ class RoomsListAdapter(
     }
 
     override fun bindItemViewHolder(holder: RoomViewHolder, position: Int) {
-        holder.bind(items[position], onRoomOptions)
+        holder.bind(items[position], openRoom, onRoomOptions)
     }
 }

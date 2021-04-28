@@ -18,6 +18,7 @@ import com.flaringapp.coursework2021.presentation.features.room.list.model.Rooms
 import com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomParams
 import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.CreateRoomBehaviour
 import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.EditRoomBehaviour
+import com.flaringapp.coursework2021.presentation.features.tenants.RoomTenantsParams
 import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
@@ -53,8 +54,9 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
             reverseLayout = true
         }
         recyclerRooms.adapter = RoomsListAdapter(
+            { model.openRoom(it) },
+            { model.handleRoomOptions(it) },
             { model.createNewRoom() },
-            { model.handleRoomOptions(it) }
         ).apply {
             setIsEditable(true)
         }
@@ -78,6 +80,10 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
         }
         deleteRoomData.observe(viewLifecycleOwner) { id ->
             adapterAction { removeItem(id) }
+        }
+
+        openRoomData.observe(viewLifecycleOwner) { room ->
+            openRoomTenants(room)
         }
 
         openRoomActionsData.observe(viewLifecycleOwner) {
@@ -113,6 +119,13 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
 
     private fun <T> adapterAction(action: RoomsListAdapter.() -> T): T {
         return (binding.recyclerRooms.adapter as RoomsListAdapter).action()
+    }
+
+    private fun openRoomTenants(room: Room) {
+        val direction = RoomsListFragmentDirections.actionRoomsListToRoomTenants(
+            RoomTenantsParams(room.id, room.name, room.maxTenantsCount)
+        )
+        findNavController().navigate(direction)
     }
 
     private fun openRoomOptions() {

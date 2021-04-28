@@ -128,6 +128,16 @@
     <string name="error_resident_empty_email">Please enter a resident email</string>
     <string name="error_resident_email_invalid">Please enter a valid email</string>
 
+    <!-- Room tenants -->
+    <string name="title_room_rents">Room rentals</string>
+    <string name="message_add_tenant">Add new tenant</string>
+    <string name="title_remove_tenant">Remove tenant</string>
+    <string name="message_remove_tenant">Are you sure to delete rent in this room of %s?</string>
+
+    <!-- Search resident -->
+    <string name="title_select_resident">Select a resident</string>
+    <string name="hint_select_resident">Enter resident name</string>
+
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>
         <item quantity="one">%d workplace</item>

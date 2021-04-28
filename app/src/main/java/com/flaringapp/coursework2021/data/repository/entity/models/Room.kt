@@ -28,4 +28,7 @@ class Room(
         const val NO_ID = "0"
     }
 
+    val maxTenantsCount: Int
+        get() = if (type == RoomType.Private) 1 else workplacesCount ?: 0
+
 }
