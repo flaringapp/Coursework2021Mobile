@@ -1,6 +1,7 @@
 package com.flaringapp.coursework2021.presentation.features.building.list.adapter
 
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import com.flaringapp.coursework2021.databinding.ViewHolderBuildingBinding
 import com.flaringapp.coursework2021.presentation.features.building.list.models.BuildingViewData
 import com.flaringapp.coursework2021.presentation.features.common.adapter.MutableListItemViewHolder
@@ -28,6 +29,6 @@ class BuildingViewHolder(
     }
 
     override fun setIsEditable(isEditable: Boolean) {
-        binding.root.isClickable = isEditable
+        binding.imageItem.isVisible = isEditable
     }
 }
