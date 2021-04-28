@@ -17,6 +17,7 @@ import com.flaringapp.coursework2021.presentation.features.resident.list.model.R
 import com.flaringapp.coursework2021.presentation.features.resident.modify.ModifyResidentParams
 import com.flaringapp.coursework2021.presentation.features.resident.modify.behaviour.CreateResidentBehaviour
 import com.flaringapp.coursework2021.presentation.features.resident.modify.behaviour.EditResidentBehaviour
+import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -55,10 +56,13 @@ class ResidentsListFragment : ModelledFragment(R.layout.fragment_resident_list),
 
     override fun observeModel() = with(model) {
         residentsData.observe(viewLifecycleOwner) { residents ->
+            val shouldScroll = residents.size != adapterAction { itemCount }
             adapterAction { setItems(residents) }
+            if (shouldScroll) binding.recyclerResident.postScrollToBottom()
         }
         addResidentData.observe(viewLifecycleOwner) { resident ->
             adapterAction { addNewItem(resident) }
+            binding.recyclerResident.postScrollToBottom()
         }
         updateResidentData.observe(viewLifecycleOwner) { resident ->
             adapterAction { updateItem(resident) }

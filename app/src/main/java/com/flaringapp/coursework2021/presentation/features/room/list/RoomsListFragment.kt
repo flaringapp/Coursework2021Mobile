@@ -18,6 +18,7 @@ import com.flaringapp.coursework2021.presentation.features.room.list.model.Rooms
 import com.flaringapp.coursework2021.presentation.features.room.modify.ModifyRoomParams
 import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.CreateRoomBehaviour
 import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.EditRoomBehaviour
+import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -64,10 +65,13 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
 
     override fun observeModel() = with(model) {
         roomsData.observe(viewLifecycleOwner) { rooms ->
+            val shouldScroll = rooms.size != adapterAction { itemCount }
             adapterAction { setItems(rooms) }
+            if (shouldScroll) binding.recyclerRooms.postScrollToBottom()
         }
         addRoomData.observe(viewLifecycleOwner) { room ->
             adapterAction { addNewItem(room) }
+            binding.recyclerRooms.postScrollToBottom()
         }
         updateRoomData.observe(viewLifecycleOwner) { room ->
             adapterAction { updateItem(room) }

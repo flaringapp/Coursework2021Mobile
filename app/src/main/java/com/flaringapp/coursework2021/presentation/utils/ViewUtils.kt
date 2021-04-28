@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import android.widget.TextView
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.RecyclerView
 
 var TextView.textWithVisibility: CharSequence?
     get() = text
@@ -28,6 +29,11 @@ fun TextView.updateCompoundDrawablesWithIntrinsicBounds(
     )
 }
 
+fun RecyclerView.postScrollToBottom() {
+    post {
+        smoothScrollToPosition(adapter?.itemCount ?: return@post)
+    }
+}
 
 
 fun Context.dpi(dp: Float): Int {

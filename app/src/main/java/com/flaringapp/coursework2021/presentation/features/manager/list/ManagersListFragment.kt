@@ -16,6 +16,7 @@ import com.flaringapp.coursework2021.presentation.features.manager.list.model.Ma
 import com.flaringapp.coursework2021.presentation.features.manager.modify.ModifyManagerParams
 import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.CreateManagerBehaviour
 import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.EditManagerBehaviour
+import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -54,10 +55,13 @@ class ManagersListFragment : ModelledFragment(R.layout.fragment_manager_list),
 
     override fun observeModel() = with(model) {
         managersData.observe(viewLifecycleOwner) { managers ->
+            val shouldScroll = managers.size != adapterAction { itemCount }
             adapterAction { setItems(managers) }
+            if (shouldScroll) binding.recyclerManagers.postScrollToBottom()
         }
         addManagerData.observe(viewLifecycleOwner) { manager ->
             adapterAction { addNewItem(manager) }
+            binding.recyclerManagers.postScrollToBottom()
         }
         updateManagerData.observe(viewLifecycleOwner) { manager ->
             adapterAction { updateItem(manager) }
