@@ -3,7 +3,6 @@ package com.flaringapp.coursework2021.presentation.features.manager.modify.model
 import androidx.lifecycle.LiveData
 import com.flaringapp.coursework2021.presentation.base.BaseViewModel
 import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.ModifyManagerBehaviour
-import com.flaringapp.coursework2021.presentation.features.manager.modify.models.ManagerBuildingViewData
 import com.flaringapp.coursework2021.presentation.features.manager.modify.models.ManagerSelectBuildingsViewData
 
 abstract class ModifyManagerModel: BaseViewModel() {
