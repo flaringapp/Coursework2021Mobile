@@ -13,7 +13,7 @@ class RentsSourceModelMock : RentsSourceModel {
 
     private val rents: MutableList<RentResponse> = mutableListOf(
         RentResponse("1", "1", "1", "Andrew", "Shpek"),
-        RentResponse("2", "2", "1", "Andrew", "Shpek"),
+        RentResponse("2", "2", "2", "Gordon", "Watson"),
     )
 
     override suspend fun getRents(): CallResultList<RentResponse> {
@@ -45,7 +45,7 @@ class RentsSourceModelMock : RentsSourceModel {
         id,
         roomId,
         residentId,
-        "Andrew",
-        "Shpek"
+        if (residentId == "1") "Andrew" else "Gordon",
+        if (residentId == "1") "Shpek" else "Watson"
     )
 }
