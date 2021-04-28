@@ -111,25 +111,24 @@
                 android:nextFocusDown="@id/inputLatitude"
                 tools:text="Manager description" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/InputLayout.Stroke.Dropdown"
-                android:id="@+id/layoutInputBuilding"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputLayout.Stroke.Dropdown"
+            android:id="@+id/layoutInputBuilding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/hint_manager_building"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                style="@style/Input.InLayout.Stroke"
+                android:id="@+id/inputBuilding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/hint_manager_building"
-                app:errorEnabled="true">
-
-                <AutoCompleteTextView
-                    style="@style/Input.InLayout.Stroke"
-                    android:id="@+id/inputBuilding"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:imeOptions="actionDone"  />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:inputType="none"
+                android:imeOptions="actionDone"  />
 
         </com.google.android.material.textfield.TextInputLayout>
 
