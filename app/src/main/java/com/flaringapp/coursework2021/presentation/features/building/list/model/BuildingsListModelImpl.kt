@@ -78,11 +78,10 @@ class BuildingsListModelImpl(
         viewModelScope.launchOnIO {
             val loadedBuildings = safeCall { repository.getBuildings() } ?: return@launchOnIO
 
-            buildings.clearAndAdd(loadedBuildings)
-
             val buildingsViewData = loadedBuildings.map { it.toViewData() }
 
             withMainContext {
+                buildings.clearAndAdd(loadedBuildings)
                 buildingsData.value = buildingsViewData
             }
         }

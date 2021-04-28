@@ -89,9 +89,8 @@ class RoomsListModelImpl(
 
             rooms.clearAndAdd(loadedRooms)
 
-            val roomsViewData = loadedRooms.map { it.toViewData() }
-
             withMainContext {
+                val roomsViewData = loadedRooms.map { it.toViewData() }
                 roomsData.value = roomsViewData
             }
         }
