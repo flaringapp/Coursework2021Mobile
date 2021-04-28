@@ -8,6 +8,8 @@ import com.flaringapp.coursework2021.data.repository.tenants.models.Tenant
 
 interface RentsRepository {
 
+    suspend fun getRents(): CallResultList<Rent>
+
     suspend fun getRents(roomId: String): CallResultList<Rent>
 
     suspend fun addRent(roomId: String, tenant: Tenant): CallResult<Rent>

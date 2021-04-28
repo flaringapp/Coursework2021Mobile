@@ -31,6 +31,6 @@ val RepositoryModule = module {
 
     single<ResidentsRepository> { ResidentsRepositoryImpl(get()) } bind ResidentsStorage::class
 
-    single<RentsRepository> { RentsRepositoryImpl() }
+    single<RentsRepository> { RentsRepositoryImpl(get()) }
 
 }
