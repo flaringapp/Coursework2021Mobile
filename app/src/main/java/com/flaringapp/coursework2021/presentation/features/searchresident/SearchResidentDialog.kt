@@ -60,6 +60,7 @@ class SearchResidentDialog : ModelledDialog(R.layout.dialog_search_resident) {
                 residents.find { it.name == adapter.getItem(position) }!!.id
             )
         }
+        binding.inputName.showDropDown()
     }
 
     private fun notifyResidentSelected(resident: Resident) {
