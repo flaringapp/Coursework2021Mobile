@@ -11,9 +11,9 @@ class Room(
 
     val area: Float?,
 
-    val windowCount: Int?,
     val hasBalcony: Boolean?,
     val hasBoard: Boolean?,
 
-    val placesCount: Int
+    val windowCount: Int?,
+    val placesCount: Int?
 )

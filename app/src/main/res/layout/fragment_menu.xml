@@ -92,6 +92,35 @@
 
             <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
                 style="@style/MenuItemLayout"
+                android:id="@+id/layoutRooms"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/MenuItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_image_size"
+                    android:padding="12dp"
+                    android:src="@drawable/img_menu_room" />
+
+                <TextView
+                    style="@style/MenuItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_menu_rooms" />
+
+            </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+            style="@style/MenuItemLayoutRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+                style="@style/MenuItemLayout"
                 android:id="@+id/layoutPayments"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
@@ -110,14 +139,6 @@
 
             </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
 
-        </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
-
-        <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
-            style="@style/MenuItemLayoutRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
             <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
                 style="@style/MenuItemLayout"
                 android:id="@+id/layoutBuildingDashboard"
@@ -132,7 +153,7 @@
 
                 <TextView
                     style="@style/MenuItemText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_menu_building_dashboard" />
 

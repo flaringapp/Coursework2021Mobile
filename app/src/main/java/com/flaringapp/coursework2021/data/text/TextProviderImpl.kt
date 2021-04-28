@@ -15,6 +15,10 @@ class TextProviderImpl(
         return context.getString(res, *params)
     }
 
+    override fun getPluralText(res: Int, count: Int): String {
+        return context.resources.getQuantityString(res, count, count)
+    }
+
     override fun formatLocation(location: GeoLocation): CharSequence {
         return "${location.latitude}N, ${location.latitude}W"
     }

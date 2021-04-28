@@ -42,8 +42,9 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
             reverseLayout = true
         }
         recyclerBuildings.adapter = BuildingsListAdapter(
+            { openBuildingRooms(it) },
+            { model.handleBuildingOptions(it) },
             { model.createNewBuilding() },
-            { model.handleBuildingOptions(it) }
         ).apply {
             setIsEditable(true)
         }
@@ -99,6 +100,11 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
 
     private fun <T> adapterAction(action: BuildingsListAdapter.() -> T): T {
         return (binding.recyclerBuildings.adapter as BuildingsListAdapter).action()
+    }
+
+    private fun openBuildingRooms(id: String) {
+        val direction = BuildingsListFragmentDirections.actionBuildingsToRooms(id)
+        findNavController().navigate(direction)
     }
 
     private fun openBuildingOptions() {

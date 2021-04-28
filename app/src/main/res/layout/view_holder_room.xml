@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/bg_ripple"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
     android:paddingStart="16dp"
@@ -51,7 +50,7 @@
                     android:layout_marginTop="8dp"
                     android:ellipsize="end"
                     android:lines="1"
-                    tools:text="Item 4" />
+                    tools:text="Room 4" />
 
                 <ImageButton
                     android:id="@+id/buttonOptions"
@@ -80,28 +79,109 @@
 
     </LinearLayout>
 
-    <TextView
-        style="@style/Text.WithIcon"
-        android:id="@+id/textLocation"
+    <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+        android:id="@+id/layoutBoardAndBalcony"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:drawableStartCompat="@drawable/ic_location"
-        tools:text="41.123122S -12.3123123W" />
+        android:orientation="horizontal"
+        app:bll_children_spacing="8dp">
 
-    <TextView
-        style="@style/Text.WithIcon"
-        android:id="@+id/textAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:drawableStartCompat="@drawable/ic_address"
-        tools:text="Lviv, 12 Schevchenka Str." />
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-    <TextView
-        style="@style/Text.WithIcon"
-        android:id="@+id/textArea"
+            <TextView
+                style="@style/Text.WithIcon"
+                android:id="@+id/textHasBoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/message_has_board"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:drawableStartCompat="@drawable/ic_board"
+                app:drawableEndCompat="@drawable/ic_done" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                style="@style/Text.WithIcon"
+                android:id="@+id/textHasBalcony"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@string/message_has_balcony"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:drawableStartCompat="@drawable/ic_fail"
+                app:drawableEndCompat="@drawable/ic_balcony" />
+
+        </FrameLayout>
+
+    </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+    <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
+        android:id="@+id/layoutWorkplacesAndWindows"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:drawableStartCompat="@drawable/ic_area"
-        tools:text="412.34 m2" />
+        app:bll_children_spacing="8dp">
+
+        <TextView
+            style="@style/Text.WithIcon"
+            android:id="@+id/textWorkplacesCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:drawableStartCompat="@drawable/ic_workplace"
+            tools:text="5 workplaces" />
+
+        <TextView
+            style="@style/Text.WithIcon"
+            android:id="@+id/textWindowCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:drawableEndCompat="@drawable/ic_window"
+            tools:text="No windows" />
+
+    </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Text.WithIcon"
+            android:id="@+id/textArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_area"
+            tools:text="412.34 m2" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            style="@style/Text.Small"
+            android:id="@+id/textRoomType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary_dark"
+            tools:text="Private room" />
+
+    </LinearLayout>
 
 </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>

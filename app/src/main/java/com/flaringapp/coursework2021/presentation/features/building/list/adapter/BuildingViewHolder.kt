@@ -18,13 +18,18 @@ class BuildingViewHolder(
         )
     }
 
-    fun bind(item: BuildingViewData, onOptionsClicked: (String) -> Unit) = with(binding) {
+    fun bind(
+        item: BuildingViewData,
+        onBuildingClicked: (String) -> Unit,
+        onOptionsClicked: (String) -> Unit
+    ) = with(binding) {
         textName.text = item.name
         textDescription.textWithVisibility = item.description
         textLocation.textWithVisibility = item.location
         textAddress.textWithVisibility = item.address
         textArea.textWithVisibility = item.area
 
+        root.setOnClickListener { onBuildingClicked(item.id) }
         buttonOptions.setOnClickListener { onOptionsClicked(item.id) }
     }
 

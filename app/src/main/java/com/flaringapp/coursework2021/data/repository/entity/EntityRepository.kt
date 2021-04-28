@@ -15,7 +15,7 @@ interface EntityRepository {
     suspend fun deleteBuilding(id: String): CallResultNothing
 
 
-    suspend fun getRooms(): CallResultList<Room>
+    suspend fun getRooms(buildingId: String): CallResultList<Room>
 
     suspend fun addRoom(room: Room): CallResult<Room>
     suspend fun editRoom(room: Room): CallResult<Room>

@@ -18,9 +18,10 @@ fun <T> MutableList<T>.replaceFirstOrAdd(value: T, predicate: (T) -> Boolean) {
     else this[index] = value
 }
 
-fun <T> MutableList<T>.removeFirst(predicate: (T) -> Boolean) {
-    val index = indexOfFirst(predicate).takeIf { it >= 0 } ?: return
+fun <T> MutableList<T>.removeFirst(predicate: (T) -> Boolean): Boolean {
+    val index = indexOfFirst(predicate).takeIf { it >= 0 } ?: return false
     this.removeAt(index)
+    return true
 }
 
 inline fun <K, V, M : Map<out K, V>> M.forEachIndexed(action: (index: Int, key: K, value: V) -> Unit) {

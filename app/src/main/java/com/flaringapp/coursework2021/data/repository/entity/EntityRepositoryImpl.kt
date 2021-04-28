@@ -45,7 +45,7 @@ class EntityRepositoryImpl(
             .doOnSuccessSuspend { deleteBuildingFlow.emit(id) }
     }
 
-    override suspend fun getRooms(): CallResultList<Room> {
+    override suspend fun getRooms(buildingId: String): CallResultList<Room> {
         return CallResult.Success(emptyList())
     }
 

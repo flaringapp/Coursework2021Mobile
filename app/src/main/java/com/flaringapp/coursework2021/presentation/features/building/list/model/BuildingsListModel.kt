@@ -19,9 +19,9 @@ abstract class BuildingsListModel: BaseViewModel() {
     abstract val openCreateBuildingData: LiveData<Unit>
     abstract val openEditBuildingData: LiveData<Building>
 
-    abstract fun handleBuildingOptions(id: String)
-
     abstract fun createNewBuilding()
+
+    abstract fun handleBuildingOptions(id: String)
 
     abstract fun editSelectedBuilding()
 

@@ -7,8 +7,9 @@ import com.flaringapp.coursework2021.presentation.features.building.list.models.
 import com.flaringapp.coursework2021.presentation.features.common.adapter.SimpleMutableListAdapter
 
 class BuildingsListAdapter(
-    addNewBuilding: Action,
+    private val openBuilding: (String) -> Unit,
     private val onBuildingOptions: (String) -> Unit,
+    addNewBuilding: Action,
 ): SimpleMutableListAdapter<BuildingViewHolder, BuildingViewData>(
     R.string.button_add_building,
     addNewBuilding
@@ -19,6 +20,6 @@ class BuildingsListAdapter(
     }
 
     override fun bindItemViewHolder(holder: BuildingViewHolder, position: Int) {
-        holder.bind(items[position], onBuildingOptions)
+        holder.bind(items[position], openBuilding, onBuildingOptions)
     }
 }

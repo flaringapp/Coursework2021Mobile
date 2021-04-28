@@ -19,8 +19,9 @@
     <!-- Menu -->
     <string name="button_menu_buildings">Buildings</string>
     <string name="button_menu_managers">Managers</string>
-    <string name="button_menu_users">Users</string>
     <string name="button_menu_payments">Payments</string>
+    <string name="button_menu_users">Users</string>
+    <string name="button_menu_rooms">Rooms</string>
     <string name="button_menu_building_dashboard">Building dashboard</string>
     <string name="button_menu_admin_dashboard">Admin dashboard</string>
     <string name="title_menu">Menu</string>
@@ -47,5 +48,34 @@
     <string name="error_building_invalid_latitude">Latitude is invalid</string>
     <string name="error_building_invalid_longitude">Longitude is invalid</string>
     <string name="error_building_invalid_area">Area is invalid</string>
+
+    <!-- Rooms -->
+    <string name="title_rooms">Coworking rooms</string>
+    <string name="button_add_room">Add new room</string>
+    <string name="title_room_options">Room actions</string>
+    <string name="option_room_edit">Edit room information</string>
+    <string name="option_room_delete">Delete room</string>
+    <string name="title_room_delete">Delete room</string>
+    <string name="message_room_delete">Do you really want to delete room \"%s\"?</string>
+    <string name="message_has_board">Has board</string>
+    <string name="message_no_board">No board</string>
+    <string name="message_has_balcony">Has balcony</string>
+    <string name="message_no_balcony">No balcony</string>
+    <string name="room_type_private">Private room</string>
+    <string name="room_type_open_space">Open space</string>
+
+    <plurals name="workplaces">
+        <item quantity="zero">No workplaces</item>
+        <item quantity="one">%d workplace</item>
+        <item quantity="two">%d workplaces</item>
+        <item quantity="other">%d workplaces</item>
+    </plurals>
+
+    <plurals name="windows">
+        <item quantity="zero">No windows</item>
+        <item quantity="one">%d window</item>
+        <item quantity="two">%d windows</item>
+        <item quantity="other">%d windows</item>
+    </plurals>
 
 </resources>
