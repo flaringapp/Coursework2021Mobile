@@ -10,6 +10,7 @@ class RoomViewData(
     val hasBalcony: Boolean?,
     val workplacesCount: CharSequence,
     val windowsCount: CharSequence?,
+    val price: CharSequence?,
     val area: CharSequence?,
     val roomType: CharSequence?,
 ): MutableListItem

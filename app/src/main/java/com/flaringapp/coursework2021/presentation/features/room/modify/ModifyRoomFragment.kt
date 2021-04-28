@@ -31,6 +31,9 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
         inputName.doAfterTextChanged {
             model.handleNameChanged(it.toString())
         }
+        inputPrice.doAfterTextChanged {
+            model.handlePriceChanged(it.toString())
+        }
         inputDescription.doAfterTextChanged {
             model.handleDescriptionChanged(it.toString())
         }
@@ -67,6 +70,9 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
         nameData.observe(viewLifecycleOwner) { name ->
             binding.inputName.setText(name)
         }
+        priceData.observe(viewLifecycleOwner) { price ->
+            binding.inputPrice.setText(price)
+        }
         descriptionData.observe(viewLifecycleOwner) { description ->
             binding.inputDescription.setText(description)
         }
@@ -94,6 +100,9 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
 
         nameErrorData.observe(viewLifecycleOwner) { nameError ->
             binding.layoutInputName.error = nameError?.let { getString(it) }
+        }
+        priceErrorData.observe(viewLifecycleOwner) { priceError ->
+            binding.layoutInputPrice.error = priceError?.let { getString(it) }
         }
         areaErrorData.observe(viewLifecycleOwner) { areaError ->
             binding.layoutInputArea.error = areaError?.let { getString(it) }
@@ -126,6 +135,7 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
 
         listOf(
             binding.layoutInputName,
+            binding.layoutInputPrice,
             binding.layoutInputDescription,
             binding.buttonRoomTypePrivate,
             binding.buttonRoomTypeOpenSpace,

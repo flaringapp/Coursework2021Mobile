@@ -62,6 +62,8 @@ class RoomViewHolder(
         textWorkplacesCount.text = item.workplacesCount
         textWindowCount.textWithVisibility = item.windowsCount
 
+        textPrice.textWithVisibility = item.price
+
         textArea.textWithVisibility = item.area
 
         textRoomType.textWithVisibility = item.roomType
@@ -76,6 +78,7 @@ class RoomViewHolder(
     private fun setHasBoard(hasBoard: Boolean?) {
         binding.textHasBoard.setHasItem(
             hasBoard,
+            false,
             R.string.message_has_board,
             R.string.message_no_board
         )
@@ -84,12 +87,13 @@ class RoomViewHolder(
     private fun setHasBalcony(hasBalcony: Boolean?) {
         binding.textHasBalcony.setHasItem(
             hasBalcony,
+            true,
             R.string.message_has_balcony,
             R.string.message_no_balcony
         )
     }
 
-    private fun TextView.setHasItem(hasItem: Boolean?, hasItemText: Int, noItemText: Int) {
+    private fun TextView.setHasItem(hasItem: Boolean?, isIconStart: Boolean, hasItemText: Int, noItemText: Int) {
         binding.textHasBalcony.isInvisible = hasItem == null
         if (hasItem == null) return
 
@@ -104,9 +108,16 @@ class RoomViewHolder(
             drawable = negativeDrawable
         }
         setText(textRes)
-        updateCompoundDrawablesWithIntrinsicBounds(
-            right = drawable
-        )
+
+        if (isIconStart) {
+            updateCompoundDrawablesWithIntrinsicBounds(
+                start = drawable
+            )
+        } else {
+            updateCompoundDrawablesWithIntrinsicBounds(
+                end = drawable
+            )
+        }
     }
 
 }

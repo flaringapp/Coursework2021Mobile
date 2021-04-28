@@ -13,6 +13,8 @@ class Room(
 
     val type: RoomType,
 
+    val price: Int,
+
     val hasBoard: Boolean?,
     val hasBalcony: Boolean?,
 

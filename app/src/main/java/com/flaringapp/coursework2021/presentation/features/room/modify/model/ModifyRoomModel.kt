@@ -10,6 +10,7 @@ abstract class ModifyRoomModel: BaseViewModel() {
     abstract val nameData: LiveData<CharSequence>
     abstract val descriptionData: LiveData<CharSequence>
     abstract val roomTypeData: LiveData<RoomType>
+    abstract val priceData: LiveData<String>
     abstract val hasBoardData: LiveData<Boolean>
     abstract val hasBalconyData: LiveData<Boolean>
     abstract val workplacesCountData: LiveData<Int>
@@ -17,6 +18,7 @@ abstract class ModifyRoomModel: BaseViewModel() {
     abstract val areaData: LiveData<CharSequence>
 
     abstract val nameErrorData: LiveData<Int?>
+    abstract val priceErrorData: LiveData<Int?>
     abstract val areaErrorData: LiveData<Int?>
 
     abstract val loadingData: LiveData<Boolean>
@@ -28,6 +30,7 @@ abstract class ModifyRoomModel: BaseViewModel() {
     abstract fun handleNameChanged(name: String)
     abstract fun handleDescriptionChanged(description: String)
     abstract fun handleRoomTypeSelected(roomType: RoomType)
+    abstract fun handlePriceChanged(price: String)
     abstract fun handleHasBoardChanged(hasBoard: Boolean)
     abstract fun handleHasBalconyChanged(hasBalcony: Boolean)
     abstract fun handleWorkplacesCountChanged(workplacesCount: Int)

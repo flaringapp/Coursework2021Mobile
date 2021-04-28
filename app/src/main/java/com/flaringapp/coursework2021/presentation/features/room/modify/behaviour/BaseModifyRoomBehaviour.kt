@@ -2,6 +2,7 @@ package com.flaringapp.coursework2021.presentation.features.room.modify.behaviou
 
 import com.flaringapp.coursework2021.data.repository.entity.EntityRepository
 import com.flaringapp.coursework2021.data.repository.entity.models.Room
+import com.flaringapp.coursework2021.data.text.TextProvider
 import com.flaringapp.coursework2021.presentation.features.room.modify.models.RoomEditableData
 import kotlinx.parcelize.IgnoredOnParcel
 import org.koin.core.context.GlobalContext
@@ -14,7 +15,5 @@ abstract class BaseModifyRoomBehaviour: ModifyRoomBehaviour {
     @IgnoredOnParcel
     protected val repository: EntityRepository by GlobalContext.get().inject()
 
-    @IgnoredOnParcel
-    override val preliminaryData: RoomEditableData? = null
-
+    override fun createPreliminaryData(textProvider: TextProvider): RoomEditableData? = null
 }

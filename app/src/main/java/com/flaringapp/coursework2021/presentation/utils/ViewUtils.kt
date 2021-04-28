@@ -16,16 +16,16 @@ var TextView.textWithVisibility: CharSequence?
     }
 
 fun TextView.updateCompoundDrawablesWithIntrinsicBounds(
-    left: Drawable? = null,
+    start: Drawable? = null,
     top: Drawable? = null,
-    right: Drawable? = null,
+    end: Drawable? = null,
     bottom: Drawable? = null
 ) {
-    setCompoundDrawablesWithIntrinsicBounds(
-        left ?: this.compoundDrawables[0],
-        top ?: this.compoundDrawables[1],
-        right ?: this.compoundDrawables[2],
-        bottom ?: this.compoundDrawables[3],
+    setCompoundDrawablesRelativeWithIntrinsicBounds(
+        start ?: this.compoundDrawablesRelative[0],
+        top ?: this.compoundDrawablesRelative[1],
+        end ?: this.compoundDrawablesRelative[2],
+        bottom ?: this.compoundDrawablesRelative[3],
     )
 }
 

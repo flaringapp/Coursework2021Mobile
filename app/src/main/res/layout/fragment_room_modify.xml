@@ -42,6 +42,29 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/InputLayout.Stroke"
+            android:id="@+id/layoutInputPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_room_place_price"
+            app:prefixText="@string/currency"
+            app:prefixTextColor="@color/gray_light"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Input.InLayout.Stroke"
+                android:id="@+id/inputPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number|numberDecimal"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/inputDescription"
+                tools:text="100.0"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputLayout.Stroke"
             android:id="@+id/layoutInputDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

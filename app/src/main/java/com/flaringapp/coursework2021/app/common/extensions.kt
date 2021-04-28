@@ -1,6 +1,7 @@
 package com.flaringapp.coursework2021.app.common
 
 import android.util.Patterns
+import kotlin.math.roundToInt
 
 typealias Action = () -> Unit
 
@@ -50,3 +51,5 @@ fun String.isCorrectDouble() = isEmpty() || toDoubleOrNull() != null
 fun Boolean.toInt() = if (this) 1 else 0
 
 fun String.isValidEmail() = Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
+fun String.toMoney(): Int? = toFloatOrNull()?.let { it * 100 }?.roundToInt()

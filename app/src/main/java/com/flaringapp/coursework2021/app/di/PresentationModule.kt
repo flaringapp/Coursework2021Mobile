@@ -35,7 +35,7 @@ val PresentationModule = module {
 
     viewModel<RoomsListModel> { RoomsListModelImpl(get(), get(), get()) }
 
-    viewModel<ModifyRoomModel> { ModifyRoomModelImpl() }
+    viewModel<ModifyRoomModel> { ModifyRoomModelImpl(get()) }
 
     viewModel<ManagersListModel> { ManagersListModelImpl(get(), get(), get()) }
 

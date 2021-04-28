@@ -21,4 +21,7 @@ interface TextProvider {
 
     fun formatNameSurname(name: String, surname: String): CharSequence
 
+    fun formatPrice(price: Int): CharSequence
+    fun formatPriceWithPrefix(price: Int): CharSequence
+
 }

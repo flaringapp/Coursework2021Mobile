@@ -1,12 +1,15 @@
 <resources>
     <string name="app_name">Coworking</string>
 
+    <string name="currency">"\$"</string>
+
     <!-- Common -->
     <string name="ok">OK</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+
 
     <!-- Login -->
     <string name="title_login">Email</string>
@@ -68,6 +71,7 @@
     <string name="title_create_room">Create new room</string>
     <string name="title_edit_room">Edit coworking room</string>
     <string name="hint_room_name">Room name</string>
+    <string name="hint_room_place_price">Price per place</string>
     <string name="hint_room_description">Description</string>
     <string name="title_room_type">Room type</string>
     <string name="hint_room_area">Room area</string>
@@ -76,6 +80,8 @@
     <string name="title_room_workplaces_count">Workplaces count</string>
     <string name="title_room_window_count">Window count</string>
     <string name="error_room_empty_name">Please enter a room name</string>
+    <string name="error_room_empty_price">Please enter price per place</string>
+    <string name="error_room_invalid_price">Please enter a valid price</string>
     <string name="error_room_invalid_area">Area is invalid</string>
 
     <!-- Managers -->

@@ -11,6 +11,7 @@ class RoomResponse(
     val name: String,
     val description: String? = null,
     val type: String,
+    val price: Int,
     @Json(name = "has_board")
     val hasBoard: Int? = null,
     @Json(name = "has_balcony")

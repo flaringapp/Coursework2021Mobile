@@ -12,8 +12,8 @@ import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomRe
 class RoomsSourceModelMock : RoomsSourceModel {
 
     private val rooms: MutableList<RoomResponse> = mutableListOf(
-        RoomResponse("1", "1", "R1", "Description room 1", "open_space", 1, 0, 12, 2),
-        RoomResponse("2", "1", "R2", "Description room 2", "private", 1, 1, 4, 1),
+        RoomResponse("1", "1", "R1", "Description room 1", "open_space", 10000, 1, 0, 12, 2),
+        RoomResponse("2", "1", "R2", "Description room 2", "private", 10000, 1, 1, 4, 1),
     )
 
     override suspend fun getRooms(): CallResultList<RoomResponse> {
@@ -43,6 +43,6 @@ class RoomsSourceModelMock : RoomsSourceModel {
     }
 
     private fun RoomRequest.toResponse() = RoomResponse(
-        id, "1", name, description, type, hasBoard, hasBalcony, workplacesCount, windowCount, area
+        id, "1", name, description, type, price, hasBoard, hasBalcony, workplacesCount, windowCount, area
     )
 }
