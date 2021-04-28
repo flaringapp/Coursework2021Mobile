@@ -44,3 +44,5 @@ fun String.isCorrectInteger() = isEmpty() || toIntOrNull() != null
 fun String.isCorrectFloat() = isEmpty() || toFloatOrNull() != null
 
 fun String.isCorrectDouble() = isEmpty() || toDoubleOrNull() != null
+
+fun Boolean.toInt() = if (this) 1 else 0

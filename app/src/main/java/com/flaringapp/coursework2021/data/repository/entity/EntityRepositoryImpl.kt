@@ -5,6 +5,7 @@ import com.flaringapp.coursework2021.data.common.call.CallResultList
 import com.flaringapp.coursework2021.data.common.call.CallResultNothing
 import com.flaringapp.coursework2021.data.common.call.transformList
 import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsSourceModel
+import com.flaringapp.coursework2021.data.network.features.rooms.RoomsSourceModel
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
 import com.flaringapp.coursework2021.data.repository.entity.models.Room
 import com.flaringapp.coursework2021.data.repository.entity.storage.BuildingsStorage
@@ -12,7 +13,8 @@ import com.flaringapp.coursework2021.data.repository.entity.storage.RoomsStorage
 import kotlinx.coroutines.flow.MutableSharedFlow
 
 class EntityRepositoryImpl(
-    private val buildingsSourceModel: BuildingsSourceModel
+    private val buildingsSourceModel: BuildingsSourceModel,
+    private val roomsSourceModel: RoomsSourceModel
 ): EntityRepository, BuildingsStorage, RoomsStorage {
 
     override val addBuildingFlow = MutableSharedFlow<Building>()
@@ -46,21 +48,24 @@ class EntityRepositoryImpl(
     }
 
     override suspend fun getRooms(buildingId: String): CallResultList<Room> {
-        return CallResult.Success(emptyList())
+        return roomsSourceModel.getRooms()
+            .transformList { parseRoom() }
     }
 
     override suspend fun addRoom(room: Room): CallResult<Room> {
-        addRoomFlow.emit(room)
-        return CallResult.Success(room)
+        return roomsSourceModel.addRoom(room.asRequest())
+            .doOnSuccessSuspend { addRoomFlow.emit(room) }
+            .transform { parseRoom() }
     }
 
     override suspend fun editRoom(room: Room): CallResult<Room> {
-        editRoomFlow.emit(room)
-        return CallResult.Success(room)
+        return roomsSourceModel.editRoom(room.asRequest())
+            .doOnSuccessSuspend { editRoomFlow.emit(room) }
+            .transform { parseRoom() }
     }
 
     override suspend fun deleteRoom(id: String): CallResultNothing {
-        deleteRoomFlow.emit(id)
-        return CallResult.Success(Unit)
+        return roomsSourceModel.deleteRoom(id)
+            .doOnSuccessSuspend { deleteRoomFlow.emit(id) }
     }
 }

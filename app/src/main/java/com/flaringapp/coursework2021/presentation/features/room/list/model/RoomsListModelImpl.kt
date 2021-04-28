@@ -118,7 +118,7 @@ class RoomsListModelImpl(
         description,
         hasBoard,
         hasBalcony,
-        textProvider.getPluralText(R.plurals.workplaces, placesCount ?: 0),
+        textProvider.getPluralText(R.plurals.workplaces, workplacesCount ?: 0),
         textProvider.getPluralText(R.plurals.windows, windowCount ?: 0),
         area?.let { textProvider.formatArea(it) },
         type.formatName(textProvider)

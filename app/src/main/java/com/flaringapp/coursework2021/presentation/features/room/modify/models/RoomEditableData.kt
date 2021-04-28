@@ -25,7 +25,7 @@ class RoomEditableData(
         room.type,
         room.hasBoard == true,
         room.hasBalcony == true,
-        room.placesCount ?: DEFAULT_PLACES_COUNT,
+        room.workplacesCount ?: DEFAULT_PLACES_COUNT,
         room.windowCount ?: DEFAULT_WINDOW_COUNT,
         room.area.toString(),
     )
