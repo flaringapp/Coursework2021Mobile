@@ -26,4 +26,8 @@ class TextProviderImpl(
     override fun formatArea(area: Float): CharSequence {
         return "$area m2"
     }
+
+    override fun formatNameSurname(name: String, surname: String): CharSequence {
+        return "$name $surname"
+    }
 }

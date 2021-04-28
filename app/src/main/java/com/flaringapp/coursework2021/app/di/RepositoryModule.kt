@@ -4,8 +4,12 @@ import com.flaringapp.coursework2021.data.repository.entity.EntityRepository
 import com.flaringapp.coursework2021.data.repository.entity.EntityRepositoryImpl
 import com.flaringapp.coursework2021.data.repository.entity.storage.BuildingsStorage
 import com.flaringapp.coursework2021.data.repository.entity.storage.RoomsStorage
+import com.flaringapp.coursework2021.data.repository.manager.ManagersRepository
+import com.flaringapp.coursework2021.data.repository.manager.ManagersRepositoryImpl
+import com.flaringapp.coursework2021.data.repository.manager.storage.ManagersStorage
 import com.flaringapp.coursework2021.data.repository.profile.ProfileRepository
 import com.flaringapp.coursework2021.data.repository.profile.ProfileRepositoryImpl
+import org.koin.dsl.bind
 import org.koin.dsl.binds
 import org.koin.dsl.module
 
@@ -17,5 +21,7 @@ val RepositoryModule = module {
         BuildingsStorage::class,
         RoomsStorage::class
     )
+
+    single<ManagersRepository> { ManagersRepositoryImpl() } bind ManagersStorage::class
 
 }

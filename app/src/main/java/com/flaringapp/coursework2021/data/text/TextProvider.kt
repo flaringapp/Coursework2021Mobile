@@ -19,4 +19,6 @@ interface TextProvider {
 
     fun formatArea(area: Float): CharSequence
 
+    fun formatNameSurname(name: String, surname: String): CharSequence
+
 }

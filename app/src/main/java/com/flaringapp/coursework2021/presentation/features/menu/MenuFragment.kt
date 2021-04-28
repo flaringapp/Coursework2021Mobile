@@ -40,6 +40,7 @@ class MenuFragment: ModelledFragment(R.layout.fragment_menu) {
     }
 
     private fun openManagers() {
+        findNavController().navigate(R.id.action_menu_to_managers)
     }
 
     private fun openUsers() {
