@@ -96,7 +96,7 @@
 
     <style name="InputLayout.Stroke" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxBackgroundMode">outline</item>
-        <item name="boxStrokeColor">@color/input</item>
+        <item name="boxStrokeColor">@color/color_input</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxStrokeWidthFocused">2dp</item>
         <item name="boxStrokeErrorColor">@color/error</item>
