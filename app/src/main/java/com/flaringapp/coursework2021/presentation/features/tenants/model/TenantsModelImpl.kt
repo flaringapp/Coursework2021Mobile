@@ -36,7 +36,6 @@ class TenantsModelImpl(
     private var maxTenants = 1
 
     private val rents: MutableList<Rent> = mutableListOf()
-    private val tenants: MutableList<Tenant> = mutableListOf()
 
     private var pendingRemoveRentId: String? = null
 
@@ -51,7 +50,7 @@ class TenantsModelImpl(
     }
 
     override fun requestAddNewTenant() {
-        if (tenants.size >= maxTenants) return
+        if (rents.size >= maxTenants) return
         openAddNewTenantData.value = roomName
     }
 
@@ -77,13 +76,11 @@ class TenantsModelImpl(
             val loadedRents = safeCall {
                 repository.getRents(roomId)
             } ?: return@launchOnIO
-            val loadedTenants = loadedRents.map { it.tenant }
 
             val viewData = loadedRents.map { it.toViewData() }
 
             withMainContext {
                 rents.clearAndAdd(loadedRents)
-                tenants.clearAndAdd(loadedTenants)
 
                 tenantsData.value = viewData
                 updateCanAddTenants()
@@ -120,7 +117,7 @@ class TenantsModelImpl(
     }
 
     private fun updateCanAddTenants() {
-        canAddTenantsData.value = tenants.size < maxTenants
+        canAddTenantsData.value = rents.size < maxTenants
     }
 
     private fun Rent.toViewData() = TenantViewData(
