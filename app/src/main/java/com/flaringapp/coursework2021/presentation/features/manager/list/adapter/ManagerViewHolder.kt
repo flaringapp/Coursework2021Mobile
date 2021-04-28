@@ -24,8 +24,8 @@ class ManagerViewHolder(
     ) = with(binding) {
         textName.text = item.name
         textDescription.textWithVisibility = item.description
-        textEmail.text = item.email
-        textCoworking.text = item.coworking
+        textEmail.textWithVisibility = item.email
+        textCoworking.textWithVisibility = item.coworking
 
         buttonOptions.setOnClickListener { onOptionsClicked(item.id) }
     }
