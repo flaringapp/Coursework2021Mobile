@@ -5,7 +5,6 @@ import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsSo
 import com.flaringapp.coursework2021.data.network.features.managers.ManagersSourceModel
 import com.flaringapp.coursework2021.data.network.features.profile.ProfileSourceModel
 import com.flaringapp.coursework2021.data.network.features.rents.RentsSourceModel
-import com.flaringapp.coursework2021.data.network.features.rents.RentsSourceModelImpl
 import com.flaringapp.coursework2021.data.network.features.residents.ResidentsSourceModel
 import com.flaringapp.coursework2021.data.network.features.rooms.RoomsSourceModel
 import com.flaringapp.coursework2021.mock.*
@@ -27,12 +26,13 @@ val NetworkModule = module {
 //    single<RoomsSourceModel> { RoomsSourceModelImpl() }
 //    single<ManagersSourceModel> { ManagersSourceModelImpl(get()) }
 //    single<ResidentsSourceModel> { ResidentsSourceModelImpl(get()) }
-    single<RentsSourceModel> { RentsSourceModelImpl(get()) }
+//    single<RentsSourceModel> { RentsSourceModelImpl(get()) }
 
     single<ProfileSourceModel> { ProfileSourceModelMock() }
     single<BuildingsSourceModel> { BuildingsSourceModelMock() }
     single<RoomsSourceModel> { RoomsSourceModelMock() }
     single<ManagersSourceModel> { ManagersSourceModelMock() }
     single<ResidentsSourceModel> { ResidentsSourceModelMock() }
+    single<RentsSourceModel> { RentsSourceModelMock() }
 
 }
