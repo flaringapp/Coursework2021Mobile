@@ -22,7 +22,7 @@ interface BuildingsApiService {
         @Body building: BuildingRequest
     ): ApiResponse<BuildingsResponse>
 
-    @DELETE
+    @DELETE("building")
     @FormUrlEncoded
     fun deleteBuilding(
         @Field("id") id: String
