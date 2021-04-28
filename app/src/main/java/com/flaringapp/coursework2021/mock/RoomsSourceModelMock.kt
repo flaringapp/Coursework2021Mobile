@@ -20,6 +20,11 @@ class RoomsSourceModelMock : RoomsSourceModel {
         return CallResult.Success(rooms)
     }
 
+    override suspend fun getRooms(buildingId: String): CallResultList<RoomResponse> {
+        return CallResult.Success(rooms)
+
+    }
+
     override suspend fun addRoom(room: RoomRequest): CallResult<RoomResponse> {
         val response = room.toResponse()
         rooms += response
