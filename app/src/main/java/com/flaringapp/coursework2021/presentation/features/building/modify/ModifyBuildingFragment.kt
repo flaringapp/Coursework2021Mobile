@@ -87,14 +87,28 @@ class ModifyBuildingFragment : ModelledFragment(R.layout.fragment_building_modif
         }
 
         loadingData.observe(viewLifecycleOwner) { isLoading ->
-            binding.progressBar.isVisibleAndAnimateProgressBar = isLoading
-            binding.buttonSubmit.isEnabled = !isLoading
-            binding.buttonSubmit.isVisibleAndAnimateProgressBar = !isLoading
+            setIsLoading(isLoading)
         }
 
         closeScreenData.observe(viewLifecycleOwner) {
             findNavController().navigateUp()
         }
+    }
+
+    private fun setIsLoading(isLoading: Boolean) {
+        binding.progressBar.isVisibleAndAnimateProgressBar = isLoading
+
+        binding.buttonSubmit.isEnabled = !isLoading
+        binding.buttonSubmit.isVisibleAndAnimateProgressBar = !isLoading
+
+        listOf(
+            binding.layoutInputName,
+            binding.layoutInputDescription,
+            binding.layoutInputLatitude,
+            binding.layoutInputLongitude,
+            binding.layoutInputAddress,
+            binding.layoutInputArea,
+        ).forEach { it.isEnabled = !isLoading }
     }
 
 }
