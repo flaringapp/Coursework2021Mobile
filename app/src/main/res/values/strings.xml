@@ -94,7 +94,7 @@
     <string name="hint_manager_surname">Surname</string>
     <string name="hint_manager_email">Contact email</string>
     <string name="hint_manager_description">Description</string>
-    <string name="hint_manager_building">Operationa building</string>
+    <string name="hint_manager_building">Operation building</string>
     <string name="error_manager_empty_name">Please enter a manager name</string>
     <string name="error_manager_empty_surname">Please enter a manager surname</string>
     <string name="error_manager_empty_email">Please enter a manager email</string>
