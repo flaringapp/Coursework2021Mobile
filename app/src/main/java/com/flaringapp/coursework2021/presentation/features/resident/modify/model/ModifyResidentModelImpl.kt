@@ -3,6 +3,7 @@ package com.flaringapp.coursework2021.presentation.features.resident.modify.mode
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.flaringapp.coursework2021.R
+import com.flaringapp.coursework2021.app.common.isValidEmail
 import com.flaringapp.coursework2021.app.common.withMainContext
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
 import com.flaringapp.coursework2021.presentation.features.resident.modify.behaviour.ModifyResidentBehaviour
@@ -93,6 +94,9 @@ class ModifyResidentModelImpl : ModifyResidentModel() {
             }
             editor.email.trim().isEmpty() -> {
                 emailErrorData.value = R.string.error_resident_empty_email
+            }
+            !editor.email.trim().isValidEmail() -> {
+                emailErrorData.value = R.string.error_resident_email_invalid
             }
             else -> return true
         }

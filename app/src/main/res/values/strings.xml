@@ -98,6 +98,7 @@
     <string name="error_manager_empty_name">Please enter a manager name</string>
     <string name="error_manager_empty_surname">Please enter a manager surname</string>
     <string name="error_manager_empty_email">Please enter a manager email</string>
+    <string name="error_manager_email_invalid">Please enter a valid email</string>
     <string name="error_manager_empty_building">Please select an operation building</string>
 
     <!-- Residents -->
@@ -119,6 +120,7 @@
     <string name="error_resident_empty_name">Please enter a resident name</string>
     <string name="error_resident_empty_surname">Please enter a resident surname</string>
     <string name="error_resident_empty_email">Please enter a resident email</string>
+    <string name="error_resident_email_invalid">Please enter a valid email</string>
 
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>

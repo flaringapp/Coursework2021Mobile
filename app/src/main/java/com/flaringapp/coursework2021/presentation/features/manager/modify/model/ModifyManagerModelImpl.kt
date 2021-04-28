@@ -3,6 +3,7 @@ package com.flaringapp.coursework2021.presentation.features.manager.modify.model
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.flaringapp.coursework2021.R
+import com.flaringapp.coursework2021.app.common.isValidEmail
 import com.flaringapp.coursework2021.app.common.withMainContext
 import com.flaringapp.coursework2021.data.repository.entity.EntityRepository
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
@@ -132,6 +133,9 @@ class ModifyManagerModelImpl(
             }
             editor.email.trim().isEmpty() -> {
                 emailErrorData.value = R.string.error_manager_empty_email
+            }
+            !editor.email.trim().isValidEmail() -> {
+                emailErrorData.value = R.string.error_manager_email_invalid
             }
             editor.coworkingId == null || editor.coworkingName == null -> {
                 buildingErrorData.value = R.string.error_manager_empty_building

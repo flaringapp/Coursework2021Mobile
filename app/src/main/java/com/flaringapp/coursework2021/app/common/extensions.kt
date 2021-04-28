@@ -1,5 +1,7 @@
 package com.flaringapp.coursework2021.app.common
 
+import android.util.Patterns
+
 typealias Action = () -> Unit
 
 fun <T> MutableCollection<T>.clearAndAdd(other: Collection<T>) {
@@ -46,3 +48,5 @@ fun String.isCorrectFloat() = isEmpty() || toFloatOrNull() != null
 fun String.isCorrectDouble() = isEmpty() || toDoubleOrNull() != null
 
 fun Boolean.toInt() = if (this) 1 else 0
+
+fun String.isValidEmail() = Patterns.EMAIL_ADDRESS.matcher(this).matches()
