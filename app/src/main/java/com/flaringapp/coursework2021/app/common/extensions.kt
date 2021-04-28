@@ -12,6 +12,12 @@ fun <T> MutableList<T>.replaceFirst(value: T, predicate: (T) -> Boolean) {
     this[index] = value
 }
 
+fun <T> MutableList<T>.replaceFirstOrAdd(value: T, predicate: (T) -> Boolean) {
+    val index = indexOfFirst(predicate).takeIf { it >= 0 }
+    if (index == null) { add(value) }
+    else this[index] = value
+}
+
 fun <T> MutableList<T>.removeFirst(predicate: (T) -> Boolean) {
     val index = indexOfFirst(predicate).takeIf { it >= 0 } ?: return
     this.removeAt(index)

@@ -8,7 +8,9 @@ private typealias InlineTransformer<T, U> = T.() -> CallResult<U>
 
 sealed class CallResult<T> {
 
-    class Success<T>(val data: T) : CallResult<T>()
+    open class Success<T>(val data: T) : CallResult<T>()
+
+    object Nothing: Success<Unit?>(Unit)
 
     open class Error<T>(
         val errorType: String? = null,
