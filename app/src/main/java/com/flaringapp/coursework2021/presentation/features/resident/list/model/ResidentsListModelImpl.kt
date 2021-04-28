@@ -44,9 +44,9 @@ class ResidentsListModelImpl(
 
             residentsData.value = residents.map { it.toViewData() }
         }
-        residentsStorage.editResidentFlow.collectOn(viewModelScope) { changedresident ->
-            residents.replaceFirst(changedresident) { it.id == changedresident.id }
-            updateResidentData.valueIfHasObservers = changedresident.toViewData()
+        residentsStorage.editResidentFlow.collectOn(viewModelScope) { changedResident ->
+            residents.replaceFirst(changedResident) { it.id == changedResident.id }
+            updateResidentData.valueIfHasObservers = changedResident.toViewData()
 
             residentsData.value = residents.map { it.toViewData() }
         }
