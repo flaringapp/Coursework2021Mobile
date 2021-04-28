@@ -41,7 +41,7 @@
                     android:id="@+id/inputName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textCapWords"
+                    android:inputType="textPersonName"
                     android:imeOptions="actionNext"
                     android:nextFocusDown="@id/inputSurname"
                     tools:text="Manager name" />
@@ -62,7 +62,7 @@
                     android:id="@+id/inputSurname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textCapWords"
+                    android:inputType="textPersonName"
                     android:imeOptions="actionNext"
                     android:nextFocusDown="@id/inputEmail"
                     tools:text="Manager surname" />
