@@ -2,6 +2,7 @@ package com.flaringapp.coursework2021.data.network
 
 import android.util.Log
 import com.flaringapp.coursework2021.app.Constants
+import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsApiService
 import com.flaringapp.coursework2021.data.network.features.profile.ProfileApiService
 import com.flaringapp.coursework2021.data.network.modifiers.ModifierApplyInterceptor
 import com.flaringapp.coursework2021.data.network.modifiers.ParametrizedCallAdapterFactory
@@ -22,6 +23,7 @@ class RetrofitAdapter {
     }
 
     val profileService: ProfileApiService = createClientAutoToken(NetworkConstants.profile)
+    val buildingsService: BuildingsApiService = createClientAutoToken(NetworkConstants.buildings)
 
     private inline fun <reified T> createClientAutoToken(prefix: String): T {
         return createClient(prefix, RequestTokenAppender())

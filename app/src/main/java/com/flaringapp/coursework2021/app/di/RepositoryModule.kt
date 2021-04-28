@@ -13,7 +13,7 @@ val RepositoryModule = module {
 
     single<ProfileRepository> { ProfileRepositoryImpl(get(), get()) }
 
-    single<EntityRepository> { EntityRepositoryImpl() } binds arrayOf(
+    single<EntityRepository> { EntityRepositoryImpl(get()) } binds arrayOf(
         BuildingsStorage::class,
         RoomsStorage::class
     )

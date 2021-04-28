@@ -40,6 +40,12 @@ sealed class CallResult<T> {
         }
     }
 
+    suspend fun doOnSuccessSuspend(action: suspend (T) -> Unit) = apply {
+        if (this is Success) {
+            action(data)
+        }
+    }
+
     fun doOnError(action: () -> Unit) = apply {
         if (this is Error) {
             action()

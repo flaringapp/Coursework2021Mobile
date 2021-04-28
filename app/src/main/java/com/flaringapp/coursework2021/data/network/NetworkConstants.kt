@@ -8,4 +8,6 @@ object NetworkConstants {
 
     const val profile: String = "user/"
 
+    const val buildings: String = ""
+
 }
