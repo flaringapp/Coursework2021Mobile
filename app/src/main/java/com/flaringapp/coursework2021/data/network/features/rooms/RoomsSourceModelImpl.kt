@@ -18,6 +18,11 @@ class RoomsSourceModelImpl(
             .validateList()
     }
 
+    override suspend fun getRooms(buildingId: String): CallResultList<RoomResponse> {
+        return api.getRooms()
+            .validateList()
+    }
+
     override suspend fun addRoom(room: RoomRequest): CallResult<RoomResponse> {
         return api.addRoom(room)
             .validate()

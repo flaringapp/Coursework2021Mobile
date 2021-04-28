@@ -11,6 +11,7 @@ import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomRe
 interface RoomsSourceModel {
 
     suspend fun getRooms(): CallResultList<RoomResponse>
+    suspend fun getRooms(buildingId: String): CallResultList<RoomResponse>
 
     suspend fun addRoom(room: RoomRequest): CallResult<RoomResponse>
 

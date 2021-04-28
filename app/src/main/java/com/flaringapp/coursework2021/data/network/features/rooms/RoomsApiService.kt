@@ -10,7 +10,9 @@ import retrofit2.http.*
 interface RoomsApiService {
 
     @GET("rooms")
-    fun getRooms(): ApiResponseList<RoomResponse>
+    fun getRooms(
+        @Query("building_id") buildingId: String? = null
+    ): ApiResponseList<RoomResponse>
 
     @PUT("room")
     fun addRoom(

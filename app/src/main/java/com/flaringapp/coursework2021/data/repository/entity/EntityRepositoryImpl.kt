@@ -48,7 +48,7 @@ class EntityRepositoryImpl(
     }
 
     override suspend fun getRooms(buildingId: String): CallResultList<Room> {
-        return roomsSourceModel.getRooms()
+        return roomsSourceModel.getRooms(buildingId)
             .transformList { parseRoom() }
     }
 
