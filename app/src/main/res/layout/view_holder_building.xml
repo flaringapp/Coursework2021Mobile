@@ -51,7 +51,7 @@
                     android:layout_marginTop="8dp"
                     android:ellipsize="end"
                     android:lines="1"
-                    tools:text="Item 4" />
+                    tools:text="Building 4" />
 
                 <ImageButton
                     android:id="@+id/buttonOptions"
@@ -74,7 +74,7 @@
                 android:layout_marginBottom="8dp"
                 android:lines="2"
                 android:ellipsize="end"
-                tools:text="Fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description" />
+                tools:text="Building description Building description Building description Building description Building description Building description Building description Building description Building description Building description Building description Building description" />
 
         </LinearLayout>
 

@@ -73,7 +73,7 @@
                 android:layout_marginBottom="8dp"
                 android:lines="2"
                 android:ellipsize="end"
-                tools:text="Fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description fridge description" />
+                tools:text="Room description Room description Room description Room description Room description Room description Room description Room description Room description Room description Room description Room description" />
 
         </LinearLayout>
 
