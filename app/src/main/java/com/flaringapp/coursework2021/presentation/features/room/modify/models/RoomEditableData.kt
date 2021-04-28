@@ -27,7 +27,7 @@ class RoomEditableData(
         room.hasBalcony == true,
         room.workplacesCount ?: DEFAULT_PLACES_COUNT,
         room.windowCount ?: DEFAULT_WINDOW_COUNT,
-        room.area.toString(),
+        room.area?.toString() ?: "",
     )
 
     fun toRoom(room: Room?, buildingId: String) = Room(
