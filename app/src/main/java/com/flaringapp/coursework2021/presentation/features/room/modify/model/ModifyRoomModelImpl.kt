@@ -127,7 +127,7 @@ class ModifyRoomModelImpl(
             editor.price.trim().isEmpty() -> {
                 priceErrorData.value = R.string.error_room_empty_price
             }
-            !editor.price.isCorrectFloat() -> {
+            !editor.price.isCorrectFloat() || editor.price.toFloat() <= 0f -> {
                 priceErrorData.value = R.string.error_room_invalid_price
             }
             !editor.area.trim().isCorrectFloat() -> {
