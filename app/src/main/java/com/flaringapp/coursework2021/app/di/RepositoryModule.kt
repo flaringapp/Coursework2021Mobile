@@ -12,8 +12,8 @@ import com.flaringapp.coursework2021.data.repository.profile.ProfileRepositoryIm
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepository
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepositoryImpl
 import com.flaringapp.coursework2021.data.repository.residents.storage.ResidentsStorage
-import com.flaringapp.coursework2021.data.repository.tenants.RentsRepository
-import com.flaringapp.coursework2021.data.repository.tenants.RentsRepositoryImpl
+import com.flaringapp.coursework2021.data.repository.tenants.RentalsRepository
+import com.flaringapp.coursework2021.data.repository.tenants.RentalsRepositoryImpl
 import com.flaringapp.coursework2021.data.repository.transactions.TransactionsRepository
 import com.flaringapp.coursework2021.data.repository.transactions.TransactionsRepositoryImpl
 import com.flaringapp.coursework2021.data.repository.transactions.storage.TransactionsStorage
@@ -34,7 +34,7 @@ val RepositoryModule = module {
 
     single<ResidentsRepository> { ResidentsRepositoryImpl(get()) } bind ResidentsStorage::class
 
-    single<RentsRepository> { RentsRepositoryImpl(get()) }
+    single<RentalsRepository> { RentalsRepositoryImpl(get()) }
 
     single<TransactionsRepository> { TransactionsRepositoryImpl(get()) } bind TransactionsStorage::class
 

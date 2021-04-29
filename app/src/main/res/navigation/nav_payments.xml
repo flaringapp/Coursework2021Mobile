@@ -11,23 +11,17 @@
         android:name="com.flaringapp.coursework2021.presentation.features.transaction.list.TransactionsListFragment"
         tools:layout="@layout/fragment_transactions_list">
 
-<!--        <action android:id="@+id/action_residents_list_to_modify_resident"-->
-<!--            app:destination="@id/screen_modify_resident" />-->
+        <action android:id="@+id/action_payments_list_to_create_payment"
+            app:destination="@id/screen_create_payment" />
 
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/screen_modify_resident"-->
-<!--        android:label="{title}"-->
-<!--        android:name="com.flaringapp.coursework2021.presentation.features.resident.modify.ModifyResidentFragment"-->
-<!--        tools:layout="@layout/fragment_resident_list">-->
+    <fragment
+        android:id="@+id/screen_create_payment"
+        android:label="@string/title_create_payment"
+        android:name="com.flaringapp.coursework2021.presentation.features.transaction.create.CreateTransactionFragment"
+        tools:layout="@layout/fragment_create_transaction">
 
-<!--        <argument android:name="params"-->
-<!--            app:argType="com.flaringapp.coursework2021.presentation.features.resident.modify.ModifyResidentParams" />-->
-
-<!--        <argument android:name="title"-->
-<!--            app:argType="string" />-->
-
-<!--    </fragment>-->
+    </fragment>
 
 </navigation>

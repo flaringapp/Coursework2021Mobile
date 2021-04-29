@@ -23,5 +23,6 @@ class TransactionsRepositoryImpl(
     override suspend fun makeTransaction(transaction: AddTransaction): CallResult<Transaction> {
         return sourceModel.addTransaction(transaction.asRequest())
             .transform { parseTransaction() }
+            .doOnSuccessSuspend { addTransactionFlow.emit(it) }
     }
 }

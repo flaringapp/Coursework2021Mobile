@@ -11,9 +11,9 @@ import com.flaringapp.coursework2021.data.repository.transactions.models.Transac
 
 fun TransactionResponse.parseTransaction() = Transaction(
     id,
-    rentId,
+    rentalId,
     TransactionResident(residentId, residentName, residentSurname),
-    TransactionRoom(roomId, roomName, roomTypeKeys.getKey(roomType)!!),
+    TransactionRoom(roomId, roomName, roomTypeKeys.getKey(roomType)!!, roomPrice),
     managerId,
     dateFrom,
     dateTo,
@@ -22,5 +22,5 @@ fun TransactionResponse.parseTransaction() = Transaction(
 )
 
 fun AddTransaction.asRequest() = AddTransactionRequest(
-    rentId, managerId, amount
+    rentalId, managerId, monthCount
 )

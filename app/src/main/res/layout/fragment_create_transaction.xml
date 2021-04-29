@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="ifContentScrolls">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/img_room_modify" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputLayout.Stroke.Dropdown"
+            android:id="@+id/layoutInputResident"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/hint_payment_select_resident"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                style="@style/Input.InLayout.Stroke"
+                android:id="@+id/inputResident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"  />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputLayout.Stroke.Dropdown"
+            android:id="@+id/layoutInputRental"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/hint_payment_select_rental"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                style="@style/Input.InLayout.Stroke"
+                android:id="@+id/inputRental"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/Text.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_payment_month_count"
+            android:layout_marginTop="12dp" />
+
+        <com.flaringapp.coursework2021.presentation.utils.amountpicker.AmountPickerView
+            android:id="@+id/pickerWorkplacesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_horizontal"
+            app:amountMinValue="1"
+            app:amountDefaultValue="1"
+            app:amountMaxValue="12" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layoutSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:clipToPadding="false">
+
+                <Button
+                    style="@style/Button"
+                    android:id="@+id/buttonSubmit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/submit" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 
 class Transaction(
     val id: String,
-    val rentId: String,
+    val rentalId: String,
     val resident: TransactionResident,
     val room: TransactionRoom,
     val managerId: String,

@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_rents"
-    app:startDestination="@id/screen_room_rents">
+    android:id="@+id/nav_rentals"
+    app:startDestination="@id/screen_room_rentals">
 
     <fragment
-        android:id="@+id/screen_room_rents"
-        android:label="@string/title_room_rents"
+        android:id="@+id/screen_room_rentals"
+        android:label="@string/title_room_rentals"
         android:name="com.flaringapp.coursework2021.presentation.features.tenants.TenantsFragment"
         tools:layout="@layout/fragment_tenants">
 

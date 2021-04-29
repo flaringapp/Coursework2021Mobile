@@ -4,7 +4,7 @@ import com.flaringapp.coursework2021.data.network.RetrofitAdapter
 import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsSourceModel
 import com.flaringapp.coursework2021.data.network.features.managers.ManagersSourceModel
 import com.flaringapp.coursework2021.data.network.features.profile.ProfileSourceModel
-import com.flaringapp.coursework2021.data.network.features.rents.RentsSourceModel
+import com.flaringapp.coursework2021.data.network.features.rentals.RentalsSourceModel
 import com.flaringapp.coursework2021.data.network.features.residents.ResidentsSourceModel
 import com.flaringapp.coursework2021.data.network.features.rooms.RoomsSourceModel
 import com.flaringapp.coursework2021.data.network.features.transactions.TransactionsSourceModel
@@ -21,7 +21,7 @@ val NetworkModule = module {
     single { adapter.roomsService }
     single { adapter.managersService }
     single { adapter.residentsService }
-    single { adapter.rentsService }
+    single { adapter.rentalsService }
     single { adapter.transactionsService }
 
 //    single<ProfileSourceModel> { ProfileSourceModelImpl(get()) }
@@ -29,7 +29,7 @@ val NetworkModule = module {
 //    single<RoomsSourceModel> { RoomsSourceModelImpl() }
 //    single<ManagersSourceModel> { ManagersSourceModelImpl(get()) }
 //    single<ResidentsSourceModel> { ResidentsSourceModelImpl(get()) }
-//    single<RentsSourceModel> { RentsSourceModelImpl(get()) }
+//    single<RentalsSourceModel> { RentalsSourceModelImpl(get()) }
     single<TransactionsSourceModel> { TransactionsSourceModelImpl(get()) }
 
     single<ProfileSourceModel> { ProfileSourceModelMock() }
@@ -37,6 +37,6 @@ val NetworkModule = module {
     single<RoomsSourceModel> { RoomsSourceModelMock() }
     single<ManagersSourceModel> { ManagersSourceModelMock() }
     single<ResidentsSourceModel> { ResidentsSourceModelMock() }
-    single<RentsSourceModel> { RentsSourceModelMock() }
+    single<RentalsSourceModel> { RentalsSourceModelMock() }
 
 }

@@ -129,10 +129,10 @@
     <string name="error_resident_email_invalid">Please enter a valid email</string>
 
     <!-- Room tenants -->
-    <string name="title_room_rents">Room rentals</string>
+    <string name="title_room_rentals">Room rentals</string>
     <string name="message_add_tenant">Add new tenant</string>
     <string name="title_remove_tenant">Remove tenant</string>
-    <string name="message_remove_tenant">Are you sure to delete rent in this room of %s?</string>
+    <string name="message_remove_tenant">Are you sure to delete rental in this room of %s?</string>
 
     <!-- Search resident -->
     <string name="title_select_resident">Select a resident</string>
@@ -141,8 +141,17 @@
     <!-- Transactions -->
     <string name="title_payments">Payments</string>
     <string name="button_new_transaction">New transaction</string>
-    <string name="message_payment_private_room">Private room rent payment</string>
+    <string name="message_payment_private_room">Private room rental payment</string>
     <string name="message_payment_open_space">Workplace in open space payment</string>
+
+    <!-- Create transaction -->
+    <string name="title_create_payment">Create new payment</string>
+    <string name="title_payment_month_count">Months count to pay for</string>
+    <string name="hint_payment_select_resident">Select resident</string>
+    <string name="hint_payment_select_rental">Select rental</string>
+    <string name="hint_payment_enter_amount">Enter payment amount</string>
+    <string name="error_payment_empty_resident">Please select a resident</string>
+    <string name="error_payment_empty_rental">Please select a resident rental</string>
 
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>

@@ -1,8 +1,8 @@
 package com.flaringapp.coursework2021.data.repository.tenants.models
 
-class Rent(
+class Rental(
     val id: String,
-    val roomId: String,
+    val room: RentalRoom,
     val tenant: Tenant,
 ) {
 

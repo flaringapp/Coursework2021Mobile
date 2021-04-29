@@ -7,8 +7,9 @@ import com.flaringapp.coursework2021.app.common.launchOnIO
 import com.flaringapp.coursework2021.app.common.removeFirst
 import com.flaringapp.coursework2021.app.common.withMainContext
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
-import com.flaringapp.coursework2021.data.repository.tenants.RentsRepository
-import com.flaringapp.coursework2021.data.repository.tenants.models.Rent
+import com.flaringapp.coursework2021.data.repository.tenants.RentalsRepository
+import com.flaringapp.coursework2021.data.repository.tenants.models.AddRental
+import com.flaringapp.coursework2021.data.repository.tenants.models.Rental
 import com.flaringapp.coursework2021.data.repository.tenants.models.Tenant
 import com.flaringapp.coursework2021.data.text.TextProvider
 import com.flaringapp.coursework2021.presentation.features.tenants.RoomTenantsParams
@@ -16,7 +17,7 @@ import com.flaringapp.coursework2021.presentation.features.tenants.models.Tenant
 import com.flaringapp.coursework2021.presentation.utils.common.SingleLiveEvent
 
 class TenantsModelImpl(
-    private val repository: RentsRepository,
+    private val repository: RentalsRepository,
     private val textProvider: TextProvider
 ): TenantsModel() {
 
@@ -35,7 +36,7 @@ class TenantsModelImpl(
 
     private var maxTenants = 1
 
-    private val rents: MutableList<Rent> = mutableListOf()
+    private val rentals: MutableList<Rental> = mutableListOf()
 
     private var pendingRemoveRentId: String? = null
 
@@ -46,41 +47,41 @@ class TenantsModelImpl(
     }
 
     override fun loadData() {
-        loadRents()
+        loadRentals()
     }
 
     override fun requestAddNewTenant() {
-        if (rents.size >= maxTenants) return
+        if (rentals.size >= maxTenants) return
         openAddNewTenantData.value = roomName
     }
 
     override fun addNewTenant(resident: Resident) {
         val tenant = Tenant(resident)
-        addRent(tenant)
+        addRental(tenant)
     }
 
     override fun removeTenant(id: String) {
-        val tenant: Tenant = rents.find { it.id == id }?.tenant ?: return
+        val tenant: Tenant = rentals.find { it.id == id }?.tenant ?: return
         pendingRemoveRentId = id
         openConfirmRemoveTenantData.value = tenant.formatNameSurname(textProvider).toString()
     }
 
     override fun confirmRemoveTenant() {
         val rentId = pendingRemoveRentId ?: return
-        val rent = rents.find { it.id == rentId } ?: return
+        val rent = rentals.find { it.id == rentId } ?: return
         deleteRent(rent)
     }
 
-    private fun loadRents() {
+    private fun loadRentals() {
         viewModelScope.launchOnIO {
-            val loadedRents = safeCall {
-                repository.getRents(roomId)
+            val loadedRentals = safeCall {
+                repository.getRentalsByRoom(roomId)
             } ?: return@launchOnIO
 
-            val viewData = loadedRents.map { it.toViewData() }
+            val viewData = loadedRentals.map { it.toViewData() }
 
             withMainContext {
-                rents.clearAndAdd(loadedRents)
+                rentals.clearAndAdd(loadedRentals)
 
                 tenantsData.value = viewData
                 updateCanAddTenants()
@@ -88,39 +89,40 @@ class TenantsModelImpl(
         }
     }
 
-    private fun addRent(tenant: Tenant) {
+    private fun addRental(tenant: Tenant) {
         viewModelScope.launchOnIO {
-            val rent = safeCall {
-                repository.addRent(roomId, tenant)
+            val addRental = AddRental(roomId, tenant.residentId)
+            val rental = safeCall {
+                repository.addRental(addRental)
             } ?: return@launchOnIO
 
-            val viewData = rent.toViewData()
+            val viewData = rental.toViewData()
 
             withMainContext {
-                rents.add(rent)
+                rentals.add(rental)
                 tenantAddedData.value = viewData
                 updateCanAddTenants()
             }
         }
     }
 
-    private fun deleteRent(rent: Rent) {
+    private fun deleteRent(rental: Rental) {
         viewModelScope.launchOnIO {
-            safeCall { repository.removeRent(rent.id) } ?: return@launchOnIO
+            safeCall { repository.removeRental(rental.id) } ?: return@launchOnIO
 
             withMainContext {
-                rents.removeFirst { it.id == rent.id }
-                tenantRemovedData.value = rent.id
+                rentals.removeFirst { it.id == rental.id }
+                tenantRemovedData.value = rental.id
                 updateCanAddTenants()
             }
         }
     }
 
     private fun updateCanAddTenants() {
-        canAddTenantsData.value = rents.size < maxTenants
+        canAddTenantsData.value = rentals.size < maxTenants
     }
 
-    private fun Rent.toViewData() = TenantViewData(
+    private fun Rental.toViewData() = TenantViewData(
         id,
         textProvider.formatNameSurname(tenant.residentName, tenant.residentSurname)
     )

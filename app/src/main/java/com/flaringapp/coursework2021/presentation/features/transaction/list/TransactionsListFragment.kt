@@ -1,5 +1,6 @@
 package com.flaringapp.coursework2021.presentation.features.transaction.list
 
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.databinding.FragmentTransactionsListBinding
@@ -50,7 +51,7 @@ class TransactionsListFragment : ModelledFragment(R.layout.fragment_transactions
     }
 
     private fun openCreateTransactionScreen() {
-        // TODO open create transaction screen
+        findNavController().navigate(R.id.action_payments_list_to_create_payment)
     }
 
 }

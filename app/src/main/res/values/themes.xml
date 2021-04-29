@@ -91,7 +91,7 @@
 
     <style name="InputLayout.Filled">
         <item name="boxBackgroundMode">filled</item>
-        <item name="boxBackgroundColor">@color/input</item>
+        <item name="boxBackgroundColor">@color/color_input</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
     </style>

@@ -16,3 +16,20 @@ fun CoroutineScope.startLoadingTask(
         withMainContext { loadingData.value = false }
     }
 }
+
+fun CoroutineScope.startLoadingTaskInverted(
+    loadingData: MutableLiveData<Boolean>,
+    task: suspend () -> Unit
+): Job {
+    return startLoadingTask(
+        object : MutableLiveData<Boolean>() {
+            override fun setValue(value: Boolean?) {
+                loadingData.value = value?.let { !it }
+            }
+            override fun postValue(value: Boolean?) {
+                loadingData.postValue(value?.let { !it })
+            }
+        },
+        task
+    )
+}
