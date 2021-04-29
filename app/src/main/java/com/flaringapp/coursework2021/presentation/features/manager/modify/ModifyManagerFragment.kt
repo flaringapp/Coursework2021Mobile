@@ -74,13 +74,13 @@ class ModifyManagerFragment : ModelledFragment(R.layout.fragment_manager_modify)
             binding.layoutInputName.error = nameError?.let { getString(it) }
         }
         surnameErrorData.observe(viewLifecycleOwner) { surnameError ->
-            binding.inputSurname.error = surnameError?.let { getString(it) }
+            binding.layoutInputSurname.error = surnameError?.let { getString(it) }
         }
         emailErrorData.observe(viewLifecycleOwner) { emailError ->
-            binding.inputEmail.error = emailError?.let { getString(it) }
+            binding.layoutInputEmail.error = emailError?.let { getString(it) }
         }
         buildingErrorData.observe(viewLifecycleOwner) { buildingError ->
-            binding.inputBuilding.error = buildingError?.let { getString(it) }
+            binding.layoutInputBuilding.error = buildingError?.let { getString(it) }
         }
 
         loadingData.observe(viewLifecycleOwner) { isLoading ->
@@ -88,11 +88,11 @@ class ModifyManagerFragment : ModelledFragment(R.layout.fragment_manager_modify)
             binding.buttonSubmit.isEnabled = !isLoading
             binding.buttonSubmit.isVisibleAndAnimateProgressBar = !isLoading
             listOf(
-                binding.inputName,
-                binding.inputSurname,
-                binding.inputEmail,
-                binding.inputDescription,
-                binding.inputBuilding,
+                binding.layoutInputName,
+                binding.layoutInputSurname,
+                binding.layoutInputEmail,
+                binding.layoutInputDescription,
+                binding.layoutInputBuilding,
             ).forEach { it.isEnabled = !isLoading }
         }
 

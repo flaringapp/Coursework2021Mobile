@@ -94,9 +94,6 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
         areaData.observe(viewLifecycleOwner) { area ->
             binding.inputArea.setText(area)
         }
-        areaData.observe(viewLifecycleOwner) { area ->
-            binding.inputArea.setText(area)
-        }
 
         nameErrorData.observe(viewLifecycleOwner) { nameError ->
             binding.layoutInputName.error = nameError?.let { getString(it) }

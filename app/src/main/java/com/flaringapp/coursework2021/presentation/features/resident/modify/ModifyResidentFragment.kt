@@ -68,10 +68,10 @@ class ModifyResidentFragment : ModelledFragment(R.layout.fragment_resident_modif
             binding.layoutInputName.error = nameError?.let { getString(it) }
         }
         surnameErrorData.observe(viewLifecycleOwner) { surnameError ->
-            binding.inputSurname.error = surnameError?.let { getString(it) }
+            binding.layoutInputSurname.error = surnameError?.let { getString(it) }
         }
         emailErrorData.observe(viewLifecycleOwner) { emailError ->
-            binding.inputEmail.error = emailError?.let { getString(it) }
+            binding.layoutInputEmail.error = emailError?.let { getString(it) }
         }
 
         loadingData.observe(viewLifecycleOwner) { isLoading ->
@@ -79,10 +79,10 @@ class ModifyResidentFragment : ModelledFragment(R.layout.fragment_resident_modif
             binding.buttonSubmit.isEnabled = !isLoading
             binding.buttonSubmit.isVisibleAndAnimateProgressBar = !isLoading
             listOf(
-                binding.inputName,
-                binding.inputSurname,
-                binding.inputEmail,
-                binding.inputDescription,
+                binding.layoutInputName,
+                binding.layoutInputSurname,
+                binding.layoutInputEmail,
+                binding.layoutInputDescription,
             ).forEach { it.isEnabled = !isLoading }
         }
 
