@@ -2,6 +2,8 @@ package com.flaringapp.coursework2021.data.network
 
 import android.util.Log
 import com.flaringapp.coursework2021.app.Constants
+import com.flaringapp.coursework2021.data.common.json.DateJsonAdapter
+import com.flaringapp.coursework2021.data.common.json.DateTimeJsonAdapter
 import com.flaringapp.coursework2021.data.network.features.buildings.BuildingsApiService
 import com.flaringapp.coursework2021.data.network.features.managers.ManagersApiService
 import com.flaringapp.coursework2021.data.network.features.profile.ProfileApiService
@@ -15,6 +17,7 @@ import com.flaringapp.coursework2021.data.network.modifiers.RequestDataCache
 import com.flaringapp.coursework2021.data.network.modifiers.modifier.RequestModifier
 import com.flaringapp.coursework2021.data.network.modifiers.modifier.RequestTokenAppender
 import com.flaringapp.coursework2021.data.network.modifiers.setupModifiersCallAdapterFactory
+import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -25,6 +28,12 @@ class RetrofitAdapter {
 
     companion object {
         private const val LOGGER_TAG = "Http"
+
+        private val moshi = Moshi.Builder()
+            .add(DateJsonAdapter())
+            .add(DateTimeJsonAdapter())
+            .build()
+
     }
 
     val profileService: ProfileApiService = createClientAutoToken(NetworkConstants.profile)
@@ -54,7 +63,7 @@ class RetrofitAdapter {
         return Retrofit.Builder()
             .client(createHttpClient(dataCache))
             .baseUrl(NetworkConstants.serverUrl + prefix)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .withModifiers(dataCache, modifiers)
             .build()
             .setupModifiersCallAdapterFactory()
