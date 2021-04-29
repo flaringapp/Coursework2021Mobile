@@ -11,7 +11,7 @@ import com.flaringapp.coursework2021.data.repository.entity.models.GeoLocation
 import com.flaringapp.coursework2021.data.repository.entity.models.Room
 import com.flaringapp.coursework2021.data.repository.entity.models.RoomType
 
-private val roomTypeKeys = mapOf(
+val roomTypeKeys = mapOf(
     RoomType.OpenSpace to "open_space",
     RoomType.Private to "private",
 )
