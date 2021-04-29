@@ -24,6 +24,9 @@ class CreateTransactionFragment : ModelledFragment(R.layout.fragment_create_tran
     )
 
     override fun initViews() = with(binding) {
+        pickerWorkplacesCount.onAmountChange = { monthsCount ->
+            model.handleMonthCountChanged(monthsCount)
+        }
         buttonSubmit.setOnClickListener {
             model.createTransaction()
         }
@@ -54,6 +57,10 @@ class CreateTransactionFragment : ModelledFragment(R.layout.fragment_create_tran
         rentalsAvailableData.observe(viewLifecycleOwner) { rentalsAvailable ->
             binding.layoutInputRental.isEnabled = rentalsAvailable
             binding.inputRental.isEnabled = rentalsAvailable
+        }
+
+        priceData.observe(viewLifecycleOwner) { price ->
+            binding.textMoneyAmount.text = price
         }
 
         loadingData.observe(viewLifecycleOwner) { isLoading ->

@@ -1,4 +1,3 @@
-
 package com.flaringapp.coursework2021.presentation.features.transaction.create.model
 
 import androidx.lifecycle.MutableLiveData
@@ -38,6 +37,9 @@ class CreateTransactionModelImpl(
 
     override val residentsAvailableData = MutableLiveData(false)
     override val rentalsAvailableData = MutableLiveData(false)
+
+    override val priceData = MutableLiveData<CharSequence>()
+
     override val loadingData = MutableLiveData(false)
 
     override val closeScreenData = SingleLiveEvent<Unit>()
@@ -57,6 +59,8 @@ class CreateTransactionModelImpl(
         editor.setup()
 
         loadResidents()
+
+        updatePrice()
     }
 
     override fun handleResidentChanged(id: String) {
@@ -75,16 +79,21 @@ class CreateTransactionModelImpl(
         rentalsAvailableData.value = false
 
         loadRentals(id)
+
+        updatePrice()
     }
 
     override fun handleRentalChanged(id: String) {
         val rental = rentals.find { it.id == id } ?: return
         editor.rentalId = id
         editor.rentalName = rental.room.roomName
+
+        updatePrice()
     }
 
     override fun handleMonthCountChanged(monthsCount: Int) {
-        TODO("Not yet implemented")
+        editor.monthsCount = monthsCount
+        updatePrice()
     }
 
     override fun createTransaction() {
@@ -150,6 +159,24 @@ class CreateTransactionModelImpl(
                 closeScreenData.value = Unit
             }
         }
+    }
+
+    private fun updatePrice() {
+        val price = resolveRentalPrice()
+        val text =
+            if (price == null) textProvider.emptyPriceText()
+            else textProvider.formatPrice(price)
+        priceData.value = text
+    }
+
+    private fun resolveRentalPrice(): Int? {
+        val rentalId = editor.rentalId ?: return null
+        val rental = rentals.find { it.id == rentalId } ?: return null
+        return calculateRentalPrice(rental, editor.monthsCount)
+    }
+
+    private fun calculateRentalPrice(rental: Rental, monthsCount: Int): Int {
+        return rental.room.roomPrice * monthsCount
     }
 
     private fun isValid(): Boolean {

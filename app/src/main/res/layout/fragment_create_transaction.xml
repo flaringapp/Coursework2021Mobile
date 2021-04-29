@@ -67,15 +67,28 @@
             android:id="@+id/pickerWorkplacesCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity="center_horizontal"
             app:amountMinValue="1"
             app:amountDefaultValue="1"
             app:amountMaxValue="12" />
 
+        <TextView
+            style="@style/Text.Header"
+            android:id="@+id/textMoneyAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="32sp"
+            tools:text="$ 100.00" />
+
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
 
             <LinearLayout
                 android:id="@+id/layoutSubmit"
@@ -83,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1"
                 android:gravity="center_horizontal"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:paddingBottom="24dp"
                 android:clipToPadding="false">
 

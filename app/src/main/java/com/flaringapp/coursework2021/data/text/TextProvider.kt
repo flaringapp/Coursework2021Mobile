@@ -25,6 +25,7 @@ interface TextProvider {
 
     fun formatPrice(price: Int): CharSequence
     fun formatPriceWithPrefix(price: Int): CharSequence
+    fun emptyPriceText(): CharSequence
 
     fun formatDate(date: LocalDate): CharSequence
     fun formatDateTime(dateTime: LocalDateTime): CharSequence

@@ -17,6 +17,8 @@ abstract class CreateTransactionModel: BaseViewModel() {
     abstract val residentsAvailableData: LiveData<Boolean>
     abstract val rentalsAvailableData: LiveData<Boolean>
 
+    abstract val priceData: LiveData<CharSequence>
+
     abstract val loadingData: LiveData<Boolean>
 
     abstract val closeScreenData: LiveData<Unit>

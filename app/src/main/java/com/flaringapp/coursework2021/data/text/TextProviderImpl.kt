@@ -53,6 +53,10 @@ class TextProviderImpl(
         return "${getString(R.string.currency)} ${formatPrice(price)}"
     }
 
+    override fun emptyPriceText(): CharSequence {
+        return getText(R.string.no_price)
+    }
+
     override fun formatDate(date: LocalDate): CharSequence {
         return DATE_FORMAT.asFormat().format(date)
     }

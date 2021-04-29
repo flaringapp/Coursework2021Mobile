@@ -2,6 +2,7 @@
     <string name="app_name">Coworking</string>
 
     <string name="currency">"\$"</string>
+    <string name="no_price">"-.--"</string>
 
     <!-- Common -->
     <string name="ok">OK</string>
