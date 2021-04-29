@@ -166,6 +166,10 @@
         <item name="android:outlineProvider">none</item>
     </style>
 
+    <style name="Button.Bottom">
+        <item name="android:background">@drawable/bg_button_bottom</item>
+    </style>
+
     <!-- Menu -->
 
     <style name="MenuItemLayoutRow">

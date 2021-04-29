@@ -2,6 +2,8 @@
 <resources>
 
     <dimen name="button_radius">8dp</dimen>
+    <dimen name="button_bottom_radius">12dp</dimen>
+    <dimen name="button_bottom_radius_negated">-12dp</dimen>
 
     <dimen name="menu_spacing">24dp</dimen>
 

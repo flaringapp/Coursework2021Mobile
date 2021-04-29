@@ -138,6 +138,12 @@
     <string name="title_select_resident">Select a resident</string>
     <string name="hint_select_resident">Enter resident name</string>
 
+    <!-- Transactions -->
+    <string name="title_payments">Payments</string>
+    <string name="button_new_transaction">New transaction</string>
+    <string name="message_payment_private_room">Private room rent payment</string>
+    <string name="message_payment_open_space">Workplace in open space payment</string>
+
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>
         <item quantity="one">%d workplace</item>

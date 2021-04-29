@@ -3,6 +3,8 @@ package com.flaringapp.coursework2021.data.text
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import com.flaringapp.coursework2021.data.repository.entity.models.GeoLocation
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 interface TextProvider {
 
@@ -23,5 +25,8 @@ interface TextProvider {
 
     fun formatPrice(price: Int): CharSequence
     fun formatPriceWithPrefix(price: Int): CharSequence
+
+    fun formatDate(date: LocalDate): CharSequence
+    fun formatDateTime(dateTime: LocalDateTime): CharSequence
 
 }

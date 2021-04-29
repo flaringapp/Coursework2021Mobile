@@ -35,6 +35,11 @@ fun RecyclerView.postScrollToBottom() {
     }
 }
 
+fun RecyclerView.postScrollToTop() {
+    post {
+        smoothScrollToPosition(0)
+    }
+}
 
 fun Context.dpi(dp: Float): Int {
     return resources.dp(dp).toInt()

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        style="@style/Text.WithIcon"
+        android:id="@+id/textName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_resident"
+        tools:text="Andrew Shpek"/>
+
+    <TextView
+        style="@style/Text.WithIcon"
+        android:id="@+id/textRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:drawableStartCompat="@drawable/ic_location"
+        tools:text="Room open space 2, floor 3"/>
+
+    <TextView
+        style="@style/Text.WithIcon"
+        android:id="@+id/textDateRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:drawableStartCompat="@drawable/ic_date"
+        tools:text="01.01.2021 - 01.02.2021"/>
+
+    <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        tools:text="Workplace payment"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            style="@style/Text.Accent"
+            android:id="@+id/textAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            tools:text="$ 300.00" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            style="@style/Text.Small"
+            android:id="@+id/textTransactionTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="24.02.2021 14:53" />
+
+    </LinearLayout>
+
+</LinearLayout>

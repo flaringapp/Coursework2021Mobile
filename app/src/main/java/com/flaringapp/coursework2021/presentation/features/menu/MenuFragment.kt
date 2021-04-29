@@ -48,6 +48,7 @@ class MenuFragment: ModelledFragment(R.layout.fragment_menu) {
     }
 
     private fun openPayments() {
+        findNavController().navigate(R.id.action_menu_to_payments)
     }
 
     private fun openBuildingDashboard() {

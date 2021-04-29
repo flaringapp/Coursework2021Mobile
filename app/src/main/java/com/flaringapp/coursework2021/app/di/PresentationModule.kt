@@ -24,6 +24,8 @@ import com.flaringapp.coursework2021.presentation.features.searchresident.model.
 import com.flaringapp.coursework2021.presentation.features.searchresident.model.SearchResidentModelImpl
 import com.flaringapp.coursework2021.presentation.features.tenants.model.TenantsModel
 import com.flaringapp.coursework2021.presentation.features.tenants.model.TenantsModelImpl
+import com.flaringapp.coursework2021.presentation.features.transaction.list.model.TransactionModelImpl
+import com.flaringapp.coursework2021.presentation.features.transaction.list.model.TransactionsModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -52,5 +54,7 @@ val PresentationModule = module {
     viewModel<TenantsModel> { TenantsModelImpl(get(), get()) }
 
     viewModel<SearchResidentModel> { SearchResidentModelImpl(get(), get()) }
+
+    viewModel<TransactionsModel> { TransactionModelImpl(get(), get(), get()) }
 
 }

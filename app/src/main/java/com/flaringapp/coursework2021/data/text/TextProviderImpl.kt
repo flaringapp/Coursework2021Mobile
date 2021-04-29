@@ -2,12 +2,22 @@ package com.flaringapp.coursework2021.data.text
 
 import android.content.Context
 import com.flaringapp.coursework2021.R
+import com.flaringapp.coursework2021.app.common.runtimeLocale
 import com.flaringapp.coursework2021.data.repository.entity.models.GeoLocation
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class TextProviderImpl(
     private val context: Context
 ): TextProvider {
+
+    companion object {
+        private const val DATE_FORMAT = "dd.MM.yyyy"
+        private const val DATE_TIME_FORMAT = "HH:mm dd.MM.yyyy"
+    }
 
     private val priceFormat = DecimalFormat("0.00")
 
@@ -42,4 +52,18 @@ class TextProviderImpl(
     override fun formatPriceWithPrefix(price: Int): CharSequence {
         return "${getString(R.string.currency)} ${formatPrice(price)}"
     }
+
+    override fun formatDate(date: LocalDate): CharSequence {
+        return DATE_FORMAT.asFormat().format(date)
+    }
+
+    override fun formatDateTime(dateTime: LocalDateTime): CharSequence {
+        return DATE_TIME_FORMAT.asFormat().format(dateTime)
+    }
+
+    private fun String.asFormat() = SimpleDateFormat(this, runtimeLocale(context))
+
+    private fun String.asDateTimeFormatter() =
+        DateTimeFormatter.ofPattern(this).withLocale(runtimeLocale(context))
+
 }
