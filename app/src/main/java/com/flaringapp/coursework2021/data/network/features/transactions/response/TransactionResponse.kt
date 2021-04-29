@@ -26,8 +26,6 @@ class TransactionResponse(
     val roomPrice: Int,
     @Json(name = "manager_id")
     val managerId: String,
-    @Json(name = "manager_id")
-    val manager: String,
     @Json(name = "date_paid_from")
     val dateFrom: LocalDate,
     @Json(name = "date_paid_to")
