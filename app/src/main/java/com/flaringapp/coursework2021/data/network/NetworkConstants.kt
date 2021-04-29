@@ -13,5 +13,6 @@ object NetworkConstants {
     const val managers: String = ""
     const val residents: String = ""
     const val rents: String = ""
+    const val transactions: String = ""
 
 }

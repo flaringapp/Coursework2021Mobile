@@ -7,6 +7,8 @@ import com.flaringapp.coursework2021.data.network.features.profile.ProfileSource
 import com.flaringapp.coursework2021.data.network.features.rents.RentsSourceModel
 import com.flaringapp.coursework2021.data.network.features.residents.ResidentsSourceModel
 import com.flaringapp.coursework2021.data.network.features.rooms.RoomsSourceModel
+import com.flaringapp.coursework2021.data.network.features.transactions.TransactionsSourceModel
+import com.flaringapp.coursework2021.data.network.features.transactions.TransactionsSourceModelImpl
 import com.flaringapp.coursework2021.mock.*
 import org.koin.dsl.module
 
@@ -20,6 +22,7 @@ val NetworkModule = module {
     single { adapter.managersService }
     single { adapter.residentsService }
     single { adapter.rentsService }
+    single { adapter.transactionsService }
 
 //    single<ProfileSourceModel> { ProfileSourceModelImpl(get()) }
 //    single<BuildingsSourceModel> { BuildingsSourceModelImpl(get()) }
@@ -27,6 +30,7 @@ val NetworkModule = module {
 //    single<ManagersSourceModel> { ManagersSourceModelImpl(get()) }
 //    single<ResidentsSourceModel> { ResidentsSourceModelImpl(get()) }
 //    single<RentsSourceModel> { RentsSourceModelImpl(get()) }
+    single<TransactionsSourceModel> { TransactionsSourceModelImpl(get()) }
 
     single<ProfileSourceModel> { ProfileSourceModelMock() }
     single<BuildingsSourceModel> { BuildingsSourceModelMock() }
