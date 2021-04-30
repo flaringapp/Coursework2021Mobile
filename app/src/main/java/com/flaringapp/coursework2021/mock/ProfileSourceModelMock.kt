@@ -13,7 +13,9 @@ class ProfileSourceModelMock : ProfileSourceModel {
                 "Name",
                 "Surname",
                 "namesurname@gmail.com",
-                "token_namesurname"
+                "token_namesurname",
+                "manager",
+                "1"
             )
         )
     }
