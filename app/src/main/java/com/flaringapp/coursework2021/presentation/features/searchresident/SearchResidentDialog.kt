@@ -65,6 +65,11 @@ class SearchResidentDialog : ModelledDialog(R.layout.dialog_search_resident) {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.inputName.showDropDown()
+    }
+
     private fun notifyResidentSelected(resident: Resident) {
         if (isActionNotified) return
         isActionNotified = true
