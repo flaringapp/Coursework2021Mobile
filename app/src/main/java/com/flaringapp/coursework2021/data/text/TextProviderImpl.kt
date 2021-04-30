@@ -66,11 +66,11 @@ class TextProviderImpl(
     }
 
     override fun formatDate(date: LocalDate): CharSequence {
-        return DATE_FORMAT.asFormat().format(date)
+        return DATE_FORMAT.asDateTimeFormatter().format(date)
     }
 
     override fun formatDateTime(dateTime: LocalDateTime): CharSequence {
-        return DATE_TIME_FORMAT.asFormat().format(dateTime)
+        return DATE_TIME_FORMAT.asDateTimeFormatter().format(dateTime)
     }
 
     private fun String.asFormat() = SimpleDateFormat(this, runtimeLocale(context))
