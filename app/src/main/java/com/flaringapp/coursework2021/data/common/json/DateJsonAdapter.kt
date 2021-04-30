@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter
 class DateJsonAdapter : JsonAdapter<LocalDate>() {
 
     companion object {
-        private val FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+        private val FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd")
             .withZone(ZoneOffset.UTC)
     }
 
