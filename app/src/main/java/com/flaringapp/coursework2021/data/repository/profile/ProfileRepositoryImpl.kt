@@ -48,6 +48,7 @@ class ProfileRepositoryImpl(
         )
 
         val userType = parseUserType(dataStorage.userType)
+        ProfileCache.setProfile(profile)
         ProfileCache.setUserType(userType)
         userType.setupDependencies(profile)
     }
