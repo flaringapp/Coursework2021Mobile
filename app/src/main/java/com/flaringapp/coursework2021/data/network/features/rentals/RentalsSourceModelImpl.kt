@@ -24,7 +24,7 @@ class RentalsSourceModelImpl(
     }
 
     override suspend fun getResidentRentals(residentId: String): CallResultList<RentalResponse> {
-        return api.getResidentRentals()
+        return api.getResidentRentals(residentId)
             .validateList()
     }
 
