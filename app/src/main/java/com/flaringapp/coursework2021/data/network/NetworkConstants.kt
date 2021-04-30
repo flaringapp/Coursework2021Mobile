@@ -8,11 +8,11 @@ object NetworkConstants {
 
     const val profile: String = "user/"
 
-    const val buildings: String = "locations/"
-    const val rooms: String = "rooms/"
-    const val managers: String = "managers/"
-    const val residents: String = "users/"
-    const val rentals: String = "rentals/"
-    const val transactions: String = "transactions/"
+    const val buildings: String = ""
+    const val rooms: String = ""
+    const val managers: String = ""
+    const val residents: String = ""
+    const val rentals: String = ""
+    const val transactions: String = ""
 
 }

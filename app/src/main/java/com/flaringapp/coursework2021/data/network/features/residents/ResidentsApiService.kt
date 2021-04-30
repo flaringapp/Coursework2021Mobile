@@ -9,24 +9,23 @@ import retrofit2.http.*
 
 interface ResidentsApiService {
 
-    @GET("residents")
-    fun getResidents(
-        @Query("building_id") buildingId: String? = null
+    @GET("users")
+    suspend fun getResidents(
+        @Query("locationId") buildingId: String? = null
     ): ApiResponseList<ResidentResponse>
 
-    @PUT("resident")
-    fun addResident(
+    @PUT("user")
+    suspend fun addResident(
         @Body resident: ResidentRequest
     ): ApiResponse<ResidentResponse>
 
-    @POST("resident")
-    fun editResident(
+    @POST("user")
+    suspend fun editResident(
         @Body resident: ResidentRequest
     ): ApiResponse<ResidentResponse>
 
-    @DELETE("resident")
-    @FormUrlEncoded
-    fun deleteResident(
+    @DELETE("user")
+    suspend fun deleteResident(
         @Query("id") id: String
     ): ApiResponseSuccess
 

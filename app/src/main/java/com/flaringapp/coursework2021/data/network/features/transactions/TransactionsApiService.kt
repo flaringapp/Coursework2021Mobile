@@ -13,7 +13,7 @@ interface TransactionsApiService {
 
     @GET("transactions")
     suspend fun getTransactions(
-        @Query("manager_id") managerId: String? = null
+        @Query("managerId") managerId: String? = null
     ): ApiResponseList<TransactionResponse>
 
     @PUT("transaction")

@@ -46,18 +46,18 @@ private fun <T> ValidateableResponse<out T>?.parseResult(
 }
 
 private fun <T> ResponseBody?.parseErrorResult(): CallResult<T> {
-    if (this == null) return CallResult.UnknownError()
-    return convertErrorBody().toCallResult()
+    val message = this?.source()?.readUtf8() ?: ""
+    return CallResult.Error(CallResult.Error.API_ERROR, message)
 }
 
-private fun ResponseBody.convertErrorBody(): ErrorResponseContents? {
-    return try {
-        val source = source()
-        errorResponseAdapter.fromJson(source)?.error
-    } catch (exception: Exception) {
-        null
-    }
-}
+//private fun ResponseBody.convertErrorBody(): ErrorResponseContents? {
+//    return try {
+//        val source = source()
+//        errorResponseAdapter.fromJson(source)?.error
+//    } catch (exception: Exception) {
+//        null
+//    }
+//}
 
 private fun <T> ErrorResponseContents?.toCallResult(): CallResult<T> {
     if (this == null) return CallResult.UnknownError()

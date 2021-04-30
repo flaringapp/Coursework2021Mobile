@@ -17,6 +17,10 @@ sealed class CallResult<T> {
         val message: String
     ) : CallResult<T>() {
 
+        companion object {
+            const val API_ERROR = "api_error"
+        }
+
         constructor(message: String) : this(null, message)
     }
 

@@ -10,23 +10,22 @@ import retrofit2.http.*
 interface RoomsApiService {
 
     @GET("rooms")
-    fun getRooms(
-        @Query("building_id") buildingId: String? = null
+    suspend fun getRooms(
+        @Query("locationId") buildingId: String? = null
     ): ApiResponseList<RoomResponse>
 
     @PUT("room")
-    fun addRoom(
+    suspend fun addRoom(
         @Body room: RoomRequest
     ): ApiResponse<RoomResponse>
 
     @POST("room")
-    fun editRoom(
+    suspend fun editRoom(
         @Body room: RoomRequest
     ): ApiResponse<RoomResponse>
 
     @DELETE("room")
-    @FormUrlEncoded
-    fun deleteRoom(
+    suspend fun deleteRoom(
         @Query("id") id: String
     ): ApiResponseSuccess
 

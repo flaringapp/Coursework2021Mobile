@@ -9,22 +9,21 @@ import retrofit2.http.*
 
 interface BuildingsApiService {
 
-    @GET("buildings")
-    fun getBuildings(): ApiResponseList<BuildingsResponse>
+    @GET("locations")
+    suspend fun getBuildings(): ApiResponseList<BuildingsResponse>
 
-    @PUT("building")
-    fun addBuilding(
+    @PUT("location")
+    suspend fun addBuilding(
         @Body building: BuildingRequest
     ): ApiResponse<BuildingsResponse>
 
-    @POST("building")
-    fun editBuilding(
+    @POST("location")
+    suspend fun editBuilding(
         @Body building: BuildingRequest
     ): ApiResponse<BuildingsResponse>
 
-    @DELETE("building")
-    @FormUrlEncoded
-    fun deleteBuilding(
+    @DELETE("location")
+    suspend fun deleteBuilding(
         @Query("id") id: String
     ): ApiResponseSuccess
 

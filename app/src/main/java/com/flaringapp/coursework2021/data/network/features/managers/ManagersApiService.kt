@@ -10,21 +10,20 @@ import retrofit2.http.*
 interface ManagersApiService {
 
     @GET("managers")
-    fun getManagers(): ApiResponseList<ManagerResponse>
+    suspend fun getManagers(): ApiResponseList<ManagerResponse>
 
     @PUT("manager")
-    fun addManager(
+    suspend fun addManager(
         @Body manager: ManagerRequest
     ): ApiResponse<ManagerResponse>
 
     @POST("manager")
-    fun editManager(
+    suspend fun editManager(
         @Body manager: ManagerRequest
     ): ApiResponse<ManagerResponse>
 
     @DELETE("manager")
-    @FormUrlEncoded
-    fun deleteManager(
+    suspend fun deleteManager(
         @Query("id") id: String
     ): ApiResponseSuccess
 

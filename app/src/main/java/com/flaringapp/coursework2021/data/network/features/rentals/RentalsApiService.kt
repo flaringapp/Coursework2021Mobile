@@ -10,33 +10,30 @@ import retrofit2.http.*
 interface RentalsApiService {
 
     @GET("rentals")
-    fun getRentals(
-        @Query("room_id") roomId: String? = null
+    suspend fun getRentals(): ApiResponseList<RentalResponse>
+
+    @GET("rentals")
+    suspend fun getRoomRentals(
+        @Query("roomId") roomId: String? = null
     ): ApiResponseList<RentalResponse>
 
     @GET("rentals")
-    fun getRoomRentals(
-        @Query("room_id") roomId: String? = null
-    ): ApiResponseList<RentalResponse>
-
-    @GET("rentals")
-    fun getResidentRentals(
-        @Query("resident_id") residentId: String? = null
+    suspend fun getResidentRentals(
+        @Query("residentId") residentId: String? = null
     ): ApiResponseList<RentalResponse>
 
     @PUT("rental")
-    fun addRental(
+    suspend fun addRental(
         @Body rental: RentalRequest
     ): ApiResponse<RentalResponse>
 
     @POST("rental")
-    fun editRental(
+    suspend fun editRental(
         @Body rental: RentalRequest
     ): ApiResponse<RentalResponse>
 
     @DELETE("rental")
-    @FormUrlEncoded
-    fun deleteRental(
+    suspend fun deleteRental(
         @Query("id") id: String
     ): ApiResponseSuccess
 

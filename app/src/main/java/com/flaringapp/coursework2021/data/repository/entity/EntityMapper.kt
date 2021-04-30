@@ -38,6 +38,7 @@ fun BuildingsResponse.parseLocation(): GeoLocation? {
 
 fun Room.asRequest() = RoomRequest(
     id,
+    buildingId,
     name,
     description,
     roomTypeKeys[type]!!,
