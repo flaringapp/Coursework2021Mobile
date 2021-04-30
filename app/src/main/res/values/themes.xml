@@ -177,6 +177,7 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:clipChildren">false</item>
         <item name="bll_children_spacing">@dimen/menu_spacing</item>
+        <item name="android:weightSum">2</item>
     </style>
 
     <style name="MenuItemLayout">

@@ -11,6 +11,7 @@ class ManagerRequest(
     @Json(name = "last_name")
     val surname: String,
     val email: String,
+    val password: String?,
     val description: String,
     @Json(name = "location_id")
     val buildingId: String,

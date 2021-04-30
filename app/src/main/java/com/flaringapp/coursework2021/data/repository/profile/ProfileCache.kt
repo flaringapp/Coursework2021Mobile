@@ -17,15 +17,15 @@ object ProfileCache {
     var managerInfo: ManagerInfo? = null
         private set
 
-    fun setProfile(profile: Profile) {
+    fun setProfile(profile: Profile?) {
         this.mProfile = profile
     }
 
-    fun setUserType(userType: UserType) {
+    fun setUserType(userType: UserType?) {
         this.mUserType = userType
     }
 
-    fun setManagerInfo(managerInfo: ManagerInfo) {
+    fun setManagerInfo(managerInfo: ManagerInfo?) {
         this.managerInfo = managerInfo
     }
 

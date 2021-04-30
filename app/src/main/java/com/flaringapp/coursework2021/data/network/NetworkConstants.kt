@@ -6,7 +6,7 @@ object NetworkConstants {
 
     const val serverUrl: String = "https://coursework2021api.azurewebsites.net/api/"
 
-    const val profile: String = "user/"
+    const val profile: String = ""
 
     const val buildings: String = ""
     const val rooms: String = ""

@@ -9,6 +9,7 @@ fun Manager.asRequest() = ManagerRequest(
     name,
     surname,
     email,
+    password,
     description,
     buildingId,
 )
@@ -18,6 +19,7 @@ fun ManagerResponse.parseManager() = Manager(
     name,
     surname,
     email,
+    null,
     description ?: "",
     buildingId,
     buildingName

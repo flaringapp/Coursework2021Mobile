@@ -40,6 +40,9 @@ class ModifyManagerFragment : ModelledFragment(R.layout.fragment_manager_modify)
         inputEmail.doAfterTextChanged {
             model.handleEmailChanged(it.toString())
         }
+        inputPassword.doAfterTextChanged {
+            model.handlePasswordChanged(it.toString())
+        }
         inputDescription.doAfterTextChanged {
             model.handleDescriptionChanged(it.toString())
         }
@@ -78,6 +81,9 @@ class ModifyManagerFragment : ModelledFragment(R.layout.fragment_manager_modify)
         }
         emailErrorData.observe(viewLifecycleOwner) { emailError ->
             binding.layoutInputEmail.error = emailError?.let { getString(it) }
+        }
+        passwordErrorData.observe(viewLifecycleOwner) { passwordError ->
+            binding.layoutInputPassword.error = passwordError?.let { getString(it) }
         }
         buildingErrorData.observe(viewLifecycleOwner) { buildingError ->
             binding.layoutInputBuilding.error = buildingError?.let { getString(it) }

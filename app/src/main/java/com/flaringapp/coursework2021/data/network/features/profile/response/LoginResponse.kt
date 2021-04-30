@@ -5,12 +5,13 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 class LoginResponse(
-    @Json(name = "uuid")
     val id: String,
+    @Json(name = "first_name")
     val name: String,
+    @Json(name = "last_name")
     val surname: String,
     val email: String,
-    @Json(name = "apiKey")
+    @Json(name = "token")
     val token: String,
     @Json(name = "user_type")
     val userType: String,

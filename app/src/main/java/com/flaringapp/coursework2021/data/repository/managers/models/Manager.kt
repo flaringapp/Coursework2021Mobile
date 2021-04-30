@@ -9,6 +9,7 @@ class Manager(
     val name: String,
     val surname: String,
     val email: String,
+    val password: String?,
     val description: String,
     val buildingId: String,
     val buildingName: String,

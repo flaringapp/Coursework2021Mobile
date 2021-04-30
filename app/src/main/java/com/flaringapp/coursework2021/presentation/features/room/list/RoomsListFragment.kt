@@ -20,6 +20,7 @@ import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour
 import com.flaringapp.coursework2021.presentation.features.room.modify.behaviour.EditRoomBehaviour
 import com.flaringapp.coursework2021.presentation.features.tenants.RoomTenantsParams
 import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
+import com.flaringapp.coursework2021.presentation.utils.postSmoothScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -73,7 +74,7 @@ class RoomsListFragment : ModelledFragment(R.layout.fragment_rooms_list),
         }
         addRoomData.observe(viewLifecycleOwner) { room ->
             adapterAction { addNewItem(room) }
-            binding.recyclerRooms.postScrollToBottom()
+            binding.recyclerRooms.postSmoothScrollToBottom()
         }
         updateRoomData.observe(viewLifecycleOwner) { room ->
             adapterAction { updateItem(room) }

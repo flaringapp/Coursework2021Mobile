@@ -31,6 +31,12 @@ fun TextView.updateCompoundDrawablesWithIntrinsicBounds(
 
 fun RecyclerView.postScrollToBottom() {
     post {
+        scrollToPosition(adapter?.itemCount ?: return@post)
+    }
+}
+
+fun RecyclerView.postSmoothScrollToBottom() {
+    post {
         smoothScrollToPosition(adapter?.itemCount ?: return@post)
     }
 }

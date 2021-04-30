@@ -17,6 +17,7 @@ import com.flaringapp.coursework2021.presentation.features.dialogs.options.model
 import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParams
 import com.flaringapp.coursework2021.presentation.features.dialogs.permission.PermissionDialogParent
 import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
+import com.flaringapp.coursework2021.presentation.utils.postSmoothScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -62,7 +63,7 @@ class BuildingsListFragment : ModelledFragment(R.layout.fragment_buildings_list)
         }
         addBuildingData.observe(viewLifecycleOwner) { building ->
             adapterAction { addNewItem(building) }
-            binding.recyclerBuildings.postScrollToBottom()
+            binding.recyclerBuildings.postSmoothScrollToBottom()
         }
         updateBuildingData.observe(viewLifecycleOwner) { building ->
             adapterAction { updateItem(building) }

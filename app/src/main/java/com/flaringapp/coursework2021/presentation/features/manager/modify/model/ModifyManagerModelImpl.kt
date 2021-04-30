@@ -28,6 +28,7 @@ class ModifyManagerModelImpl(
     override val nameErrorData = SingleLiveEvent<Int?>()
     override val surnameErrorData = SingleLiveEvent<Int?>()
     override val emailErrorData = SingleLiveEvent<Int?>()
+    override val passwordErrorData = SingleLiveEvent<Int?>()
     override val buildingErrorData = SingleLiveEvent<Int?>()
 
     override val loadingData = MutableLiveData(false)
@@ -65,6 +66,11 @@ class ModifyManagerModelImpl(
     override fun handleEmailChanged(email: String) {
         editor.email = email
         emailErrorData.value = null
+    }
+
+    override fun handlePasswordChanged(password: String) {
+        editor.password = password
+        passwordErrorData.value = null
     }
 
     override fun handleDescriptionChanged(description: String) {
@@ -136,6 +142,12 @@ class ModifyManagerModelImpl(
             }
             !editor.email.trim().isValidEmail() -> {
                 emailErrorData.value = R.string.error_manager_email_invalid
+            }
+            behaviour.isPasswordRequired && editor.password.trim().isEmpty() -> {
+                passwordErrorData.value = R.string.error_manager_empty_password
+            }
+            behaviour.isPasswordRequired && editor.password.trim().isEmpty() -> {
+                passwordErrorData.value = R.string.error_manager_empty_password
             }
             editor.coworkingId == null || editor.coworkingName == null -> {
                 buildingErrorData.value = R.string.error_manager_empty_building

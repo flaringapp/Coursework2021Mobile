@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -18,6 +19,7 @@
 
         <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
             style="@style/MenuItemLayoutRow"
+            android:id="@+id/layoutBuildingsAndManager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -66,6 +68,7 @@
 
         <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
             style="@style/MenuItemLayoutRow"
+            android:id="@+id/layoutResidentsAndRooms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -115,9 +118,11 @@
 
         <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
             style="@style/MenuItemLayoutRow"
+            android:id="@+id/layoutPaymentAndDashboards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:weightSum="3">
 
             <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
                 style="@style/MenuItemLayout"
@@ -180,6 +185,16 @@
             </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
 
         </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
+
+        <TextView
+            style="@style/Text.Small"
+            android:id="@+id/textLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_rounded"
+            android:padding="8dp"
+            android:textColor="@color/color_primary_dark"
+            android:text="@string/logout" />
 
     </com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout>
 

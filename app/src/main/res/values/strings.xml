@@ -100,12 +100,15 @@
     <string name="hint_manager_name">Name</string>
     <string name="hint_manager_surname">Surname</string>
     <string name="hint_manager_email">Contact email</string>
+    <string name="hint_manager_password">Password</string>
     <string name="hint_manager_description">Description</string>
     <string name="hint_manager_building">Coworking</string>
     <string name="error_manager_empty_name">Please enter a manager name</string>
     <string name="error_manager_empty_surname">Please enter a manager surname</string>
     <string name="error_manager_empty_email">Please enter a manager email</string>
     <string name="error_manager_email_invalid">Please enter a valid email</string>
+    <string name="error_manager_empty_password">Please enter a manager password</string>
+    <string name="error_manager_password_invalid">Please enter a valid password</string>
     <string name="error_manager_empty_building">Please select an operation coworking</string>
 
     <!-- Residents -->
@@ -153,6 +156,7 @@
     <string name="hint_payment_enter_amount">Enter payment amount</string>
     <string name="error_payment_empty_resident">Please select a resident</string>
     <string name="error_payment_empty_rental">Please select a resident rental</string>
+    <string name="logout">Logout</string>
 
     <plurals name="workplaces">
         <item quantity="zero">No workplaces</item>

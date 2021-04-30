@@ -10,4 +10,14 @@ class DataStorageImpl(context: Context) : Preferences(context, "data_prefs"),
 
     override var userId: String by StringPref("user_id", "")
 
+    override var userType: String by StringPref("user_type", "")
+
+    override var name: String by StringPref("name", "")
+
+    override var surname: String by StringPref("surname", "")
+
+    override var email: String by StringPref("email", "")
+
+    override var buildingId: String by StringPref("building_id", "")
+
 }

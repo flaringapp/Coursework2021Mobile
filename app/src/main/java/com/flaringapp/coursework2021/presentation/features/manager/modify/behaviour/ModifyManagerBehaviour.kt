@@ -10,6 +10,8 @@ interface ModifyManagerBehaviour: Parcelable {
     val manager: Manager?
     val preliminaryData: ManagerEditableData?
 
+    val isPasswordRequired: Boolean
+
     suspend fun modifyManager(manager: Manager): CallResultNothing
 
 }

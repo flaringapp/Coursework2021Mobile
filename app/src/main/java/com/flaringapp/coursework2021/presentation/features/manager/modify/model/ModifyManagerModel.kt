@@ -17,6 +17,7 @@ abstract class ModifyManagerModel: BaseViewModel() {
     abstract val nameErrorData: LiveData<Int?>
     abstract val surnameErrorData: LiveData<Int?>
     abstract val emailErrorData: LiveData<Int?>
+    abstract val passwordErrorData: LiveData<Int?>
     abstract val buildingErrorData: LiveData<Int?>
 
     abstract val loadingData: LiveData<Boolean>
@@ -30,6 +31,7 @@ abstract class ModifyManagerModel: BaseViewModel() {
     abstract fun handleNameChanged(name: String)
     abstract fun handleSurnameChanged(surname: String)
     abstract fun handleEmailChanged(email: String)
+    abstract fun handlePasswordChanged(password: String)
     abstract fun handleDescriptionChanged(description: String)
     abstract fun handleBuildingChanged(id: String)
 

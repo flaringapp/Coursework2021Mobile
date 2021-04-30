@@ -6,6 +6,14 @@ import com.flaringapp.coursework2021.presentation.features.menu.behaviour.displa
 
 abstract class MenuModel: BaseViewModel() {
 
-    abstract val displayModel: LiveData<MenuDisplay>
+    abstract val loginData: LiveData<Unit>
+
+    abstract val displayData: LiveData<MenuDisplay>
+
+    abstract val openRoomsData: LiveData<String>
+
+    abstract fun openRooms()
+
+    abstract fun logout()
 
 }

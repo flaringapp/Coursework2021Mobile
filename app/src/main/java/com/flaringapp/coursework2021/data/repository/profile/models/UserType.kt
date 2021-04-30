@@ -4,6 +4,8 @@ import com.flaringapp.coursework2021.presentation.features.menu.behaviour.MenuBe
 
 interface UserType {
 
+    val key: String
+
     val menuBehavior: MenuBehaviour
 
     fun setupDependencies(profile: Profile)

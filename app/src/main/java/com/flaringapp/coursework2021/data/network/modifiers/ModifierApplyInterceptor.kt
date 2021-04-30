@@ -10,12 +10,13 @@ class ModifierApplyInterceptor(
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
 
+        val requestBuilder = request.newBuilder()
+            .addHeader("Content-Type", "application/json")
+
         val modifier = dataCache.resolveRequestModifier(request)
-        if (modifier != null) {
-            val builder = request.newBuilder()
-            modifier.applyChanges(builder)
-            request = builder.build()
-        }
+        modifier?.applyChanges(requestBuilder)
+
+        request = requestBuilder.build()
 
         return chain.proceed(request)
     }

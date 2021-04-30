@@ -17,6 +17,7 @@ import com.flaringapp.coursework2021.presentation.features.manager.modify.Modify
 import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.CreateManagerBehaviour
 import com.flaringapp.coursework2021.presentation.features.manager.modify.behaviour.EditManagerBehaviour
 import com.flaringapp.coursework2021.presentation.utils.postScrollToBottom
+import com.flaringapp.coursework2021.presentation.utils.postSmoothScrollToBottom
 import com.flaringapp.coursework2021.presentation.utils.recycler.DividerItemDecoration
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -61,7 +62,7 @@ class ManagersListFragment : ModelledFragment(R.layout.fragment_manager_list),
         }
         addManagerData.observe(viewLifecycleOwner) { manager ->
             adapterAction { addNewItem(manager) }
-            binding.recyclerManagers.postScrollToBottom()
+            binding.recyclerManagers.postSmoothScrollToBottom()
         }
         updateManagerData.observe(viewLifecycleOwner) { manager ->
             adapterAction { updateItem(manager) }
@@ -128,14 +129,14 @@ class ManagersListFragment : ModelledFragment(R.layout.fragment_manager_list),
     private fun openCreateManager() {
         goToModifyManager(
             ModifyManagerParams(CreateManagerBehaviour()),
-            getString(R.string.title_create_building)
+            getString(R.string.title_add_manager)
         )
     }
 
     private fun openEditManager(manager: Manager) {
         goToModifyManager(
             ModifyManagerParams(EditManagerBehaviour(manager)),
-            getString(R.string.title_edit_building)
+            getString(R.string.title_edit_manager)
         )
     }
 

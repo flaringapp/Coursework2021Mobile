@@ -10,4 +10,8 @@ interface ProfileRepository {
 
     fun getCurrentProfile(): Profile?
 
+    fun setup()
+
+    fun logout()
+
 }

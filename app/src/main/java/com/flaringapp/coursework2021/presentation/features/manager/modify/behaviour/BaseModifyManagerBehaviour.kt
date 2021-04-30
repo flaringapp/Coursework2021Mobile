@@ -17,4 +17,7 @@ abstract class BaseModifyManagerBehaviour: ModifyManagerBehaviour {
     @IgnoredOnParcel
     override val preliminaryData: ManagerEditableData? = null
 
+    @IgnoredOnParcel
+    override val isPasswordRequired: Boolean = false
+
 }

@@ -6,6 +6,7 @@ class ManagerEditableData(
     var name: String = "",
     var surname: String = "",
     var email: String = "",
+    var password: String = "",
     var description: String = "",
     var coworkingId: String? = null,
     var coworkingName: String? = null,
@@ -21,13 +22,14 @@ class ManagerEditableData(
     )
 
     fun toManager(manager: Manager?) = Manager(
-        manager?.id ?: Manager.NO_ID,
-        name.trim(),
-        surname.trim(),
-        email.trim(),
-        description.trim(),
-        coworkingId!!,
-        coworkingName!!
+        id = manager?.id ?: Manager.NO_ID,
+        name = name.trim(),
+        surname = surname.trim(),
+        email = email.trim(),
+        password = password.trim().takeIf { it.isNotEmpty() },
+        description = description.trim(),
+        buildingId = coworkingId!!,
+        buildingName = coworkingName!!
     )
 
 }

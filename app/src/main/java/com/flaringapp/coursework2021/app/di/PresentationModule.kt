@@ -35,7 +35,7 @@ val PresentationModule = module {
 
     viewModel<LoginModel> { LoginModelImpl(get()) }
 
-    viewModel<MenuModel> { MenuModelImpl(get()) }
+    viewModel<MenuModel> { MenuModelImpl(get(), get()) }
 
     viewModel<BuildingsListModel> { BuildingsListModelImpl(get(), get(), get()) }
 

@@ -7,6 +7,8 @@ import com.flaringapp.coursework2021.presentation.features.menu.behaviour.displa
 
 class UserTypeManager: UserType {
 
+    override val key: String = "manager"
+
     override val menuBehavior: MenuBehaviour = SimpleMenuBehaviour(
         ManagerMenuDisplay()
     )
