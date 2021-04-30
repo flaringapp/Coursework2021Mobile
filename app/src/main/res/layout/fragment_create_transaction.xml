@@ -17,8 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/img_room_modify" />
-
+            android:src="@drawable/img_payments_2" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/InputLayout.Stroke.Dropdown"

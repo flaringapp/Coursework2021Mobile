@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/img_building_modify" />
+            android:src="@drawable/img_resident" />
 
         <com.flaringapp.coursework2021.presentation.utils.betterlinearlayout.BetterLinearLayout
             android:id="@+id/layoutNameSurname"
