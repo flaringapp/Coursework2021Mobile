@@ -101,7 +101,7 @@ class ModifyManagerModelImpl(
 
             val buildingsViewData = ManagerSelectBuildingsViewData(
                 viewBuildings,
-                editor.coworkingName ?: viewBuildings.firstOrNull()?.name
+                editor.coworkingName
             )
 
             withMainContext {
