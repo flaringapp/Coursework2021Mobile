@@ -4,6 +4,7 @@ package com.flaringapp.coursework2021.presentation.features.resident.list.model
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.flaringapp.coursework2021.app.common.*
+import com.flaringapp.coursework2021.data.repository.profile.models.Profile
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepository
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
 import com.flaringapp.coursework2021.data.repository.residents.storage.ResidentsStorage
@@ -13,6 +14,7 @@ import com.flaringapp.coursework2021.presentation.utils.common.SingleLiveEvent
 import com.flaringapp.coursework2021.presentation.utils.valueIfHasObservers
 
 class ResidentsListModelImpl(
+    private val profile: Profile,
     private val residentsRepository: ResidentsRepository,
     residentsStorage: ResidentsStorage,
     private val textProvider: TextProvider,
@@ -53,8 +55,7 @@ class ResidentsListModelImpl(
     }
 
     override fun createNewResident() {
-        // TODO IMPORTANT add current manager building id
-        openCreateResidentData.value = "1"
+        openCreateResidentData.value = profile.id
     }
 
     override fun handleResidentOptions(id: String) {

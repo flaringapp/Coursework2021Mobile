@@ -8,6 +8,7 @@ import com.flaringapp.coursework2021.app.common.collectOn
 import com.flaringapp.coursework2021.app.common.launchOnIO
 import com.flaringapp.coursework2021.app.common.withMainContext
 import com.flaringapp.coursework2021.data.repository.entity.models.RoomType
+import com.flaringapp.coursework2021.data.repository.profile.models.Profile
 import com.flaringapp.coursework2021.data.repository.transactions.TransactionsRepository
 import com.flaringapp.coursework2021.data.repository.transactions.models.Transaction
 import com.flaringapp.coursework2021.data.repository.transactions.storage.TransactionsStorage
@@ -18,15 +19,11 @@ import com.flaringapp.coursework2021.presentation.utils.valueIfHasObservers
 import java.time.LocalDate
 
 class TransactionModelImpl(
+    private val profile: Profile,
     private val repository: TransactionsRepository,
     storage: TransactionsStorage,
     private val textProvider: TextProvider
 ) : TransactionsModel() {
-
-    companion object {
-        // TODO important read manager id
-        private const val MANAGER_ID = "1"
-    }
 
     override val transactionsData = MutableLiveData<List<TransactionViewData>>()
     override val addTransactionData = SingleLiveEvent<TransactionViewData>()
@@ -54,7 +51,7 @@ class TransactionModelImpl(
     private fun loadTransactions() {
         viewModelScope.launchOnIO {
             val loadedTransactions = safeCall {
-                repository.getTransactions(MANAGER_ID)
+                repository.getTransactions(profile.id)
             } ?: return@launchOnIO
 
             val viewData = loadedTransactions.map { it.toViewData() }

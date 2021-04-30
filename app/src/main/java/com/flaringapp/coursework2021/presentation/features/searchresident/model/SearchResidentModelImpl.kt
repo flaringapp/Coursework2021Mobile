@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.flaringapp.coursework2021.app.common.launchOnIO
 import com.flaringapp.coursework2021.app.common.withMainContext
+import com.flaringapp.coursework2021.data.repository.profile.models.ManagerInfo
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepository
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
 import com.flaringapp.coursework2021.data.text.TextProvider
@@ -11,14 +12,10 @@ import com.flaringapp.coursework2021.presentation.features.searchresident.models
 import com.flaringapp.coursework2021.presentation.utils.common.SingleLiveEvent
 
 class SearchResidentModelImpl(
+    private val managerInfo: ManagerInfo,
     private val repository: ResidentsRepository,
     private val textProvider: TextProvider
 ) : SearchResidentModel() {
-
-    companion object {
-        // TODO important read building id
-        private const val BUILDING_ID = "1"
-    }
 
     override val residentsData = MutableLiveData<List<SearchResidentViewData>>()
 
@@ -38,7 +35,7 @@ class SearchResidentModelImpl(
     private fun loadResidents() {
         viewModelScope.launchOnIO {
             val loadedResidents = safeCall {
-                repository.getResidents(BUILDING_ID)
+                repository.getResidents(managerInfo.buildingId)
             } ?: return@launchOnIO
 
             val viewData = loadedResidents.map { it.toViewData() }

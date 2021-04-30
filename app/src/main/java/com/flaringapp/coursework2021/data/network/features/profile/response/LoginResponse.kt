@@ -12,4 +12,8 @@ class LoginResponse(
     val email: String,
     @Json(name = "apiKey")
     val token: String,
+    @Json(name = "user_type")
+    val userType: String,
+    @Json(name = "location_id")
+    val buildingId: String? = null,
 )

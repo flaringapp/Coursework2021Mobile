@@ -35,7 +35,7 @@ val PresentationModule = module {
 
     viewModel<LoginModel> { LoginModelImpl(get()) }
 
-    viewModel<MenuModel> { MenuModelImpl() }
+    viewModel<MenuModel> { MenuModelImpl(get()) }
 
     viewModel<BuildingsListModel> { BuildingsListModelImpl(get(), get(), get()) }
 
@@ -49,16 +49,16 @@ val PresentationModule = module {
 
     viewModel<ModifyManagerModel> { ModifyManagerModelImpl(get()) }
 
-    viewModel<ResidentsListModel> { ResidentsListModelImpl(get(), get(), get()) }
+    viewModel<ResidentsListModel> { ResidentsListModelImpl(get(), get(), get(), get()) }
 
     viewModel<ModifyResidentModel> { ModifyResidentModelImpl() }
 
     viewModel<TenantsModel> { TenantsModelImpl(get(), get()) }
 
-    viewModel<SearchResidentModel> { SearchResidentModelImpl(get(), get()) }
+    viewModel<SearchResidentModel> { SearchResidentModelImpl(get(), get(), get()) }
 
-    viewModel<TransactionsModel> { TransactionModelImpl(get(), get(), get()) }
+    viewModel<TransactionsModel> { TransactionModelImpl(get(), get(), get(), get()) }
 
-    viewModel<CreateTransactionModel> { CreateTransactionModelImpl(get(), get(), get(), get()) }
+    viewModel<CreateTransactionModel> { CreateTransactionModelImpl(get(), get(), get(), get(), get()) }
 
 }

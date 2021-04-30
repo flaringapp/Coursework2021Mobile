@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.app.common.launchOnIO
 import com.flaringapp.coursework2021.app.common.withMainContext
+import com.flaringapp.coursework2021.data.repository.profile.models.ManagerInfo
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepository
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
 import com.flaringapp.coursework2021.data.repository.tenants.RentalsRepository
@@ -18,15 +19,12 @@ import com.flaringapp.coursework2021.presentation.utils.startLoadingTaskInverted
 import kotlinx.coroutines.Job
 
 class CreateTransactionModelImpl(
+    managerInfo: ManagerInfo,
     private val residentsRepository: ResidentsRepository,
     private val rentalsRepository: RentalsRepository,
     private val transactionsRepository: TransactionsRepository,
     private val textProvider: TextProvider,
 ) : CreateTransactionModel() {
-
-    companion object {
-        private const val BUILDING_ID = "1"
-    }
 
     override val residentsData = MutableLiveData<TransactionSelectResidentViewData>()
     override val rentalsData = MutableLiveData<TransactionSelectRentalViewData>()
@@ -44,8 +42,7 @@ class CreateTransactionModelImpl(
 
     override val closeScreenData = SingleLiveEvent<Unit>()
 
-    // TODO real building id
-    private var buildingId: String = BUILDING_ID
+    private val buildingId: String = managerInfo.buildingId
 
     private var residents: List<Resident> = emptyList()
     private var rentals: List<Rental> = emptyList()

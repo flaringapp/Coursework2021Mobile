@@ -2,7 +2,6 @@ package com.flaringapp.coursework2021.data.repository.profile
 
 import com.flaringapp.coursework2021.data.common.call.CallResult
 import com.flaringapp.coursework2021.data.network.features.profile.ProfileSourceModel
-import com.flaringapp.coursework2021.data.network.features.profile.response.LoginResponse
 import com.flaringapp.coursework2021.data.repository.profile.models.LoginData
 import com.flaringapp.coursework2021.data.repository.profile.models.Profile
 import com.flaringapp.coursework2021.data.storage.DataStorage
@@ -21,6 +20,10 @@ class ProfileRepositoryImpl(
                 currentProfile = it.profile
                 dataStorage.token = it.token
                 dataStorage.userId = it.profile.id
+
+                ProfileCache.setProfile(it.profile)
+                ProfileCache.setUserType(it.userType)
+                it.userType.setupDependencies(it.profile)
             }
     }
 
@@ -28,10 +31,4 @@ class ProfileRepositoryImpl(
         return currentProfile
     }
 
-    private fun LoginResponse.parseLoginResponse(): LoginData {
-        return LoginData(
-            Profile(id, name, surname, email),
-            token
-        )
-    }
 }
