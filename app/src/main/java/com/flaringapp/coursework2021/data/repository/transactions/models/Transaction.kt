@@ -5,10 +5,10 @@ import java.time.LocalDateTime
 
 class Transaction(
     val id: String,
-    val rentalId: String,
-    val resident: TransactionResident,
-    val room: TransactionRoom,
-    val managerId: String,
+    val rentalId: String?,
+    val resident: TransactionResident?,
+    val room: TransactionRoom?,
+    val managerId: String?,
     val dateFrom: LocalDate,
     val dateTo: LocalDate,
     val amount: Int,

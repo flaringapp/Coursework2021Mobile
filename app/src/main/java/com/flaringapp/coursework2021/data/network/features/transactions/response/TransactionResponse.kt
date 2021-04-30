@@ -9,21 +9,21 @@ import java.time.LocalDateTime
 class TransactionResponse(
     val id: String,
     @Json(name = "rental_id")
-    val rentalId: String,
+    val rentalId: String? = null,
     @Json(name = "user_id")
-    val residentId: String,
+    val residentId: String? = null,
     @Json(name = "user_first_name")
-    val residentName: String,
+    val residentName: String? = null,
     @Json(name = "user_last_name")
-    val residentSurname: String,
+    val residentSurname: String? = null,
     @Json(name = "room_id")
-    val roomId: String,
+    val roomId: String? = null,
     @Json(name = "room_name")
-    val roomName: String,
+    val roomName: String? = null,
     @Json(name = "room_type")
-    val roomType: String,
+    val roomType: String? = null,
     @Json(name = "manager_id")
-    val managerId: String,
+    val managerId: String? = null,
     @Json(name = "date_from")
     val dateFrom: LocalDate,
     @Json(name = "date_to")

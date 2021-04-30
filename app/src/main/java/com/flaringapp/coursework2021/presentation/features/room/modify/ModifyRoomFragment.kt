@@ -118,6 +118,7 @@ class ModifyRoomFragment : ModelledFragment(R.layout.fragment_room_modify) {
         val button = when(roomType) {
             RoomType.Private -> binding.buttonRoomTypePrivate
             RoomType.OpenSpace -> binding.buttonRoomTypeOpenSpace
+            else -> return
         }
         listOf(binding.buttonRoomTypePrivate, binding.buttonRoomTypeOpenSpace).forEach {
             it.isSelected = it == button

@@ -196,7 +196,7 @@ class CreateTransactionModelImpl(
 
     private fun Rental.toViewData() = TransactionRentalViewData(
         id,
-        room.roomName
+        "${room.roomName} ($id) "
     )
 
 }

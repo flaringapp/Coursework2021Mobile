@@ -122,8 +122,11 @@ class TenantsModelImpl(
         canAddTenantsData.value = rentals.size < maxTenants
     }
 
-    private fun Rental.toViewData() = TenantViewData(
-        id,
-        textProvider.formatNameSurname(tenant.residentName, tenant.residentSurname)
-    )
+    private fun Rental.toViewData(): TenantViewData {
+        val name = tenant.formatNameSurname(textProvider)
+        return TenantViewData(
+            id,
+            "$name: $id"
+        )
+    }
 }

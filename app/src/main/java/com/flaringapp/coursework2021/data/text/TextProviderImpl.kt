@@ -57,6 +57,14 @@ class TextProviderImpl(
         return getText(R.string.no_price)
     }
 
+    override fun noName(): CharSequence {
+        return getText(R.string.no_name)
+    }
+
+    override fun noRoomName(): CharSequence {
+        return getText(R.string.no_room_name)
+    }
+
     override fun formatDate(date: LocalDate): CharSequence {
         return DATE_FORMAT.asFormat().format(date)
     }

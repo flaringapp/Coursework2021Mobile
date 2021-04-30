@@ -22,4 +22,11 @@ sealed class RoomType: Parcelable {
             return textProvider.getText(R.string.room_type_private)
         }
     }
+
+    @Parcelize
+    object Unknown: RoomType() {
+        override fun formatName(textProvider: TextProvider): CharSequence {
+            return textProvider.getText(R.string.room_type_unknown)
+        }
+    }
 }

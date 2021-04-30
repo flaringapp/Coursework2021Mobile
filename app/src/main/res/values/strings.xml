@@ -11,6 +11,9 @@
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
 
+    <string name="no_name">No name</string>
+    <string name="no_room_name">No room name</string>
+
 
     <!-- Login -->
     <string name="title_login">Email</string>
@@ -67,6 +70,7 @@
     <string name="message_no_balcony">No balcony</string>
     <string name="room_type_private">Private room</string>
     <string name="room_type_open_space">Open space</string>
+    <string name="room_type_unknown">Unknown room</string>
 
     <!-- Create room -->
     <string name="title_create_room">Create new room</string>
@@ -147,6 +151,7 @@
     <string name="button_new_transaction">New transaction</string>
     <string name="message_payment_private_room">Private room rental payment</string>
     <string name="message_payment_open_space">Workplace in open space payment</string>
+    <string name="message_payment_unknown">Payment for some room</string>
 
     <!-- Create transaction -->
     <string name="title_create_payment">Create new payment</string>

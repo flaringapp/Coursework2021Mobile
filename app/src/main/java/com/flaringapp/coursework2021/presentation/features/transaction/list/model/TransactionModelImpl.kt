@@ -65,10 +65,10 @@ class TransactionModelImpl(
 
     private fun Transaction.toViewData() = TransactionViewData(
         id,
-        resident.formatNameSurname(textProvider),
-        room.roomName,
+        resident?.formatNameSurname(textProvider)  ?: textProvider.noName(),
+        room?.roomName ?: textProvider.noRoomName(),
         formatDateRange(dateFrom, dateTo),
-        formatPaymentMessage(room.roomType),
+        formatPaymentMessage(room?.roomType ?: RoomType.Unknown),
         textProvider.formatPrice(amount),
         textProvider.formatDateTime(timeCreated),
     )
@@ -82,6 +82,7 @@ class TransactionModelImpl(
             when (type) {
                 RoomType.Private -> R.string.message_payment_private_room
                 RoomType.OpenSpace -> R.string.message_payment_open_space
+                RoomType.Unknown -> R.string.message_payment_unknown
             }
         )
     }
