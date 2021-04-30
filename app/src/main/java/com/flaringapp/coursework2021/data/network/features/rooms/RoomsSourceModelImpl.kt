@@ -19,7 +19,7 @@ class RoomsSourceModelImpl(
     }
 
     override suspend fun getRooms(buildingId: String): CallResultList<RoomResponse> {
-        return api.getRooms()
+        return api.getRooms(buildingId)
             .validateList()
     }
 
