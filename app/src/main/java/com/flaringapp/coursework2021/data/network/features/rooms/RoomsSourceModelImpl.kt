@@ -6,7 +6,7 @@ import com.flaringapp.coursework2021.data.common.call.CallResultNothing
 import com.flaringapp.coursework2021.data.network.base.validate
 import com.flaringapp.coursework2021.data.network.base.validateList
 import com.flaringapp.coursework2021.data.network.base.validateNoData
-import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomRequest
+import com.flaringapp.coursework2021.data.network.features.rooms.request.RoomRequest
 import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomResponse
 
 class RoomsSourceModelImpl(

@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
 
-typealias ApiResponseSuccess = Response<BaseResponseSuccess>
+typealias ApiResponseSuccess = Response<Unit>
 
 @JsonClass(generateAdapter = true)
 class BaseResponseSuccess(

@@ -6,7 +6,7 @@ import com.flaringapp.coursework2021.data.common.call.CallResult
 import com.flaringapp.coursework2021.data.common.call.CallResultList
 import com.flaringapp.coursework2021.data.common.call.CallResultNothing
 import com.flaringapp.coursework2021.data.network.features.rooms.RoomsSourceModel
-import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomRequest
+import com.flaringapp.coursework2021.data.network.features.rooms.request.RoomRequest
 import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomResponse
 
 class RoomsSourceModelMock : RoomsSourceModel {

@@ -6,11 +6,12 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class RoomResponse(
     val id: String,
-    @Json(name = "building_id")
+    @Json(name = "location_id")
     val buildingId: String,
     val name: String,
     val description: String? = null,
     val type: String,
+    @Json(name = "place_price")
     val price: Int,
     @Json(name = "has_board")
     val hasBoard: Int? = null,

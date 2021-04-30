@@ -4,9 +4,9 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
 
-typealias ApiResponse<T> = Response<BaseResponse<T>>
+typealias ApiResponse<T> = Response<T>
 
-typealias ApiResponseList<T> = Response<BaseResponse<List<T>>>
+typealias ApiResponseList<T> = Response<List<T>>
 
 @JsonClass(generateAdapter = true)
 class BaseResponse<T>(

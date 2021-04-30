@@ -13,7 +13,7 @@ fun TransactionResponse.parseTransaction() = Transaction(
     id,
     rentalId,
     TransactionResident(residentId, residentName, residentSurname),
-    TransactionRoom(roomId, roomName, roomTypeKeys.getKey(roomType)!!, roomPrice),
+    TransactionRoom(roomId, roomName, roomTypeKeys.getKey(roomType)!!),
     managerId,
     dateFrom,
     dateTo,

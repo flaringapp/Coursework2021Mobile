@@ -7,6 +7,6 @@ import com.squareup.moshi.JsonClass
 class RentalRequest(
     @Json(name = "room_id")
     val roomId: String,
-    @Json(name = "resident_id")
+    @Json(name = "user_id")
     val residentId: String,
 )

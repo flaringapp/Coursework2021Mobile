@@ -13,27 +13,27 @@ private val errorResponseAdapter: JsonAdapter<ErrorResponse> by lazy {
         .adapter(ErrorResponse::class.java)
 }
 
-fun <T> Response<out ValidateableResponse<List<T>>>.validateList(): CallResult<List<T>> {
+fun <T> Response<List<T>>.validateList(): CallResult<List<T>> {
     return if (isSuccessful) {
-        body().parseResult {
+        body().let {
             if (it == null) CallResult.Success(emptyList())
             else CallResult.Success(it)
         }
     } else errorBody().parseErrorResult()
 }
 
-fun <T> Response<out ValidateableResponse<T>>.validate(): CallResult<T> {
+fun <T> Response<T>.validate(): CallResult<T> {
     return validateAny { CallResult.Success(it!!) }
 }
 
-fun Response<BaseResponseSuccess>.validateNoData(): CallResultNothing {
+fun ApiResponseSuccess.validateNoData(): CallResultNothing {
     return validateAny { CallResult.Success(it!!) }
 }
 
-private fun <T> Response<out ValidateableResponse<out T>>.validateAny(
+private fun <T> Response<out T>.validateAny(
     collector: (T?) -> CallResult<T>
 ): CallResult<T> {
-    return if (isSuccessful) body().parseResult(collector)
+    return if (isSuccessful) body().let(collector)
     else errorBody().parseErrorResult()
 }
 

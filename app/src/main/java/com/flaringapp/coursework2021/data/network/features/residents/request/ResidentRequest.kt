@@ -6,10 +6,12 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class ResidentRequest(
     val id: String,
+    @Json(name = "first_name")
     val name: String,
+    @Json(name = "last_name")
     val surname: String,
     val email: String,
     val description: String,
-    @Json(name = "building_id")
+    @Json(name = "location_id")
     val buildingId: String?,
 )

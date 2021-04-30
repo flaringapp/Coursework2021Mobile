@@ -2,9 +2,9 @@ package com.flaringapp.coursework2021.data.repository.entity
 
 import com.flaringapp.coursework2021.app.common.getKey
 import com.flaringapp.coursework2021.app.common.toInt
-import com.flaringapp.coursework2021.data.network.features.buildings.response.BuildingRequest
+import com.flaringapp.coursework2021.data.network.features.buildings.request.BuildingRequest
 import com.flaringapp.coursework2021.data.network.features.buildings.response.BuildingsResponse
-import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomRequest
+import com.flaringapp.coursework2021.data.network.features.rooms.request.RoomRequest
 import com.flaringapp.coursework2021.data.network.features.rooms.response.RoomResponse
 import com.flaringapp.coursework2021.data.repository.entity.models.Building
 import com.flaringapp.coursework2021.data.repository.entity.models.GeoLocation

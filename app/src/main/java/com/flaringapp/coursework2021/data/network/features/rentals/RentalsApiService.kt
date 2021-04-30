@@ -37,7 +37,7 @@ interface RentalsApiService {
     @DELETE("rental")
     @FormUrlEncoded
     fun deleteRental(
-        @Field("id") id: String
+        @Query("id") id: String
     ): ApiResponseSuccess
 
 }

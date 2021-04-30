@@ -1,4 +1,4 @@
-package com.flaringapp.coursework2021.data.network.features.rooms.response
+package com.flaringapp.coursework2021.data.network.features.rooms.request
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -6,9 +6,12 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class RoomRequest(
     val id: String,
+    @Json(name = "location_id")
+    val buildingId: String,
     val name: String,
     val description: String? = null,
     val type: String,
+    @Json(name = "place_price")
     val price: Int,
     @Json(name = "has_board")
     val hasBoard: Int? = null,

@@ -10,11 +10,11 @@ class TransactionResponse(
     val id: String,
     @Json(name = "rental_id")
     val rentalId: String,
-    @Json(name = "resident_id")
+    @Json(name = "user_id")
     val residentId: String,
-    @Json(name = "resident_name")
+    @Json(name = "user_first_name")
     val residentName: String,
-    @Json(name = "resident_surname")
+    @Json(name = "user_last_name")
     val residentSurname: String,
     @Json(name = "room_id")
     val roomId: String,
@@ -22,13 +22,11 @@ class TransactionResponse(
     val roomName: String,
     @Json(name = "room_type")
     val roomType: String,
-    @Json(name = "room_price")
-    val roomPrice: Int,
     @Json(name = "manager_id")
     val managerId: String,
-    @Json(name = "date_paid_from")
+    @Json(name = "date_from")
     val dateFrom: LocalDate,
-    @Json(name = "date_paid_to")
+    @Json(name = "date_to")
     val dateTo: LocalDate,
     val amount: Int,
     @Json(name = "time_created")

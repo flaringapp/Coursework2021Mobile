@@ -12,10 +12,10 @@ class RentalResponse(
     val roomName: String,
     @Json(name = "room_price")
     val roomPrice: Int,
-    @Json(name = "resident_id")
+    @Json(name = "user_id")
     val residentId: String,
-    @Json(name = "resident_name")
+    @Json(name = "user_first_name")
     val residentName: String,
-    @Json(name = "resident_surname")
+    @Json(name = "user_last_name")
     val residentSurname: String,
 )

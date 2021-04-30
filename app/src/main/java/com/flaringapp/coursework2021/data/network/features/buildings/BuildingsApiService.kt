@@ -3,7 +3,7 @@ package com.flaringapp.coursework2021.data.network.features.buildings
 import com.flaringapp.coursework2021.data.network.base.ApiResponse
 import com.flaringapp.coursework2021.data.network.base.ApiResponseList
 import com.flaringapp.coursework2021.data.network.base.ApiResponseSuccess
-import com.flaringapp.coursework2021.data.network.features.buildings.response.BuildingRequest
+import com.flaringapp.coursework2021.data.network.features.buildings.request.BuildingRequest
 import com.flaringapp.coursework2021.data.network.features.buildings.response.BuildingsResponse
 import retrofit2.http.*
 
@@ -25,7 +25,7 @@ interface BuildingsApiService {
     @DELETE("building")
     @FormUrlEncoded
     fun deleteBuilding(
-        @Field("id") id: String
+        @Query("id") id: String
     ): ApiResponseSuccess
 
 }
