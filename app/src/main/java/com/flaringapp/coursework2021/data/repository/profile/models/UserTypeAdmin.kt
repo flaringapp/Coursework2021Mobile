@@ -12,6 +12,8 @@ class UserTypeAdmin: UserType {
         AdminMenuDisplay()
     )
 
+    override val canOpenRoom: Boolean = false
+
     override fun setupDependencies(profile: Profile) {
     }
 }

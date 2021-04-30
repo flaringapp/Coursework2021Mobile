@@ -13,6 +13,8 @@ class UserTypeManager: UserType {
         ManagerMenuDisplay()
     )
 
+    override val canOpenRoom: Boolean = true
+
     override fun setupDependencies(profile: Profile) {
         ProfileCache.setManagerInfo(
             ManagerInfo(profile.commonData.buildingId!!)

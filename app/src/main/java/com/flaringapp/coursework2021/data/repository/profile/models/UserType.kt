@@ -8,6 +8,8 @@ interface UserType {
 
     val menuBehavior: MenuBehaviour
 
+    val canOpenRoom: Boolean
+
     fun setupDependencies(profile: Profile)
 
 }

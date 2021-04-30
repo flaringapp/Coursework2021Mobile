@@ -7,12 +7,14 @@ import com.flaringapp.coursework2021.app.common.*
 import com.flaringapp.coursework2021.data.repository.entity.EntityRepository
 import com.flaringapp.coursework2021.data.repository.entity.models.Room
 import com.flaringapp.coursework2021.data.repository.entity.storage.RoomsStorage
+import com.flaringapp.coursework2021.data.repository.profile.models.UserType
 import com.flaringapp.coursework2021.data.text.TextProvider
 import com.flaringapp.coursework2021.presentation.features.room.list.models.RoomViewData
 import com.flaringapp.coursework2021.presentation.utils.common.SingleLiveEvent
 import com.flaringapp.coursework2021.presentation.utils.valueIfHasObservers
 
 class RoomsListModelImpl(
+    private val userType: UserType,
     private val repository: EntityRepository,
     roomsStorage: RoomsStorage,
     private val textProvider: TextProvider,
@@ -67,6 +69,7 @@ class RoomsListModelImpl(
     }
 
     override fun openRoom(id: String) {
+        if (!userType.canOpenRoom) return
         val room = rooms.find { it.id == id } ?: return
         openRoomData.value = room
     }
