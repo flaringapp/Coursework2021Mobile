@@ -30,13 +30,13 @@ class ResidentsRepositoryImpl(
     override suspend fun addResident(resident: Resident): CallResult<Resident> {
         return sourceModel.addResident(resident.asRequest())
             .transform { parseResident() }
-            .doOnSuccessSuspend { addResidentFlow.emit(resident) }
+            .doOnSuccessSuspend { addResidentFlow.emit(it) }
     }
 
     override suspend fun editResident(resident: Resident): CallResult<Resident> {
         return sourceModel.editResident(resident.asRequest())
             .transform { parseResident() }
-            .doOnSuccessSuspend { editResidentFlow.emit(resident) }
+            .doOnSuccessSuspend { editResidentFlow.emit(it) }
     }
 
     override suspend fun deleteResident(id: String): CallResultNothing {
