@@ -59,6 +59,6 @@ val PresentationModule = module {
 
     viewModel<TransactionsModel> { TransactionModelImpl(get(), get(), get(), get()) }
 
-    viewModel<CreateTransactionModel> { CreateTransactionModelImpl(get(), get(), get(), get(), get()) }
+    viewModel<CreateTransactionModel> { CreateTransactionModelImpl(get(), get(), get(), get(), get(), get()) }
 
 }

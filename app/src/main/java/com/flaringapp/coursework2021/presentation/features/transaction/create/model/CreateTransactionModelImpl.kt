@@ -6,6 +6,7 @@ import com.flaringapp.coursework2021.R
 import com.flaringapp.coursework2021.app.common.launchOnIO
 import com.flaringapp.coursework2021.app.common.withMainContext
 import com.flaringapp.coursework2021.data.repository.profile.models.ManagerInfo
+import com.flaringapp.coursework2021.data.repository.profile.models.Profile
 import com.flaringapp.coursework2021.data.repository.residents.ResidentsRepository
 import com.flaringapp.coursework2021.data.repository.residents.models.Resident
 import com.flaringapp.coursework2021.data.repository.tenants.RentalsRepository
@@ -19,6 +20,7 @@ import com.flaringapp.coursework2021.presentation.utils.startLoadingTaskInverted
 import kotlinx.coroutines.Job
 
 class CreateTransactionModelImpl(
+    profile: Profile,
     managerInfo: ManagerInfo,
     private val residentsRepository: ResidentsRepository,
     private val rentalsRepository: RentalsRepository,
@@ -43,6 +45,7 @@ class CreateTransactionModelImpl(
     override val closeScreenData = SingleLiveEvent<Unit>()
 
     private val buildingId: String = managerInfo.buildingId
+    private val managerId: String = profile.id
 
     private var residents: List<Resident> = emptyList()
     private var rentals: List<Rental> = emptyList()
@@ -147,7 +150,7 @@ class CreateTransactionModelImpl(
 
     private fun performCreateTransaction() {
         viewModelScope.startLoadingTask(loadingData) {
-            val transaction = editor.toAddTransaction(buildingId)
+            val transaction = editor.toAddTransaction(managerId)
             safeCall {
                 transactionsRepository.makeTransaction(transaction)
             } ?: return@startLoadingTask
