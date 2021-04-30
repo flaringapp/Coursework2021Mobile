@@ -42,6 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
+                    android:maxLength="1024"
                     android:imeOptions="actionNext"
                     android:nextFocusDown="@id/inputSurname"
                     tools:text="Resident name" />
@@ -63,6 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
+                    android:maxLength="1024"
                     android:imeOptions="actionNext"
                     android:nextFocusDown="@id/inputEmail"
                     tools:text="Resident surname" />
@@ -86,6 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:maxLength="255"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/inputDescription" />
 
@@ -98,7 +101,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="@string/hint_resident_description"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="255">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/Input.InLayout.Stroke"
@@ -107,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine|textCapSentences"
                 android:lines="2"
+                android:maxLength="255"
                 android:imeOptions="actionDone"
                 tools:text="Resident description" />
 

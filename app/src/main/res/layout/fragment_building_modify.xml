@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:maxLength="100"
                 tools:text="Building name" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -45,7 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="@string/hint_building_description"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="255">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/Input.InLayout.Stroke"
@@ -54,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine|textCapSentences"
                 android:lines="2"
+                android:maxLength="255"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/inputLatitude"
                 tools:text="Building description" />
@@ -82,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number|numberDecimal|numberSigned"
+                    android:maxLength="10"
                     android:imeOptions="actionNext"
                     android:nextFocusDown="@id/inputLongitude" />
 
@@ -102,6 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number|numberDecimal|numberSigned"
+                    android:maxLength="10"
                     android:imeOptions="actionNext"
                     android:nextFocusDown="@id/inputAddress" />
 
@@ -116,7 +122,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="@string/hint_building_address"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="100">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/Input.InLayout.Stroke"
@@ -124,6 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:maxLength="100"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/inputArea" />
 
@@ -143,6 +152,7 @@
                 android:id="@+id/inputArea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLength="8"
                 android:inputType="number|numberDecimal"
                 android:imeOptions="actionDone"
                 tools:text="412 m2" />

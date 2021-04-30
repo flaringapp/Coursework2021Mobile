@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:maxLength="100"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/inputDescription"
                 tools:text="Room name" />
@@ -57,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number|numberDecimal"
+                android:maxLength="10"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/inputDescription"
                 tools:text="100.0"/>
@@ -70,7 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="@string/hint_room_description"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="255">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/Input.InLayout.Stroke"
@@ -79,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine|textCapSentences"
                 android:lines="2"
+                android:maxLines="255"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/inputArea"
                 tools:text="Room description" />

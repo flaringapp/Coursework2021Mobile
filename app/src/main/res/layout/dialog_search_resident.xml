@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:inputType="textPersonName"
+            android:maxLength="1024"
             android:imeOptions="actionSearch"
             android:completionThreshold="1" />
 
